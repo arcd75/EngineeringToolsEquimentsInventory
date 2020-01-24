@@ -1,0 +1,76 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Windows"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dx="clr-namespace:DevExpress.Xpf.Grid.ConditionalFormatting;assembly=DevExpress.Xpf.Grid.v19.1.Core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="EngineeringToolsEquipmentsInventory.Windows.LoanItemsWindow"
+        mc:Ignorable="d"
+       WindowStyle="None"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        BorderThickness="1"
+        BorderBrush="Black"
+        Title="LoanItemsWindow" Height="400" Width="650">
+
+
+    <Grid Margin="10">
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="LOAN ITEMS" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" FontSize="15" Foreground="{DynamicResource IOSDeepBlue}"/>
+            <dxg:GridControl Height="350" x:Name="dgGridLoans" SelectionMode="Row" >
+                <dxg:GridControl.View>
+                    <dxg:TableView ShowGroupPanel="False" ShowSearchPanelMode="Always">
+                        <dxg:TableView.FormatConditions>
+                            <dxg:ColorScaleFormatCondition FieldName="LoanQuantity" IsEnabled="False">
+                                <dx:ColorScaleFormat ColorMin="#FFF8696B" ColorMax="#FF63BE7B"/>
+                            </dxg:ColorScaleFormatCondition>
+                            <dxg:FormatCondition FieldName="Status" Value1="Active" ValueRule="Equal">
+                                <dx:Format Background="Red" Foreground="White" FontWeight="Bold"   TextDecorations="{x:Null}"/>
+                            </dxg:FormatCondition>
+                        </dxg:TableView.FormatConditions>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="ItemCode" AllowEditing="False"/>
+                <dxg:GridColumn FieldName="PECode" AllowEditing="False"/>
+                <dxg:GridColumn FieldName="Item" AllowEditing="False"/>
+                <dxg:GridColumn FieldName="Condition" AllowEditing="Default" ReadOnly="False">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings>
+                            <dxe:ComboBoxEditSettings.StyleSettings>
+                                <dxe:ComboBoxStyleSettings/>
+                            </dxe:ComboBoxEditSettings.StyleSettings>
+                            <dxe:ComboBoxEditSettings.Items>
+                                <System:String>GOOD</System:String>
+                                <System:String>NO  GOOD</System:String>
+                                <System:String>LOST</System:String>
+                            </dxe:ComboBoxEditSettings.Items>
+                        </dxe:ComboBoxEditSettings>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn FieldName="#" AllowEditing="False">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                <Button  Width="70" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="return item"  x:Name="btnReturn" Click="BtnReturn_Click"  >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Width="20" Height="20" Fill="White">
+                                            <Rectangle.OpacityMask>
+                                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/return.png"/>
+                                            </Rectangle.OpacityMask>
+                                        </Rectangle>
+                                        <TextBlock Text="RETURN" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+            </dxg:GridControl>
+        </StackPanel>
+    </Grid>
+</Window>

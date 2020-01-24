@@ -1,0 +1,111 @@
+﻿<Window x:Class="EngineeringToolsEquipmentsInventory.Windows.ToolLookupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Windows"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dx="clr-namespace:DevExpress.Xpf.Grid.ConditionalFormatting;assembly=DevExpress.Xpf.Grid.v19.1.Core"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        BorderBrush="Black"
+        KeyDown="Window_KeyDown"
+        BorderThickness="1"
+        Title="ToolLookupWindow" Height="530" Width="1000">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="TOOL LOOKUP" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" FontSize="15" Foreground="{DynamicResource IOSTextHeading}" TextAlignment="Left"/>
+            <StackPanel>
+                <DockPanel>
+                    <StackPanel Height="400" Margin="0,20,0,0">
+                        <dxg:GridControl Height="400" x:Name="dgGrid" SelectionMode="Row" >
+                            <dxg:GridControl.View  >
+                                <dxg:TableView  x:Name="viewGrid" ShowGroupPanel="True" ShowDataNavigator="True" DataNavigatorButtons="Navigation" ShowSearchPanelMode="Always" SearchPanelPosition="OverGroupPanel"  ShowCheckBoxSelectorColumn="True"  AllowEditing="False" >
+                                    <dxg:TableView.FormatConditions>
+                                        <dxg:FormatCondition FieldName="Condition" Value1="GOOD" ValueRule="Equal">
+                                            <dx:Format Background="Green" Foreground="White" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                        <dxg:FormatCondition FieldName="Condition" Value1="NO GOOD" ValueRule="Equal">
+                                            <dx:Format Background="Red" Foreground="White" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                    </dxg:TableView.FormatConditions>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="ItemCode" Visible="False"/>
+                            <dxg:GridColumn FieldName="PECode"/>
+                            <dxg:GridColumn FieldName="Item"/>
+                            <dxg:GridColumn FieldName="Type" Visible="False"/>
+                            <dxg:GridColumn FieldName="ItemDescription" Visible="False"/>
+                            <dxg:GridColumn FieldName="Brand"/>
+                            <dxg:GridColumn FieldName="Condition"/>
+                            <dxg:GridColumn FieldName="Remarks"/>
+                            <dxg:GridColumn FieldName="Status"/>
+                        </dxg:GridControl>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+                            <Button Margin="0,0,5,0" Width="100" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSRed}" x:Name="btnAddDistinct" Click="BtnAddDistinct_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <!--<Rectangle Width="30" Height="30" Fill="White">
+                                        -->
+                                    <!--<Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Search-WF.png" />
+                                        </Rectangle.OpacityMask>-->
+                                    <!--
+                                    </Rectangle>-->
+                                    <TextBlock Text="Search by Name" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="White" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Margin="0,0,5,0" Width="140" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}" x:Name="btnAdd" Click="BtnAdd_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Width="30" Height="30" Fill="White">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png" />
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock x:Name="txtBtnContent" Text="ADD ITEM/S" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="White" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0">
+                            <Button IsEnabled="True" x:Name="btnAddTool" Click="BtnAddTool_Click" Margin="0,15,0,0" Width="140" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Width="30" Height="30" Fill="White">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png" />
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="ADD TOOL" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="White" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  x:Name="btnEdit" Click="BtnEdit_Click" Width="40" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSGrey}" Margin="5,15,0,0">
+                                <Rectangle  Width="40" Height="40" Fill="White">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Data-Edit.png" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                            <Button x:Name="btnDelete" Click="BtnDelete_Click"  Width="40" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSRed}" Margin="5,15,5,0">
+                                <Rectangle  Width="40" Height="40" Fill="White">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Trash can - 01 - Copy.png" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,386 @@
+﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.IMDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views.InventoryManagement"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+             mc:Ignorable="d" 
+             Background="White"
+             ScrollViewer.CanContentScroll="True"
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="1300" d:DesignWidth="1155">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="632*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <DockPanel Background="{DynamicResource IOSDeepBlue}">
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <Rectangle Margin="10,0,0,0" Width="30" Height="30" Fill="White">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/dashboard.png"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="DASHBOARD" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="15" FontWeight="Bold" Foreground="White" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </DockPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1">
+            <DockPanel>
+                <StackPanel Margin="0,15,0,0" Orientation="Vertical">
+                    <TextBlock Text="SPARE PARTS AND CONSUMABLES"  FontSize="15" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Margin="0,5,0,0"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more"  Background="{DynamicResource IOSRed}" Header="Critical Level" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtCritical" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/critical.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more" Background="{DynamicResource IOSOrange}" Header="Reorder Item/s" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtReorder" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/reorder.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more"  Background="{DynamicResource IOSDarkBlue}" Header="No Stock" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtNoStock" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/outofstock.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                    </Grid>
+                    <TextBlock FontSize="15"   Text="TOOLS" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Margin="0,15,0,0"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more"  Background="{DynamicResource IOSRed}" Header="Active Loans" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtActiveLoans" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/loans.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more" Background="{DynamicResource IOSOrange}" Header="Loaned Tool/s" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtLoanedTool" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/ToolIndi.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="2"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more" Background="{DynamicResource IOSGreen}" Header="Available Tool/s" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtAvailableTool" VerticalAlignment="Bottom" Text="0" FontSize="80" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="70" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/toolbox.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="0"  Margin="10">
+                            <dxlc:Tile Name="btnGood" Click="BtnGood_Click" ToolTip="Click to see more" Height="80"  Background="{DynamicResource IOSGreen}" Header="Good" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtGood" VerticalAlignment="Bottom" Text="0" FontSize="40" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/good.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more" Height="80"  Background="{DynamicResource IOSRed}" Header="No Good" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtNoGood" VerticalAlignment="Bottom" Text="0" FontSize="40" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/nogood.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="2"  Margin="10">
+                            <dxlc:Tile ToolTip="Click to see more" Height="80"  Background="{DynamicResource IOSGrey}" Header="Missing" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" >
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                                            <TextBlock x:Name="txtLoast" VerticalAlignment="Bottom" Text="0" FontSize="40" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" />
+                                        </StackPanel>
+                                        <StackPanel VerticalAlignment="Bottom" Grid.Column="1">
+                                            <Rectangle Fill="White" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/lost.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel/>
+                    <StackPanel>
+                        <TextBlock FontSize="15" Text="RECENT TOOLS TRANSACTION" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Margin="0,20,0,10"/>
+                        <dxg:GridControl ShowBorder="False" Height="300" x:Name="dgGridLoans" SelectionMode="Row" >
+                            <dxg:GridControl.View>
+                                <dxg:TableView FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="13" FontWeight="Medium" Foreground="{DynamicResource IOSTextSub}" ShowDataNavigator="False" AutoWidth="True" ShowSearchPanelMode="Never" ShowGroupPanel="False" DataNavigatorButtons="Navigation" AllowEditing="False" AllowGrouping="True" AllowColumnMoving="False" AllowSorting="True" NavigationStyle="Row">
+                                    <dxg:TableView.FormatConditions>
+                                        <dxg:ColorScaleFormatCondition FieldName="LoanQuantity" IsEnabled="False">
+                                            <dxg:ColorScaleFormat ColorMin="#FFF8696B" ColorMax="#FF63BE7B"/>
+                                        </dxg:ColorScaleFormatCondition>
+                                        <dxg:FormatCondition FieldName="Status" Value1="Active" ValueRule="Equal">
+                                            <dxg:Format Background="Red" Foreground="White" FontWeight="Bold"  TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                        <dxg:FormatCondition FieldName="Status" Value1="Returned" ValueRule="Equal">
+                                            <dxg:Format Background="Green" Foreground="White" FontWeight="Bold"  TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                    </dxg:TableView.FormatConditions>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="LoanID"/>
+                            <dxg:GridColumn FieldName="UserName"/>
+                            <dxg:GridColumn FieldName="LoginName"/>
+                            <dxg:GridColumn FieldName="LoanQuantity"/>
+                            <dxg:GridColumn FieldName="LoanDate" SortMode="Value"/>
+                            <dxg:GridColumn FieldName="Status"/>
+                            <dxg:GridColumn FieldName="#" Visible="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <Button  Width="60" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Item"  x:Name="btnLoanItems" Click="BtnLoanItems_Click" >
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Rectangle Width="20" Height="20" Fill="White">
+                                                        <Rectangle.OpacityMask>
+                                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/LoanIItems.png"/>
+                                                        </Rectangle.OpacityMask>
+                                                    </Rectangle>
+                                                    <TextBlock Text="ITEM" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock FontSize="15" Text="RECENT CONSUMABLES TRANSACTION" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Margin="0,20,0,10"/>
+                        <dxg:GridControl ShowBorder="False"  Height="300" x:Name="dgGridTransaction" SelectionMode="Row" >
+                            <dxg:GridControl.View>
+                                <dxg:TableView FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="13" FontWeight="Medium" Foreground="{DynamicResource IOSTextSub}" ShowDataNavigator="False" AutoWidth="True" ShowSearchPanelMode="Never" ShowGroupPanel="False" DataNavigatorButtons="Navigation" AllowEditing="False" AllowGrouping="True" AllowColumnMoving="False" AllowSorting="True" NavigationStyle="Row">
+                                    <dxg:TableView.FormatConditions>
+                                        <dxg:ColorScaleFormatCondition FieldName="LoanQuantity" IsEnabled="False">
+                                            <dxg:ColorScaleFormat ColorMin="#FFF8696B" ColorMax="#FF63BE7B"/>
+                                        </dxg:ColorScaleFormatCondition>
+                                        <dxg:FormatCondition FieldName="Status" Value1="Active" ValueRule="Equal">
+                                            <dxg:Format Background="Red" Foreground="White" FontWeight="Bold"  TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                    </dxg:TableView.FormatConditions>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="TransactionID"/>
+                            <dxg:GridColumn FieldName="UserName"/>
+                            <dxg:GridColumn FieldName="TotalQuantity"/>
+                            <dxg:GridColumn FieldName="TransactionDate"/>
+                            <dxg:GridColumn FieldName="NumberofItem" SortMode="Value"/>
+                            <dxg:GridColumn FieldName="LineName"/>
+                            <dxg:GridColumn FieldName="#" Visible="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <Button  Width="60" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Item"  x:Name="btnLoanItems" Click="BtnLoanItems_Click" >
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Rectangle Width="20" Height="20" Fill="White">
+                                                        <Rectangle.OpacityMask>
+                                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/LoanIItems.png"/>
+                                                        </Rectangle.OpacityMask>
+                                                    </Rectangle>
+                                                    <TextBlock Text="ITEM" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock FontSize="15" Text="RECENT SPARE PARTS TRANSACTION" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Margin="0,20,0,10"/>
+                        <dxg:GridControl ShowBorder="False"  Height="300" x:Name="dgSpareParts" SelectionMode="Row" >
+                            <dxg:GridControl.View>
+                                <dxg:TableView FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="13" FontWeight="Medium" Foreground="{DynamicResource IOSTextSub}" ShowDataNavigator="False" AutoWidth="True" ShowSearchPanelMode="Never" ShowGroupPanel="False" DataNavigatorButtons="Navigation" AllowEditing="False" AllowGrouping="True" AllowColumnMoving="False" AllowSorting="True" NavigationStyle="Row">
+                                    <dxg:TableView.FormatConditions>
+                                        <dxg:ColorScaleFormatCondition FieldName="LoanQuantity" IsEnabled="False">
+                                            <dxg:ColorScaleFormat ColorMin="#FFF8696B" ColorMax="#FF63BE7B"/>
+                                        </dxg:ColorScaleFormatCondition>
+                                        <dxg:FormatCondition FieldName="Status" Value1="Active" ValueRule="Equal">
+                                            <dxg:Format Background="Red" Foreground="White" FontWeight="Bold"  TextDecorations="{x:Null}"/>
+                                        </dxg:FormatCondition>
+                                    </dxg:TableView.FormatConditions>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="TransactionID"/>
+                            <dxg:GridColumn FieldName="UserName"/>
+                            <dxg:GridColumn FieldName="TotalQuantity"/>
+                            <dxg:GridColumn FieldName="TransactionDate"/>
+                            <dxg:GridColumn FieldName="NumberofItem" SortMode="Value"/>
+                            <dxg:GridColumn FieldName="LineName"/>
+                            <dxg:GridColumn FieldName="#" Visible="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <Button  Width="60" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Item"  x:Name="btnLoanItems" Click="BtnLoanItems_Click" >
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Rectangle Width="20" Height="20" Fill="White">
+                                                        <Rectangle.OpacityMask>
+                                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/LoanIItems.png"/>
+                                                        </Rectangle.OpacityMask>
+                                                    </Rectangle>
+                                                    <TextBlock Text="ITEM" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,66 @@
+﻿<UserControl xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.DeliveryWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views.InventoryManagement"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="1300" d:DesignWidth="1155">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="1223*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <DockPanel Background="{DynamicResource IOSDeepBlue}">
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <Rectangle Margin="10,0,0,0" Width="30" Height="30" Fill="White">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/newdelivery2.png"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="DELIVERY" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="15" FontWeight="Bold" Foreground="White" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="51*"/>
+                    <RowDefinition Height="1171*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="btnNewDelivery" Click="BtnNewDelivery_Click" Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                        <Rectangle Fill="White" Height="25" Width="25">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/NewDelivery.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                        <Rectangle Fill="White" Height="25" Width="25">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/DeliveryHistory.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                        <Rectangle Fill="White" Height="25" Width="25">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/NewDelivery.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="1"> 
+                        <dxwui:NavigationFrame x:Name="mainNavigation" AnimationType="Fade"/> 
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+</UserControl>

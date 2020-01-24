@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,9 +36,78 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>EngineeringIcon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Wpf, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Map.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Carousel.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Dashboard.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Gauges.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Map.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.TreeMap.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.0.14.3\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.3.5.8\lib\35\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.14.3, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.0.14.3\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Sparrow.Chart.Wpf.40, Version=13.1.0.118, Culture=neutral, PublicKeyToken=50f33fb8697e9a92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sparrow.Chart.Wpf.13.1.0.118\lib\net40\Sparrow.Chart.Wpf.40.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -46,6 +117,35 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Toolkit.Charting, Version=1.0.5755.26422, Culture=neutral, PublicKeyToken=c475b86b0b5dd5cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Charting.1.0.5755.26422\lib\net40\Toolkit.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.CodeBase, Version=1.0.5755.26406, Culture=neutral, PublicKeyToken=85a1d6861c984571, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.CodeBase.1.0.5755.26406\lib\net35\Toolkit.CodeBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Toolkit.CommonResources, Version=1.0.5752.28158, Culture=neutral, PublicKeyToken=2899914042019c40, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.CommonResources.1.0.5752.28158\lib\net35\Toolkit.CommonResources.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Toolkit.Data, Version=1.0.5755.26407, Culture=neutral, PublicKeyToken=629543f4dbd6bd87, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Data.1.0.5755.26407\lib\net35\Toolkit.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Toolkit.Drawing, Version=1.0.5755.26408, Culture=neutral, PublicKeyToken=5ff3c7cbdef8f713, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Drawing.1.0.5755.26408\lib\net35\Toolkit.Drawing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Toolkit.Runtime, Version=1.0.5755.26410, Culture=neutral, PublicKeyToken=f6792c8416fb80c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Runtime.1.0.5755.26410\lib\net35\Toolkit.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Toolkit.Scripting, Version=1.0.5755.26411, Culture=neutral, PublicKeyToken=6616acb562ce6d44, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Scripting.1.0.5755.26411\lib\net35\Toolkit.Scripting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -55,6 +155,90 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\BCrypt.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\DatabaseTables.cs" />
+    <Compile Include="Models\GMCSDatabaseContext.cs" />
+    <Compile Include="Models\GMCSDatabaseTables.cs" />
+    <Compile Include="Models\Variables.cs" />
+    <Compile Include="Reports\LoanedItemsReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LoanedItemsReport.Designer.cs">
+      <DependentUpon>LoanedItemsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionReport.Designer.cs">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsumablesView.xaml.cs">
+      <DependentUpon>ConsumablesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryView.xaml.cs">
+      <DependentUpon>HistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagementView.xaml.cs">
+      <DependentUpon>InventoryManagementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\Dashboard1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\Dashboard1.Designer.cs">
+      <DependentUpon>Dashboard1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\DeliveryHistoryView.xaml.cs">
+      <DependentUpon>DeliveryHistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\DeliveryWindow.xaml.cs">
+      <DependentUpon>DeliveryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\IMDashboard.xaml.cs">
+      <DependentUpon>IMDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\IMInventoryView.xaml.cs">
+      <DependentUpon>IMInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\JigsTransactionView.xaml.cs">
+      <DependentUpon>JigsTransactionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\TransactionHistoryView.xaml.cs">
+      <DependentUpon>TransactionHistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JigsView.xaml.cs">
+      <DependentUpon>JigsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewDeliveryView.xaml.cs">
+      <DependentUpon>NewDeliveryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolsView.xaml.cs">
+      <DependentUpon>ToolsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddToolWindow.xaml.cs">
+      <DependentUpon>AddToolWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BarrowerLookupWindow.xaml.cs">
+      <DependentUpon>BarrowerLookupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IDScanWindow.xaml.cs">
+      <DependentUpon>IDScanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LoanItemsWindow.xaml.cs">
+      <DependentUpon>LoanItemsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ToolLookupWindow.xaml.cs">
+      <DependentUpon>ToolLookupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ToolSearchWindow.xaml.cs">
+      <DependentUpon>ToolSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +251,86 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ConsumablesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\DeliveryHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\DeliveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\IMDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\IMInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\JigsTransactionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\TransactionHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\JigsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewDeliveryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddToolWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BarrowerLookupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\IDScanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LoanItemsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ToolLookupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ToolSearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -82,17 +346,264 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LoanedItemsReport.resx">
+      <DependentUpon>LoanedItemsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionReport.resx">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InventoryManagement\Dashboard1.resx">
+      <DependentUpon>Dashboard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Libs\Images\Thumbs.db" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Fonts\Helvetica Neu Bold.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeue BlackCond.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeue Light.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeue Medium.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeue Thin.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeue.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeueBd.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeueHv.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeueIt.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeueLt.ttf" />
+    <Resource Include="Libs\Fonts\HelveticaNeueMed.ttf" />
+    <Resource Include="Libs\Images\Close.png" />
+    <Resource Include="Libs\Images\Maximize.png" />
+    <Resource Include="Libs\Images\Minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\IDScan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\SPWS-LOGO-VIOLET.png" />
+    <Resource Include="Libs\Images\SPWS-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\wifi-signal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\consumables.png" />
+    <Resource Include="Libs\Images\searchtools.png" />
+    <Resource Include="Libs\Images\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\jigs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\equipment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Copy-04-WF.png" />
+    <Resource Include="Libs\Images\crr.png" />
+    <Resource Include="Libs\Images\Data Edit-WF.png" />
+    <Resource Include="Libs\Images\Data-Edit.png" />
+    <Resource Include="Libs\Images\Data-Warning.png" />
+    <Resource Include="Libs\Images\Department.png" />
+    <Resource Include="Libs\Images\Division.png" />
+    <Resource Include="Libs\Images\Document-Check.png" />
+    <Resource Include="Libs\Images\DocumentAdd-WF.png" />
+    <Resource Include="Libs\Images\Door Open.png" />
+    <Resource Include="Libs\Images\DRCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Command-Reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Add.png" />
+    <Resource Include="Libs\Images\addfile.png" />
+    <Resource Include="Libs\Images\Camera -02.png" />
+    <Resource Include="Libs\Images\CameraCheckerLogo.png" />
+    <Resource Include="Libs\Images\Cancel.png" />
+    <Resource Include="Libs\Images\Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\err.png" />
+    <Resource Include="Libs\Images\Excel Export .png" />
+    <Resource Include="Libs\Images\Excel_01.png" />
+    <Resource Include="Libs\Images\eyeball.ico" />
+    <Resource Include="Libs\Images\FCC-LOGO.ico" />
+    <Resource Include="Libs\Images\FCC-LOGO.png" />
+    <Resource Include="Libs\Images\FCC-MACHINE-VISION-LOGO.ico" />
+    <Resource Include="Libs\Images\FCC-MACHINE-VISION-LOGO.png" />
+    <Resource Include="Libs\Images\FCC_Modeler.png" />
+    <Resource Include="Libs\Images\File Add-WF.png" />
+    <Resource Include="Libs\Images\File Delete-WF.png" />
+    <Resource Include="Libs\Images\Flag-03.png" />
+    <Resource Include="Libs\Images\fuse-box.png" />
+    <Resource Include="Libs\Images\fuses.png" />
+    <Resource Include="Libs\Images\Graduate-Hat.png" />
+    <Resource Include="Libs\Images\Graph-03.png" />
+    <Resource Include="Libs\Images\Group-Modify.png" />
+    <Resource Include="Libs\Images\Hand 12 -WF.png" />
+    <Resource Include="Libs\Images\Hand Shake.png" />
+    <Resource Include="Libs\Images\HRIS.png" />
+    <Resource Include="Libs\Images\IMS.png" />
+    <Resource Include="Libs\Images\ims1.png" />
+    <Resource Include="Libs\Images\Jesus christ-WF.png" />
+    <Resource Include="Libs\Images\Left-Arrow.png" />
+    <Resource Include="Libs\Images\Lock-Open.png" />
+    <Resource Include="Libs\Images\Login-02.png" />
+    <Resource Include="Libs\Images\Logout.png" />
+    <Resource Include="Libs\Images\MasterList.png" />
+    <Resource Include="Libs\Images\Meeting.png" />
+    <Resource Include="Libs\Images\Menu_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Microsoft-Word-New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Paint-Bucket.png" />
+    <Resource Include="Libs\Images\PDF Export.png" />
+    <Resource Include="Libs\Images\PDF.png" />
+    <Resource Include="Libs\Images\People.png" />
+    <Resource Include="Libs\Images\Power Off-03-WF.png" />
+    <Resource Include="Libs\Images\Profit-WF.png" />
+    <Resource Include="Libs\Images\Projector-Screen-WF.png" />
+    <Resource Include="Libs\Images\Reports.png" />
+    <Resource Include="Libs\Images\reps.png" />
+    <Resource Include="Libs\Images\Rules.png" />
+    <Resource Include="Libs\Images\Save.png" />
+    <Resource Include="Libs\Images\Search-WF.png" />
+    <Resource Include="Libs\Images\SerialLink.png" />
+    <Resource Include="Libs\Images\Settings-02.png" />
+    <Resource Include="Libs\Images\Shutdown-WF.png" />
+    <Resource Include="Libs\Images\Student-Laptop.png" />
+    <Resource Include="Libs\Images\SubDivision%27.png" />
+    <Resource Include="Libs\Images\Switches_01-WF.png" />
+    <Resource Include="Libs\Images\Team-01.png" />
+    <Resource Include="Libs\Images\Thumbs-Up.png" />
+    <Resource Include="Libs\Images\Trash can - 01 - Copy.png" />
+    <Resource Include="Libs\Images\User-Female.png" />
+    <Resource Include="Libs\Images\User-Information.png" />
+    <Resource Include="Libs\Images\User-Male.png" />
+    <Resource Include="Libs\Images\User.png" />
+    <Resource Include="Libs\Images\WIN_20190729_16_06_09_Pro %282%29.jpg" />
+    <Resource Include="Libs\Images\Workflow-01-WF.png" />
+    <Resource Include="Libs\Images\Workflow-02-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\UserFind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\nouser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\LoanIItems.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\EngineeringIcon %281%29.ico" />
+    <Resource Include="Libs\Images\EngineeringIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="EngineeringIcon %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\addtoorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\critical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\activeloan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\loans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\ToolIndi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\toolbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\nogood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\lost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\outofstock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\consume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\save_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\makecode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\stockin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\newdelivery2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\InventoryManagement\Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\NewDelivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\DeliveryHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\transhistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\jig.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets" Condition="Exists('..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets'))" />
+  </Target>
 </Project>

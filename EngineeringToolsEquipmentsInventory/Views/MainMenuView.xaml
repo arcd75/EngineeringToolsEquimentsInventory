@@ -1,0 +1,132 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views"
+             xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" x:Class="EngineeringToolsEquipmentsInventory.Views.MainMenuView"
+     xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             mc:Ignorable="d" 
+    
+            d:DesignHeight="697"  d:DesignWidth="1350">
+ 
+    <Grid Margin="10">
+        <DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="0">
+                    <TextBlock FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" FontSize="15" Foreground="{DynamicResource IOSDeepBlue}" Text="MAIN MENU"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                    <!--<TextBlock FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" FontSize="15" Foreground="Black" Text="Joshua Tristan Abordo" TextAlignment="Right"/>
+                    <TextBlock FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Light" FontSize="15" Foreground="{DynamicResource IOSGrey}" Text="Engineering Staff" TextAlignment="Right"/>-->
+                </StackPanel>
+            </Grid> 
+        </DockPanel>
+        <DockPanel>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Button x:Name="btnTools" Click="BtnTools_Click" Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="#0984e3" Width="110" Height="110">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/tools.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Tools [F1]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="14" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Button x:Name="btnConsumables" Click="BtnConsumables_Click" Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="#00b894" Width="110" Height="110">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/consumables.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Spareparts and Consumables [F2]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="14" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Button x:Name="btnJigs" Click="BtnJigs_Click" Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical" >
+                                    <Rectangle Fill="#22a6b3"  Width="110" Height="110" Margin="0,0,0,0">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/jig.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Jigs [F3]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+                <DockPanel Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Button Background="Transparent" x:Name="btnHistory" Click="BtnHistory_Click" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="#d63031" Width="110" Height="110">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/searchtools.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Tools History [F4]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Button Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="#00cec9" Width="110" Height="110">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/equipment.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Equipment [F5]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Button x:Name="btnInventoryManagement" Click="BtnInventoryManagement_Click" Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="#fd79a8" Width="110" Height="110">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/Libs/Images/Stock.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Text="Inventory Management [F6]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+
+        </DockPanel>
+
+
+    </Grid>
+</UserControl>

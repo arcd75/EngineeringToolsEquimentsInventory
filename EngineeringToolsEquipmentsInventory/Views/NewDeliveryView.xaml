@@ -1,0 +1,158 @@
+﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:Models="clr-namespace:EngineeringToolsEquipmentsInventory.Models"  x:Class="EngineeringToolsEquipmentsInventory.Views.NewDeliveryView"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             ScrollViewer.CanContentScroll="True"
+             Background="White"
+             d:DesignHeight="650" d:DesignWidth="900" >
+    <UserControl.Resources>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource" ContextType="{x:Type Models:DatabaseContext}" Path="Deliveries">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource1" ContextType="{x:Type Models:DatabaseContext}" Path="Consumables">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:IEnumerableDataSource x:Key="IEnumerableDataSource">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings DataObjectType="{x:Type Models:ItemType}" RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:IEnumerableDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource2" ContextType="{x:Type Models:DatabaseContext}" Path="ItemTypes">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource3" ContextType="{x:Type Models:DatabaseContext}" Path="ItemTypes">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource4" ContextType="{x:Type Models:DatabaseContext}" Path="Tools">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource5" ContextType="{x:Type Models:DatabaseContext}" Path="Tools">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource6" ContextType="{x:Type Models:DatabaseContext}" Path="Tools">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+    </UserControl.Resources>
+    <Grid Margin="0,20,0,0" >
+        <ScrollViewer VerticalScrollBarVisibility="Visible" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="99*"/>
+                    <RowDefinition Height="298*"/>
+                    <RowDefinition Height="283*"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="148*"/>
+                            <ColumnDefinition Width="616*"/>
+                            <ColumnDefinition Width="381*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Column="0">
+                            <Border Height="20">
+                                <TextBlock VerticalAlignment="Center" Text="Delivery ID" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            </Border>
+                            <Border Margin="0,10,0,0" Height="20">
+                                <TextBlock VerticalAlignment="Center" Text="Delivery Receipt No." FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            </Border>
+                            <Border Margin="0,10,0,0" Height="20">
+                                <TextBlock VerticalAlignment="Center" Text="Purchase Order No." FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            </Border>
+                            <Border Margin="0,10,0,0" Height="20">
+                                <TextBlock VerticalAlignment="Center" Text="Delivery Date" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                            <dxe:TextEdit IsReadOnly="True" x:Name="txtDeliveryID" VerticalAlignment="Center"   FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <dxe:TextEdit KeyDown="TxtDRN_KeyDown" NullText="Delivery Receipt No." x:Name="txtDRN" Margin="0,10,0,0" VerticalAlignment="Center"  FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <dxe:TextEdit KeyDown="TxtPON_KeyDown" NullText="Purchase Order No." x:Name="txtPON" Margin="0,10,0,0" VerticalAlignment="Center"   FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <dxe:DateEdit x:Name="dtDateDelivered"  Margin="0,10,0,0" VerticalAlignment="Center"   FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <Button x:Name="btnFile" Click="BtnFile_Click" Content="File" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}" Foreground="White" Height="30" Margin="0,5,0,5"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="btnSave" Click="BtnSave_Click" ToolTip="Save" Height="50" Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                                <Rectangle Height="40" Width="40" Fill="White">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Save.png"/>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                            <Button x:Name="btnCancel" Click="BtnCancel_Click" ToolTip="Cancel" Margin="5,0,0,0" Height="50" Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
+                                <Rectangle Height="40" Width="40" Fill="White">
+                                    <Rectangle.OpacityMask>
+                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Close.png"/>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <StackPanel Background="{DynamicResource IOSDeepBlue}" Height="20">
+                        <TextBlock Foreground="White" VerticalAlignment="Center" Text="Consumables" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="14"/>
+                    </StackPanel>
+                    <dxg:GridControl IsEnabled="False"  x:Name="dgItems" Height="190" Margin="0,10,0,0">
+                        <dxg:GridControl.View >
+                            <dxg:TableView  ShowGroupPanel="False" ShowSearchPanelMode="Always" ShowDataNavigator="True" DataNavigatorButtons="Editing" SearchPanelHorizontalAlignment="Left"  AllowGrouping="False" CellValueChanged="TableView_CellValueChanged" />
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ItemCode"  x:Name="dgLookup">
+                            <dxg:GridColumn.EditSettings>
+                                <dxg:LookUpEditSettings ValueMember="ItemCode" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource1}}" DisplayMember="ItemCode">
+                                    <dxg:LookUpEditSettings.StyleSettings>
+                                        <dxg:SearchLookUpEditStyleSettings/>
+                                    </dxg:LookUpEditSettings.StyleSettings>
+                                </dxg:LookUpEditSettings>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="ItemName" AllowEditing="False"/>
+                        <dxg:GridColumn FieldName="UOM" AllowEditing="False"/>
+                        <dxg:GridColumn FieldName="Quantity"/>
+                    </dxg:GridControl>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <StackPanel Background="{DynamicResource IOSDeepBlue}" Height="20">
+                        <TextBlock Foreground="White" VerticalAlignment="Center" Text="Tools" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="14" Height="20"/>
+                    </StackPanel>
+                    <dxg:GridControl IsEnabled="False" x:Name="dgTools" Height="180" Margin="0,10,0,0">
+                        <dxg:GridControl.View >
+                            <dxg:TableView IsEnabled="True" ShowGroupPanel="False" ShowSearchPanelMode="Always" ShowDataNavigator="True" DataNavigatorButtons="Editing" SearchPanelHorizontalAlignment="Left"  AllowGrouping="False" CellValueChanged="TableView_CellValueChanged_1" />
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ItemName" AllowEditing="True" ReadOnly="False">
+                            <dxg:GridColumn.EditSettings>
+                                <dxg:LookUpEditSettings DisplayMember="Item" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource6}}" ValueMember="Item">
+                                    <dxg:LookUpEditSettings.StyleSettings>
+                                        <dxg:LookUpEditStyleSettings/>
+                                    </dxg:LookUpEditSettings.StyleSettings>
+                                </dxg:LookUpEditSettings>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="ItemDescription"/>
+                        <dxg:GridColumn FieldName="Brand"/>
+                        <dxg:GridColumn FieldName="PECode"/>
+                    </dxg:GridControl>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+
+</UserControl>

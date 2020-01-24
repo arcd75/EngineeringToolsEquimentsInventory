@@ -1,0 +1,103 @@
+// JavaScript Document
+//搜索效果
+$('.serarch img').click(function(e){
+	if($(this).hasClass('active')){e.stopPropagation();$(this).removeClass('active');return}
+	$(this).addClass('active');
+	$(this). animate({width:'25px',height:'25px',top:"5px"},300);
+	$('.serarInput').animate({opacity:'1',width:'175px'},300).focus().val('');
+})
+$('.serarInput').blur(function(){
+	$('.serarch img').animate({width:'32px',height:'32px',top:"3px"},300);
+	$(this).animate({opacity:'0',width:'20px'},300);
+})
+$('.serarInput').bind("input propertychange change",function(event){
+	if($(this).val()){
+		$('.searchResult').show();
+	}else{
+		$('.searchResult').hide();
+	}
+})
+$.each($('.headToggleDIV>ul>li'),function(i){
+	var _that = $('.headToggleDIV>ul>li').eq(i);
+	var pad = _that.css('paddingLeft');
+	pad = pad.split('px')[0] * 2;
+	var _wid = _that.width() + pad;
+	_that.find('.head_toggle').css({minWidth:(_wid+'px')});
+})
+$(".serarInput").autocomplete({	
+	source:productSearchResult,
+	appendTo:".searchResult",
+	open: function( event, ui ) {
+		var showName = ['I2381FH','I2781FH','E2461FWH','I2769VM','E970SWN','E970SWNL','E1670SWU','E2070SWN','E2070SWNE','E2180SWN','E2250SWDN','E2270SWDN','E2470SWH','M2060SWD','M2461FWH','AG271QG','AG271QX','AG322FCX','G2460PF','G2460VQ6','G2770PF','G2778VQ','I2280SWD','Q3279VWF8'];
+		var obj = {};
+		for(var i=$('.searchResult li').length-1;i>=0;i--){
+			var $html = $('.searchResult li').eq(i).html();
+			if(!obj[$html]){
+				obj[$html] = 1;
+			}else{
+				$('.searchResult li').eq(i).remove();
+			}
+		}
+		
+	},
+	close: function( event, ui ) {},
+	select: function( event, ui ) { 
+	 var currentURL = ui.item.value;
+	 var newStr = currentURL.split('=');
+	 var currentID = newStr[1];
+	 if(currentID==5266){
+		window.location.href = 'http://agon.aocmonitorap.com/ph/product_G2260VWQ6.php';
+	 }else if(currentID==5268){
+		window.location.href = 'http://agon.aocmonitorap.com/ph/product_g2460vq6.php';
+	 }else{
+		window.location.href = ui.item.value;
+	 }
+	}
+	
+})
+
+//登录头像图片hover效果
+$('.userSign img').hover(function(){
+	var originImg = $(this).attr('data-originImg');
+	$(this).attr('src',"../images/header/"+originImg+"_active.png");
+},function(){
+	var originImg = $(this).attr('data-originImg');
+	$(this).attr('src',"../images/header/"+originImg+".png");
+})
+$('.userSign a p').hover(function(){
+	var originImg = $(this).siblings($('img')).attr('data-originImg');
+	$(this).siblings($('img')).attr('src',"../images/header/"+originImg+"_active.png");
+},function(){
+	var originImg = $(this).siblings($('img')).attr('data-originImg');
+	$(this).siblings($('img')).attr('src',"../images/header/"+originImg+".png");
+})
+//蒙板
+$('.headToggleDIV>ul>li').hover(function(){
+	if( $(this).find( $('.head_toggle').is(':visible') ) ){
+		$('.modal').show();
+	}
+},function(){
+	$('.modal').hide();
+})
+//下拉animate
+
+$('.headToggleDIV li').hover(function(e){
+	e.stopPropagation();
+	$(this).children($('a')).addClass('active');
+	$(this).find($('.head_toggle')).show();
+	var num =0;
+	var len = $(this).find($('li')).length;
+	setInterval(function(){
+		var _num = num ++ ;
+		if(_num < len){
+			$('.headToggleDIV ul.active li').eq(_num).addClass('right_to_left');
+			$('.headToggleDIV ul.active li').eq(_num).css({opacity : 1});
+		}
+	},45)
+
+},function(){
+	$(this).children($('a')).removeClass('active');
+	$(this).find($('.head_toggle')).hide();
+	$(this).find($('li')).removeClass();
+	$(this).find($('li')).css({opacity : 0});
+})

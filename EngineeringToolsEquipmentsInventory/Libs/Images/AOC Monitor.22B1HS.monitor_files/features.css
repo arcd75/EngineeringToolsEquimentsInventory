@@ -1,0 +1,553 @@
+.ph57_left1{width:485px;height: 600px;float:left;z-index:9;}
+.ph57_right1{float:right;width: 650px;height:594px;margin-right:30px;margin-left: 100px;margin-top: px;}
+.ph57_left2{width:495px;float:left;z-index:9;margin-top:30px;}
+.ph57_right2{float:right;width:450px;margin-right:50px;}
+.ph57_left3{float:left;width:620px;margin-top: 50px;height: 700px;}
+.ph57_right3{float:right;margin-top:-250px;margin-right:10px;}
+.ph57_other{width:530px;}
+.ph57_left1_new{width:485px;height: 550px;float:left;z-index:9;}
+.ph57_right1_new{float:right;width: 550px;height: 650px;margin-right: 150px;/* margin-top: 0px; */}
+.ph57_left2_new{width:495px;height: 500px;float:left;z-index:9;margin-top:30px;}
+.ph57_right2_new{float:right;width: 700px;margin-right:50px;}
+.ph57_left3_new{float:left;width:620px;margin-top:100px;clear:both;}
+.ph57_right3_new{float:right;width: 550px;height: 600px;margin-top: 100px;margin-right: 150px;}
+.ph57_other_new{width:530px;}
+.ph57_left4_new{width:495px;height: 500px;float:left;z-index:9;margin-top:30px;}
+.ph57_right4_new{float:right;width: 700px;margin-right: 50px;margin-top: -100px;}
+.d27_right1{float:right;width:558px;height:594px;margin-right:20px;margin-top:-80px;}
+.d27_left2{width:495px;float:left;z-index:9;margin-top:80px;}
+.d27_right2{margin-top:30px;float:right;width:450px;margin-right:50px;}
+.d27_left3{float:left;width:580px;margin-top: 100px;margin-right: 500px;}
+.d27_right3{float:right;margin-top:-230px;margin-right:30px;margin-right:15px;}
+.d27_text{font-weight:bold;}
+.d27_right1_new{float:right;width:558px;height: 650px;margin-right:20px;margin-top:50px;}
+.d27_left2_new{width:495px;float:left;z-index:9;}
+.d27_right2_new{float:right;width:450px;margin-right:50px;}
+.d27_left3_new{float:left;width:580px;margin-top: 50px;clear:both;}
+.d27_right3_new{float:right;margin-top: 50px;margin-right:30px;margin-right:15px;}
+.d27_left4_new{width:495px;height: 500px;float:left;z-index:9;margin-top: 100px;}
+.d27_right4_new{margin-top: 100px;float:right;width:450px;margin-right:50px;}
+.e20_right1{float:right;width:500px;height: 575px;margin-right: 150px;margin-top: 0px;}
+.e20_left2{width:759px;float:left;z-index:9;margin-left:-130px;}
+.e20_right2{margin-top: 40px;float:right;width:600px;margin-right:50px;}
+.e20_right3{float:right;margin-top: -230px;margin-right: 220px;}
+.e23_right1{float:right;width:666px;height: 625px;margin-top: -50px;margin-right:-27px;}
+.e23_left2{width:500px;height: 450px;float:left;z-index:9;margin-top: 50px;}
+.e23_right2{float:right;width:600px;height: 450px;margin-right:50px;margin-top: 50px;}
+.e23_right3{float:right;margin-right: 50px;margin-top: -300px;}
+.ph52_right1{float:right;width:701px;height:441px;margin-right: -5px;}
+.ph52_left2{width:1033px;float:left;z-index:9;margin-left:-70px;}
+.ph52_right2{float:right;width:520px;margin-right:90px;margin-right:45px;margin-top: -400px;border:0px solid red;}
+.ph52_left3{float:left;width:530px;margin-top:100px;position:relative;z-index:999;}
+.ph52_right3{margin-top:-360px;float:right;margin-right:47px;height:500px;position:relative;z-index:998;}
+.ph52_text{margin-top:100px;}
+.fh57_right1{float:right;width:523px;height: 600px;margin-right: 100px;}
+.fh57_left2{width:463px;height: 460px;float:left;z-index:9;}
+.fh57_right2{float:right;width:500px;margin-right:50px;height: 460px;border:0px solid red;}
+.fh57_left3{float:left;width:530px;height: 350px;margin-top: 50px;}
+.fh57_right3{float:right;height: 350px;margin-right: 80px;margin-top: 50px;}
+.fh57_left4{width:463px;float:left;z-index:9;}
+.fh57_right4{float:right;width:500px;margin-right:50px;margin-top:75px;height:450px;border:0px solid red;}
+.fh57_right1_new{float:right;width:523px;height: 600px;margin-right:80px;}
+.fh57_left2_new{width:463px;float:left;z-index:9;/* margin-top: 50px; */}
+.fh57_right2_new{float:right;width: 500px;margin-right:50px;margin-top: 100px;height: 500px;border:0px solid red;}
+.fh57_left3_new{float:left;width:530px;margin-top:80px;}
+.fh57_right3_new{margin-top: -60px;float:right;margin-right:25px;}
+.fh57_left4_new{width:463px;float:left;z-index:9;margin-top: 80px;}
+.fh57_right4_new{float:right;width:500px;margin-right:50px;margin-top: 170px;margin-top:75px;height:450px;border:0px solid red;}
+.i27_left2{width:463px;height: 450px;float:left;z-index:9;margin-top: 100px;}
+.i27_right2{float:right;width:500px;margin-right:50px;height: 450px;margin-top: 50px;}
+.i27_left3{float:left;width:530px;margin-top: 50px;margin-right: 500px;}
+.i27_right3{margin-top: -250px;float:right;margin-right: 90px;height:400px;}
+.i27_right1_new{float:right;width:523px;height: 600px;margin-right: 100px;}
+.i27_left2_new{width:463px;height: 460px;float:left;z-index:9;}
+.i27_right2_new{float:right;width:500px;margin-right:50px;margin-top: px;margin-top:125px;height: 460px;}
+.i27_left3_new{float:left;width:530px;margin-top: 100px;}
+.i27_right3_new{margin-top: 0px;float:right;margin-right:25px;height:400px;}
+.i27_left4_new{width:463px;float:left;z-index:9;margin-top: 50px;}
+.i27_right4_new{float:right;width:500px;margin-right:50px;margin-top: 50px;margin-top:125px;height:400px;}
+.wh62_left2{width:730px;height: 460px;float:left;z-index:9;margin-top: 0px;}
+.wh62_right2{float:right;width:450px;margin-right:130px;margin-right:65px;height: 460px;}
+.wh62_right3{margin-top: 100px;float:right;margin-right: 100px;margin-left: -200px;}
+.e22_right1{float:right;width:724px;margin-top:-320px;margin-right:70px;margin-right:35px;}
+.e22_left2{float:left;margin-top:80px;z-index:9;}
+.e22_right2{float:right;height:500px;width:450px;margin-top:150px;margin-right:100px;}
+.e22_other{margin-top:100px;}
+.e22_left3{float:left;margin-top:80px;z-index:9;}
+.e22_right3{float:right;margin-right:90px;margin-right:45px;z-index:9;margin-top:-90px;}
+.wda_right1{float:right;width: 668px;height: 630px;margin-right:70px;margin-right:35px;}
+.wda_left2{float:left;width: 485px;height: 520px;z-index:9;margin-top: 80px;}
+.wda_right2{float:right;height: 520px;margin-right:100px;}
+.wda_left3{float:left;width: 485px;height: 450px;z-index:9;}
+.wda_right3{float:right;z-index:9;margin-right:150px;}
+.wda_other{margin-top:20px;}
+.e24_right1{float:right;width:681px;margin-top:-480px;margin-right:10px;margin-right:-5px;border:0px solid red;}
+.e24_left2{margin-top:10px;float:left;z-index:9;}
+.e24_right2{float:right;height:600px;margin-right:80px;margin-right:40px;}
+.e24_left3{float:left;z-index:9;}
+.e24_right3{float:right;z-index:9;margin-top:-90px;margin-right:80px;margin-right:40px;}
+.wg_right1{float:right;width:462px;margin-top:-130px;margin-right:80px;margin-right:40px;}
+.wg_left2{margin-top:80px;float:left;z-index:9;}
+.wg_right2{float:right;height:600px;margin-right:30px;margin-right:15px;margin-top:30px;}
+.wg_left3{float:left;z-index:9;}
+.wg_right3{float:right;z-index:9;margin-top:-500px;margin-right:80px;margin-right:40px;}
+.whu_right1{float:right;width:726px;margin-top:-430px;margin-right:30px;}
+.whu_left2{float:left;z-index:9;margin-top:-60px;margin-left:50px;margin-left:25px;}
+.whu_right2{float:right;height:600px;margin-right:80px;margin-right:40px;margin-top:-100px;}
+.whu_left3{float:left;z-index:9;margin-top:150px;}
+.whu_right3{float:right;z-index:9;margin-top:-150px;margin-right:50px;}
+.epw_right1{float:right;width:514px;height: 650px;margin-top: -50px;margin-right:50px;}
+.epw_left2{float:left;margin-top: 150px;z-index:9;}
+.epw_right2{float:right;width: 550px;height: 543px;margin-top: 0px;margin-right:80px;}
+.epw_other{margin-top:50px;}
+.epw_left3{float:left;z-index:9;height: 550px;}
+.epw_right3{float:right;margin-right: 150px;margin-top: 50px;z-index:9;margin-top:-125px;}
+.e16_left1{width:495px;float:left;z-index:9;}
+.e16_right1{float:right;width:647px;margin-top: px;}
+.e16_left2{float:left;margin-top:50px;margin-left:-90px;z-index:9;}
+.e16_right2{float:left;margin-top:-120px;width:1000px;}
+.e16_other{margin-top:50px;}
+.e16_left3{float:left;z-index:9;margin-top:50px;}
+.e16_right3{float:right;margin-right:120px;margin-right:60px;z-index:9;margin-top:30px;}
+.vh_left1{float:left;z-index:9;}
+.vh_right1{float:right;width:435px;margin-right: 80px;}
+.vh_left2{float:left;z-index:9;margin-right: 500px;}
+.vh_right2{float:right;height:600px;width:385px;margin-right:80px;margin-top: -550px;}
+#vh_other{line-height:20px;margin-bottom:20px;}
+.vh_left3{float:left;z-index:9;margin-top:-20px;}
+.vh_right3{float:right;z-index:9;margin-right: 90px;}
+.fi43_left1{float:left;height: 475px;z-index:9;}
+.fi43_left1 h1{margin-top:35px;line-height:30px}
+.fi43_right1{float:right;margin-top: -50px;margin-right:80px;height: 525px;margin-right:40px;}
+.fi43_left2{float:left;/* margin-top: 50px; */width: 510px;height: 640px;z-index:9;}
+.fi43_right2{float:right;height: 590px;margin-top: 50px;margin-right:120px;margin-right:60px;}
+.fi43_other{margin-top:50px;}
+.fi43_left3{float:left;z-index:9;margin-top: 30px;margin-right: 500px;}
+.fi43_left3 h1{margin-top:30px;}
+.fi43_right3{float:right;margin-right: 30px;margin-right:65px;z-index:9;margin-top: 0px;/* height:400px; */}
+.evq_left1{width:495px;float:left;z-index:9;}
+.evq_right1{float:right;margin-top: -30px;margin-right: 50px;}
+.evq_left2{clear:right;float:left;z-index:9;margin-top: 50px;width: 700px;margin-right: 1000px;}
+.evq_right2{float:right;margin-top: -600px;margin-top:150px;margin-right:50px;margin-right:25px;height:640px;border:0px solid red;}
+.evq_left3{border:0px solid red;float:left;margin-top: -100px;}
+.evq_left3 h1{margin-top:30px;}
+.evq_right3{float:right;margin-right: 100px;margin-top: -50px;}
+.iph_left1{float:left;height: 470px;z-index:9;}
+.iph_left1 h1{margin-top:35px;line-height:20px;width:370px;}
+.iph_right1{float:right;margin-top: -50px;height: 520px;}
+.iph_left2{float:left;z-index:9;height: 550px;}
+.iph_right2{float:right;width:520px;margin-right:100px;margin-right:50px;height: 550px;/* margin-top:-10px; */}
+.iph_right2 h1{line-height:20px;width:400px;margin-top:20px;}
+.iph_left3{float:left;margin-top: 50px;height: 650px;}
+.iph_right3{float:right;margin-right: 100px;margin-top: 50px;}
+.iph_text{font-weight:bold;}
+.e966_left1{float:left;z-index:9;margin-top:50px;}
+.e966_left1 h1{line-height:20px;width:370px;}
+.e966_right1{float:right;width:630px;margin-top:-50px;margin-right:50px;}
+.e966_left2{float:left;z-index:9;width:518px;margin-top:50px;}
+.e966_right2{float:right;height:400px;margin-top:50px;margin-right:70px;margin-right:35px;}
+.e966_right2 h1{line-height:50px;padding:0px;margin:0px;}
+.e966_left3{float:left;z-index:9;margin-top:80px;width:500px;}
+.e966_right3{float:right;z-index:9;width:574px;margin-right:30px;margin-top:-100px;}
+.ph67_left1{float:left;width:510px;height: 703px;}
+.ph67_ul li{margin-top:40px;}
+.ph67_ul li img{float:left;}
+.ph67_ul li p{padding:0px;margin:0px;float:left;margin-left:10px;}
+.fh67_right1{float:right;width:550px;height: 703px;margin-top: 100px;margin-right: 90px;}
+.fh67_left2{float:left;width:495px;height: 550px;margin-top: 50px;}
+.fh67_right2{float:right;width:550px;height: 550px;margin-right:50px;}
+.fh67_left3{float:left;width:500px;height: 450px;margin-top: 50px;}
+.fh67_right3{float:right;width:520px;margin-right: 100px;height: 450px;}
+.le32_right1{float:right;width:548px;height:525px;margin-right:15px;margin-top:-50px;}
+.le32_left2{width:464px;float:left;z-index:9;margin-left:0px;margin-top:120px;}
+.le32_right2{float:right;width:450px;height:580px;margin-right:100px;margin-right:50px;margin-top:130px;}
+.le32_right3{margin-top:-50px;float:right;margin-right:30px;}
+.le32_left3{float:left;width:500px;margin-top:100px;}
+.lc42_right1{float:right;width:548px;height:525px;margin-right:0px;margin-top:-50px;}
+.lc42_left2{width:444px;float:left;z-index:9;margin-left:-35px;margin-top:120px;}
+.lc42_right2{float:right;width:450px;height:500px;margin-right:130px;margin-right:65px;margin-top:100px;}
+.lc42_right3{margin-top:50px;float:right;margin-right:30px;}
+.lc42_left3{float:left;width:500px;margin-top:100px;}
+.lc32_right1{float:right;width:548px;height:525px;margin-right:0px;margin-top:-50px;}
+.lc32_left2{width:444px;float:left;z-index:9;margin-left:-35px;margin-top:120px;}
+.lc32_right2{float:right;width:450px;height:500px;margin-right:100px;margin-right:50px;margin-top:100px;}
+.lc32_right3{margin-top:50px;float:right;margin-right:30px;}
+.lc32_left3{float:left;width:500px;margin-top:100px;}
+.q63_right1{float:right;width:636px;height: 575px;margin-right:0px;margin-top:0px;}
+.q63_left2{width:567px;float:left;z-index:9;margin-top: -60px;}
+.q63_right2{float:right;width:500px;height: 470px;margin-right:70px;}
+.q63_right3{float:right;width:567px;height:523px;margin-top: px;}
+.q63_left3{float:left;width:500px;margin-top:100px;}
+.q63_right4{margin-top: px;float:right;width:500px;margin-right:50px;}
+.q63_left4{float:left;width:570px;height:541px;margin-top:100px;margin-left:-35px;}
+.d69_3d_1{width:1157px;height:559px;background-image:url("../images/features/693D/69m1_3d.png");background-repeat:no-repeat;background-position:left top;margin-left:-35px;margin-top: -50px;}
+.d69_3d_2{width:1157px;height:487px;background-image:url("../images/features/693D/69m2_3d.png");background-repeat:no-repeat;background-position:left top;margin-top: -1px;}
+.d69_3d_3{width:1157px;height:631px;background-image:url("../images/features/693D/69m3_3d.png");background-repeat:no-repeat;background-position:left top;margin-top: -1px;}
+.d69_3d_4{width:1157px;height:409px;background-image:url("../images/features/693D/69m4_3d.png");background-repeat:no-repeat;background-position:left top;margin-top: -1px;}
+.ips69_1{width:1157px;height:575px;background:url("../images/features/69IPS/69m1.png") no-repeat left top;margin-left:-35px;margin-top: -50px;}
+.ips69_1ww{width:1157px;height:575px;background:url("../images/features/69IPS/69m1ww.png") no-repeat left top;margin-left:-35px;margin-top: -50px;}
+.ips69_1_jp{width:1157px;height:575px;background:url("../images/features/69IPS/69m1_jp.png") no-repeat left top;margin-left:-35px;margin-top: -50px;}
+.ips69_1_tw{width:1157px;height:575px;background:url("../images/features/69IPS/69m1_tw.png") no-repeat left top;margin-left:-35px;margin-top: -50px;}
+.ips69_2{width:1157px;height:544px;background:url("../images/features/69IPS/69m2.png") no-repeat left top;margin-top: px;}
+.ips69_2ww{width:1157px;height:544px;background:url("../images/features/69IPS/69m2ww.png") no-repeat left top;margin-top: px;}
+.ips69_2_jp{width:1157px;height:544px;background:url("../images/features/69IPS/69m2_jp.png") no-repeat left top;margin-left:-35px;}
+.ips69_3{width:1157px;height:464px;background:url("../images/features/69IPS/69m3.png") no-repeat left top;margin-top: -1px;}
+.ips69_3ww{width:1157px;height:464px;background:url("../images/features/69IPS/69m3ww.png") no-repeat left top;margin-top: -1px;}
+.ips69_3_jp{width:1157px;height:464px;background:url("../images/features/69IPS/69m3_jp.png") no-repeat left top;margin-top: -1px;}
+.ips69_3_tw{width:1157px;height:483px;background:url("../images/features/69IPS/69m3_tw.png") no-repeat left top;margin-top: -1px;}
+.ips69_4{width:1157px;height:482px;background:url("../images/features/69IPS/69m4.png") no-repeat left top;margin-top: -1px;}
+.ips69_4ww{width:1157px;height:482px;background:url("../images/features/69IPS/69m4ww.png") no-repeat left top;margin-top: -1px;}
+.ips69_4_jp{width:1157px;height:482px;background:url("../images/features/69IPS/69m4_jp.png") no-repeat left top;margin-left:-35px;}
+.ips69_4_tw{width:1157px;height:600px;background:url("../images/features/69IPS/69m4_tw.png") no-repeat left top;margin-top: -1px;}
+.ips69_5_tw{width:1157px;height:509px;background:url("../images/features/69IPS/69m5_tw.jpg") no-repeat right top;margin-left:-35px;}
+.d69_3d_1 h1,.d69_3d_2 h1,.d69_3d_3 h1,.d69_3d_4 h1,.ips69_1 h1,.ips69_2 h1, .ips69_3 h1,.ips69_4 h1,.ips69_1ww h1,.ips69_2ww h1, .ips69_3ww h1,.ips69_4ww h1,.ips69_1_jp h1,.ips69_2_jp h1, .ips69_3_jp h1,.ips69_4_jp h1,.ips69_1_tw h1,.ips69_3_tw h1,.ips69_4_tw h1,.ips69_5_tw h1{padding:0px;margin:0px;line-height:25px;}
+.d69_3d_1 h1,.ips69_1 h1,.ips69_1ww h1,.ips69_1_jp h1,.ips69_1_tw h1{margin-left:35px;margin-top: -50px;}
+.d69_3d_3 h1,.d69_3d_3 p,.ips69_3 h1,.ips69_3ww h1,.ips69_3 p,.ips69_3ww p,.ips69_3_jp h1,.ips69_3_jp p,.ips69_3_tw h1,.ips69_3_tw p,.ips69_5_tw h1,.ips69_5_tw p{margin-left:35px;}
+.d69_3d_2 h1,.d69_3d_2 p{margin-left:610px;}
+.ips69_2 h1,.ips69_2ww h1,.ips69_2_jp h1,.ips69_2 p,.ips69_2ww p,.ips69_2_jp p{margin-left:610px;}
+.d69_3d_4 h1,.d69_3d_4 p,.ips69_4 h1,.ips69_4ww h1,.ips69_4 p,.ips69_4ww p,.ips69_4_jp h1,.ips69_4_jp p,.ips69_4_tw h1,.ips69_4_tw p{margin-left:615px;}
+.d67_1{width:1157px;height:679px;background:url("../images/features/D2367PH/m1.png") no-repeat left;margin-left:0px;margin-top:-90px;}
+.d67_2{width:1157px;height:565px;background:url("../images/features/D2367PH/m2.jpg") no-repeat left bottom;margin-left:-35px;}
+.d67_3{width:1157px;height:452px;background:url("../images/features/D2367PH/m3.jpg") no-repeat left;margin-left:-35px;}
+.d67_1 h1,.d67_2 h1, .d67_3 h1{padding:0px;margin:0px;line-height:25px;}
+.d67_3 h1,.d67_3 p{margin-left:35px;}
+.d67_2 h1,.d67_2 p{margin-left:610px;}
+.mw08_1{width:1120px;height:830px;margin-top:-130px;background:url("../images/features/MW0831BR/m1.png") no-repeat right top;}
+.mw08_2{width:1100px;height:700px;background:url("../images/features/MW0831BR/m2.png") no-repeat 30px 0px;}
+.mw08_3{width:1080px;height:510px;background:url("../images/features/MW0831BR/m3.png") no-repeat right top;}
+.mw08_4{width:1080px;height:500px;background:url("../images/features/MW0831BR/m4.png") no-repeat 30px 0px;}
+.mw08_1 h1,.mw08_2 h1,.mw08_3 h1,.mw08_4 h1{padding:0px;margin:0px;line-height:30px;color:#3e3e3e;}
+.mw08_1 li,.mw08_2 li,.mw08_1 p,.mw08_2 p,.mw08_3 p,.mw08_4 p{color:#464646;}
+.mw08_2 h1,.mw08_2 p{margin-left:630px;}
+.mw08_4 h1,.mw08_4 p{margin-left:605px;}
+.mw08_2 li{height:55px;line-height:20px;}
+.mw07_1{width:1120px;height:650px;margin-top:-90px;background:url("../images/features/MW0731/m1.png") no-repeat right top;}
+.mw07_2{width:1100px;height:550px;background:url("../images/features/MW0731/m2.png") no-repeat 30px 0px;}
+.mw07_3{width:1080px;height:600px;background:url("../images/features/MW0731/m3.png") no-repeat right;}
+.mw07_1 h1,.mw07_2 h1,.mw07_3 h1{padding:0px;margin:0px;line-height:30px;color:#3e3e3e;}
+.smart58_1{width:1160px;height:693px;margin-top:-90px;margin-left:-35px;background:url("../images/features/A2258PWH/smart_bg1.png") no-repeat left top;}
+.smart58_2{width:1160px;height:589px;margin-left:-35px;background:url("../images/features/A2258PWH/smart_bg2.png") no-repeat left top;}
+.smart58_3{width:1160px;height:669px;margin-left:-35px;background:url("../images/features/A2258PWH/smart_bg3.png") no-repeat left top;}
+.smart58_1 h1,.smart58_2 h1,.smart58_3 h1{padding:0px;margin:0px;color:#3e3e3e;}
+.smart58_1 h1,.smart58_1 p,.smart58_3 h1,.smart58_3 p{margin-left:35px;}
+.smart58_1 p,.smart58_2 p,.smart58_2 p{color:#525252;}
+.smart58_2 h1,.smart58_2 p{margin-left:660px;}
+.d59_1{width:1157px;height:320px;background:url("../images/features/59series/59feature_bg1.png") no-repeat left;margin-left:-35px;margin-top:-10px;}
+.d59_2{width:1157px;height:498px;background:url("../images/features/59series/59feature_bg2.png") no-repeat left bottom;margin-top: -1px;}
+.d59_3{width:1157px;height:401px;background:url("../images/features/59series/59feature_bg3.png") no-repeat left;margin-top: -1px;}
+.d59_4{width:1157px;height:315px;background:url("../images/features/59series/59feature_bg4.jpg") no-repeat left bottom;margin-top: -1px;}
+.d59_1 h1,.d59_2 h1, .d59_3 h1, .d59_4 h1{padding:0px;margin:0px;line-height:25px;}
+.d59_3 h1{margin-left:35px;padding-top:110px;}
+.d59_2 h1{padding-top:215px;}
+.d59_4 h1{padding-top:150px;}
+.d59_2 h1,.d59_2 p{margin-left:610px;}
+.d59_4 h1,.d59_4 p{margin-left:430px;}
+.d59_1 h1,.d59_1 p{margin-left:35px;}
+.e70_1{width:1157px;height:570px;background:url("../images/features/e2070swn/m1.png") no-repeat left;margin-left:-35px;margin-top:-20px;}
+.e70_2{width:1157px;height:597px;background:url("../images/features/e2070swn/m2.jpg") no-repeat left bottom;margin-left:-35px;}
+.e70_3{width:1157px;height:574px;background:url("../images/features/e2070swn/m3.jpg") no-repeat left;margin-left:-35px;}
+.e70_1 h1,.e70_2 h1, .e70_3 h1{padding:0px;margin:0px;line-height:25px;}
+.e70_1 h1,.e70_1 p,.e70_3 h1,.e70_3 p{margin-left:35px;}
+.e70_2 h1,.e70_2 p{margin-left:660px;}
+.g2460pqu_1{width:1157px;height:674px;background:url("../images/features/G2460PQU/m1.png") no-repeat left;margin-left:-35px;margin-top:-135px;}
+.g2460pqu_2{width:1157px;height:541px;background:url("../images/features/G2460PQU/m2.jpg") no-repeat left bottom;margin-left:-35px;}
+.g2460pqu_3{width:1157px;height:576px;background:url("../images/features/G2460PQU/m3.jpg") no-repeat left;margin-left:-35px;}
+.g2460pqu_1 h1,.g2460pqu_2 h1, .g2460pqu_3 h1{padding:0px;margin:0px;line-height:25px;}
+.g2460pqu_1 h1,.g2460pqu_1 p,.g2460pqu_3 h1,.g2460pqu_3 p{margin-left:35px;}
+.g2460pqu_2 h1,.g2460pqu_2 p{margin-left:670px;}
+.e71_1{width:1156px;height:438px;background:url("../images/features/71/m2.png") no-repeat right;margin-left:-35px;margin-top:10px;}
+.e71_2{width:1156px;height:694px;background:url("../images/features/71/m1.png") no-repeat left bottom;margin-left:-35px;}
+.e71_3{width:1156px;height:452px;background:url("../images/features/71/m3.png") no-repeat right;margin-left:-35px;margin-top:-200px;}
+.e71_1 h1,.e71_2 h1, .e71_3 h1{padding:0px;margin:0px;line-height:25px;}
+.e71_1 h1,.e71_1 p,.e71_3 h1,.e71_3 p{margin-left:35px;}
+.e71_2 h1,.e71_2 p{margin-left:635px;}
+.m831_1{width:1157px;height:679px;background:url("../images/features/MW0831+/m1.png") no-repeat 85px 0px;margin-left:-35px;margin-top:-50px;}
+.m831_2{width:1157px;height:488px;background:url("../images/features/MW0831+/m2.png") no-repeat 60px 0px;margin-left:-35px;margin-top:-20px;}
+.m831_3{width:1157px;height:468px;background:url("../images/features/MW0831+/m3.png") no-repeat 345px 0px;margin-left:-35px;margin-top:30px;}
+.m831_4{width:1157px;height:608px;background:url("../images/features/MW0831+/m4.png") no-repeat 0px 0px;margin-left:-35px;margin-top:10px;}
+.m831_5{width:1157px;height:333px;background:url("../images/features/MW0831+/m5.png") no-repeat 610px 0px;margin-left:-35px;margin-top:-105px;}
+.m831_1 h1,.m831_2 h1, .m831_3 h1, .m831_4 h1, .m831_5 h1{padding:0px;margin:0px;line-height:30px;font-size:25px;}
+.m831_1 h1,.m831_1 p,.m831_3 h1,.m831_3 p,.m831_5 h1,.m831_5 p{margin-left:85px;}
+.m831_2 h1,.m831_2 p{margin-left:690px;}
+.m831_4 h1,.m831_4 p{margin-left:640px;}
+.m831_2 p,.m831_3 p,.m831_4 p,.m831_5 p{font-size:18px;}
+.m732_1{width:1157px;height:507px;background:url("../images/features/MW0732/m1.png") no-repeat 85px 0px;margin-left:-35px;}
+.m732_2{width:1157px;height:660px;background:url("../images/features/MW0732/m2.png") no-repeat 45px 0px;margin-left:-35px;}
+.m732_3{width:1157px;height:665px;background:url("../images/features/MW0732/m3.png") no-repeat 500px 0px;margin-left:-35px;}
+.m732_4{width:1157px;height:456px;background:url("../images/features/MW0732/m4.png") no-repeat 65px 0px;margin-left:-35px;margin-top:20px;}
+.m732_1 h1,.m732_2 h1, .m732_3 h1, .m732_4 h1{padding:0px;margin:0px;font-size:25px;line-height:30px;}
+.m732_1 h1,.m732_1 p,.m732_3 h1,.m732_3 p{margin-left:85px;}
+.m732_2 h1,.m732_2 p{margin-left:620px;}
+.m732_4 h1,.m732_4 p{margin-left:810px;}
+.m732_2 p,.m732_3 p,.m732_4 p{font-size:18px;line-height:25px;}
+.m733_1{width:1157px;height:475px;background:url("../images/features/MW0733/m1.png") no-repeat right;margin-left:-35px;}
+.m733_2{width:1157px;height:465px;background:url("../images/features/MW0733/m2.png") no-repeat 80px 0px;margin-left:-35px;margin-top:40px;}
+.m733_3{width:1157px;height:468px;background:url("../images/features/MW0733/m3.png") no-repeat 340px 0px;margin-left:-35px;margin-top:30px;}
+.m733_4{width:1157px;height:660px;background:url("../images/features/MW0733/m4.png") no-repeat 60px 0px;margin-left:-35px;}
+.m733_5{width:1157px;height:312px;background:url("../images/features/MW0733/m5.png") no-repeat 610px 0px;margin-left:-35px;margin-top:-105px;}
+.m733_1 h1,.m733_2 h1, .m733_3 h1, .m733_4 h1, .m733_5 h1{padding:0px;margin:0px;line-height:30px;font-size:25px;}
+.m733_1 h1,.m733_1 p,.m733_3 h1,.m733_3 p,.m733_5 h1,.m733_5 p{margin-left:85px;}
+.m733_2 h1,.m733_2 p{margin-left:690px;}
+.m733_4 h1,.m733_4 p{margin-left:640px;}
+.m733_2 p,.m733_3 p,.m733_4 p,.m733_5 p{font-size:18px;line-height:25px;}
+.i2472pwhut_1{width:1156px;height:437px;margin-left:-32px;margin-top:-40px;}
+.i2472pwhut_2{width:1156px;height:354px;background:url("../images/features/I2472PWHUT/m2.png") no-repeat 30px 0px ;margin-left:-35px;margin-top:100px;}
+.i2472pwhut_3{width:1156px;height:492px;background:url("../images/features/I2472PWHUT/m3.png") no-repeat right;margin-left:-35px;margin-top:75px;}
+.i2472pwhut_4{width:1156px;height:458px;background:url("../images/features/I2472PWHUT/m4.png") no-repeat 30px 0px ;margin-left:-35px;margin-top:120px;}
+.i2472pwhut_5{width:1156px;height:305px;background:url("../images/features/I2472PWHUT/m5.png") no-repeat 495px 0px;margin-left:-35px;margin-top:150px;}
+.i2472pwhut_1 h1,.i2472pwhut_2 h1, .i2472pwhut_3 h1, .i2472pwhut_4 h1, .i2472pwhut_5 h1, .i2472pwhut_6 h1 {padding:0px;margin:0px;line-height:25px;}
+.i2472pwhut_1 h1,.i2472pwhut_1 p,.i2472pwhut_3 h1,.i2472pwhut_3 p,.i2472pwhut_5 h1,.i2472pwhut_5 p{margin-left:35px;}
+.i2472pwhut_2 h1,.i2472pwhut_2 p,.i2472pwhut_4 h1,.i2472pwhut_4 p{margin-left:710px;}
+.i2470SWQU_1{width:1157px;height:503px;background:url("../images/features/i2470SWQU/m1.png") no-repeat 585px 0px;margin-left:-35px;margin-top:20px;}
+.i2470SWQU_2{width:1157px;height:445px;background:url("../images/features/i2470SWQU/m2.png") no-repeat 15px 0px;margin-left:-35px;margin-top:-30px;}
+.i2470SWQU_3{width:1157px;height: 450px;background:url("../images/features/i2470SWQU/m3.jpg") no-repeat 605px 0px;margin-left:-35px;margin-top:40px;}
+.M2870VQ_3{width:1157px;height: 450px;background:url("../images/features/i2470SWQU/m3_new.jpg") no-repeat 480px 0px;margin-left:-35px;margin-top:40px;}
+.i2470SWQU_1 h1,.i2470SWQU_2 h1, .i2470SWQU_3 h1,.M2870VQ_3 h1{padding:0px;margin:0px;line-height:25px;}
+.i2470SWQU_1 h1,.i2470SWQU_1 p,.i2470SWQU_3 h1,.i2470SWQU_3 p,.M2870VQ_3 h1,.M2870VQ_3 p{margin-left:35px;}
+.i2470SWQU_2 h1,.i2470SWQU_2 p{margin-left:605px;}
+.I2470SWQ_1{width:1157px;height:503px;background:url("../images/features/I2470SWQ/i2470SWQ_1.jpg") no-repeat 565px 0px;margin-left:-35px;margin-top:20px;}
+.I2470SWQ_2{width:1157px;height:490px;background:url("../images/features/I2470SWQ/i2470SWQ_2.jpg") no-repeat 15px 0px;margin-left:0px;margin-top:30px;}
+.I2470SWQ_3{width:1157px;height:470px;background:url("../images/features/I2470SWQ/i2470SWQ_3.jpg") no-repeat 505px 0px;margin-left:-35px;margin-top:70px;}
+.I2470SWQ_4{width:1157px;height:490px;background:url("../images/features/I2470SWQ/i2470SWQ_4.png") no-repeat 0px 0px;margin-left:0px;margin-top:60px;}
+.I2470SWQ_1 h1,.I2470SWQ_2 h1, .I2470SWQ_3 h1, .I2470SWQ_4 h1{padding:0px;margin:0px;line-height:25px;}
+.I2470SWQ_1 h1,.I2470SWQ_1 p,.I2470SWQ_3 h1,.I2470SWQ_3 p{margin-left:35px;}
+.I2470SWQ_1 p,.I2470SWQ_2 p,.I2470SWQ_3 p,.I2470SWQ_4 p{padding-top:10px;}
+.I2470SWQ_2 h1,.I2470SWQ_2 p{margin-left:605px;}
+.I2470SWQ_4 h1,.I2470SWQ_4 p{margin-left:615px;}
+.g2460pqu_red_1{width:1157px;height:393px;background:url("../images/features/G2460PQU_red/m1.png") no-repeat 490px 0px;margin-left:-35px;}
+.g2460pqu_red_2{width:1157px;height:335px;background:url("../images/features/G2460PQU_red/m2.png") no-repeat 45px 0px;margin-left:-35px;margin-top:130px;}
+.g2460pqu_red_3{width:1157px;height:661px;background:url("../images/features/G2460PQU_red/m3.png") no-repeat 545px 0px;margin-left:-35px;margin-top:130px;}
+.g2460pqu_red_4{width:1157px;height:430px;background:url("../images/features/G2460PQU_red/m4.png") no-repeat 80px 0px;margin-left:-35px;margin-top:140px;}
+.g2460pqu_red_1 h1,.g2460pqu_red_2 h1, .g2460pqu_red_3 h1{padding:0px;margin:0px;line-height:25px;}
+.g2460pqu_red_1 h1,.g2460pqu_red_1 p,.g2460pqu_red_3 h1,.g2460pqu_red_3 p{margin-left:90px;}
+.g2460pqu_red_2 h1,.g2460pqu_red_2 p,.g2460pqu_red_4 h1,.g2460pqu_red_4 p{margin-left:695px;}
+.a2272pwht_1{width:1156px;height:425px;background:url("../images/features/A2272PWHT/m1.png") no-repeat right;margin-left:-35px;}
+.a2272pwht_1_white{width:1156px;height:425px;background:url("../images/features/A2272PWHT/m1_white.png") no-repeat right;margin-left:-35px;}
+.A2472PW4T_1_white{width:1156px;height:425px;background:url("../images/features/A2472PW4T/m1_white.png") no-repeat right;margin-left:-35px;}
+.a2272pwht_2{width:1156px;height:302px;background:url("../images/features/A2272PWHT/m2.png") no-repeat 90px 0px ;margin-left:-35px;margin-top:70px;}
+.a2272pwht_2_white{width:1156px;height:341px;background:url("../images/features/A2272PWHT/m2_white.png") no-repeat 90px 0px ;margin-left:-35px;margin-top:70px;}
+.A2472PW4T_2_white{width:1156px;height:341px;background:url("../images/features/A2472PW4T/m2_white.png") no-repeat 90px 0px ;margin-left:-35px;margin-top:70px;}
+.a2272pwht_3{width:1156px;height:512px;background:url("../images/features/A2272PWHT/m3.png") no-repeat right;margin-left:-35px;margin-top:75px;}
+.a2272pwht_3_white{width:1156px;height:512px;background:url("../images/features/A2272PWHT/m3_white.png") no-repeat right;margin-left:-35px;margin-top:75px;}
+.A2472PW4T_3_white{width:1156px;height:512px;background:url("../images/features/A2472PW4T/m3_white.png") no-repeat right;margin-left:-35px;margin-top:75px;}
+.a2272pwht_4{width:1156px;height:342px;background:url("../images/features/A2272PWHT/m4.png") no-repeat 30px 0px ;margin-left:-35px;margin-top:150px;}
+.a2272pwht_4_white{width:1156px;height:404px;background:url("../images/features/A2272PWHT/m4_white.png") no-repeat 30px 0px ;margin-left:-35px;margin-top:150px;}
+.A2472PW4T_4_white{width:1156px;height:404px;background:url("../images/features/A2472PW4T/m4_white.png") no-repeat 30px 0px ;margin-left:-35px;margin-top:150px;}
+.a2272pwht_5{width:1156px;height:524px;background:url("../images/features/A2272PWHT/m5.png") no-repeat right top;margin-left:-35px;}
+.a2272pwht_5_white{width:1156px;height:450px;background:url("../images/features/A2272PWHT/m5_white.png") no-repeat right top;margin-left:-35px;}
+.A2472PW4T_5_white{width:1156px;height:450px;background:url("../images/features/A2472PW4T/m5_white.png") no-repeat right top;margin-left:-35px;}
+.a2272pwht_6{width:1156px;height:305px;background:url("../images/features/A2272PWHT/m6.png") no-repeat 35px 0px;margin-left:-35px;margin-top:170px;}
+.a2272pwht_6_white{width:1156px;height:329px;background:url("../images/features/A2272PWHT/m6_white.png") no-repeat 35px 0px;margin-left:-35px;margin-top:170px;}
+.A2472PW4T_6_white{width:1156px;height:329px;background:url("../images/features/A2472PW4T/m6_white.png") no-repeat 35px 0px;margin-left:-35px;margin-top:170px;}
+.a2272pwht_1 h1,.a2272pwht_2 h1, .a2272pwht_3 h1, .a2272pwht_4 h1, .a2272pwht_5 h1, .a2272pwht_6 h1,.a2272pwht_1 h1_white,.a2272pwht_2 h1_white, .a2272pwht_3_white h1, .a2272pwht_4_white h1, .a2272pwht_5_white h1, .a2272pwht_6_white h1 , .A2472PW4T_1 h1_white,.A2472PW4T_2 h1_white, .A2472PW4T_3_white h1, .A2472PW4T_4_white h1, .A2472PW4T_5_white h1, .A2472PW4T_6_white h1 {padding:0px;margin:0px;line-height:25px;}
+.a2272pwht_1 h1,.a2272pwht_1 p,.a2272pwht_3 h1,.a2272pwht_3 p,.a2272pwht_5 h1,.a2272pwht_5 p,.a2272pwht_1_white h1,.a2272pwht_1_white p,.a2272pwht_3_white h1,.a2272pwht_3_white p,.a2272pwht_5_white h1,.a2272pwht_5_white p,.A2472PW4T_1_white h1,.A2472PW4T_1_white p,.A2472PW4T_3_white h1,.A2472PW4T_3_white p,.A2472PW4T_5_white h1,.A2472PW4T_5_white p{margin-left:35px;}
+.a2272pwht_2 h1,.a2272pwht_2 p,.a2272pwht_4 h1,.a2272pwht_4 p,.a2272pwht_6 h1,.a2272pwht_6 p,.a2272pwht_2_white h1,.a2272pwht_2_white p,.a2272pwht_4_white h1,.a2272pwht_4_white p,.a2272pwht_6_white h1,.a2272pwht_6_white p,.A2472PW4T_2_white h1,.A2472PW4T_2_white p,.A2472PW4T_4_white h1,.A2472PW4T_4_white p,.A2472PW4T_6_white h1,.A2472PW4T_6_white p{margin-left:685px;}
+.q2770pqu_1{width:1156px;height:583px;background:url("../images/features/Q2770PQU/m1.png") no-repeat 50px 0px;margin-left:-35px;margin-top:40px;}
+.q2770pqu_2{width:1156px;height:686px;background:url("../images/features/Q2770PQU/m2.jpg") no-repeat center top;margin-left:-35px;margin-top:60px;}
+.q2770pqu_3{width:1156px;height:590px;background:url("../images/features/Q2770PQU/m3.jpg") no-repeat center top;margin-left:-35px;}
+
+.q2770pqu_4{width:1156px;height:588px;background:url("../images/features/Q2770PQU/m4.jpg") no-repeat center top;margin-left:-35px;}
+.q2770pqu_1 h1,.q2770pqu_2 h1, .q2770pqu_3 h1, .q2770pqu_4 h1{padding:0px;margin:0px;line-height:25px;}
+.q2770pqu_1 h1,.q2770pqu_1 p{margin-left:650px;}
+.q2770pqu_3 h1,.q2770pqu_3 p{margin-left:700px;}
+.q2770pqu_2 h1,.q2770pqu_2 p,.q2770pqu_4 h1,.q2770pqu_4 p{margin-left:35px;margin-top: -1px;}
+.e71_1_1{width:1156px;height:363px;background:url("../images/features/I2371FM/m1.jpg") no-repeat 630px 0px;margin-left:-35px;margin-top:20px;}
+.e71_1_2{width:1156px;height:389px;background:url("../images/features/I2371FM/m2.jpg") no-repeat 50px 0px;margin-left:-35px;margin-top:40px;}
+.e71_1_3{width:1156px;height:354px;background:url("../images/features/I2371FM/m3.jpg") no-repeat 550px 0px;margin-left:-35px;margin-top:60px;}
+.e71_1_4{width:1156px;height:361px;background:url("../images/features/I2371FM/m4.jpg") no-repeat 90px 0px;margin-left:-35px;margin-top:35px;}
+.e71_1_1 h1,.e71_1_2 h1, .e71_1_3 h1,.e71_1_4 h1{padding:0px;margin:0px;line-height:25px;}
+.e71_1_1 h1,.e71_1_1 p,.e71_1_3 h1,.e71_1_3 p{margin-left:70px;}
+.e71_1_2 h1,.e71_1_2 p,.e71_1_4 h1,.e71_1_4 p{margin-left:645px;}
+.e71_2_1{width:1156px;height:363px;background:url("../images/features/M2771FM/m1.jpg") no-repeat 630px 0px;margin-left:-35px;margin-top:20px;}
+.e71_2_2{width:1156px;height:438px;background:url("../images/features/M2771FM/m2.jpg") no-repeat 50px 0px;margin-left:-35px;margin-top:30px;}
+.e71_2_3{width:1156px;height:407px;background:url("../images/features/M2771FM/m3.jpg") no-repeat 660px 0px;margin-left:-35px;margin-top:-25px;}
+.e71_2_4{width:1156px;height:372px;background:url("../images/features/M2771FM/m4.jpg") no-repeat  70px 0px;margin-left:-35px;margin-top:30px;}
+.e71_2_5{width:1156px;height:372px;background:url("../images/features/M2771FM/m5.jpg") no-repeat 535px 0px;margin-left:-35px;margin-top:50px;}
+.e71_2_1 h1,.e71_2_2 h1, .e71_2_3 h1,.e71_2_4 h1,.e71_2_5 h1{padding:0px;margin:0px;line-height:25px;}
+.e71_2_1 h1,.e71_2_1 p,.e71_2_3 h1,.e71_2_3 p,.e71_2_5 h1,.e71_2_5 p{margin-left:70px;}
+.e71_2_2 h1,.e71_2_2 p{margin-left:645px;}
+.e71_2_4 h1,.e71_2_4 p{margin-left:660px;}
+.e71_3_1{width:1156px;height:363px;background:url("../images/features/M2471FM/m1.jpg") no-repeat 630px 0px;margin-left:-35px;margin-top:20px;}
+.e71_3_2{width:1156px;height:438px;background:url("../images/features/M2471FM/m2.jpg") no-repeat 50px 0px;margin-left:-35px;margin-top:30px;}
+.e71_3_3{width:1156px;height:407px;background:url("../images/features/M2471FM/m3.jpg") no-repeat 660px 0px;margin-left:-35px;margin-top:-25px;}
+.e71_3_4{width:1156px;height:372px;background:url("../images/features/M2471FM/m4.jpg") no-repeat  70px 0px;margin-left:-35px;margin-top:30px;}
+.e71_3_5{width:1156px;height:372px;background:url("../images/features/M2471FM/m5.jpg") no-repeat 535px 0px;margin-left:-35px;margin-top:50px;}
+.e71_3_1 h1,.e71_3_2 h1, .e71_3_3 h1,.e71_3_4 h1,.e71_3_5 h1{padding:0px;margin:0px;line-height:25px;}
+.e71_3_1 h1,.e71_3_1 p,.e71_3_3 h1,.e71_3_3 p,.e71_3_5 h1,.e71_3_5 p{margin-left:70px;}
+.e71_3_2 h1,.e71_3_2 p{margin-left:645px;}
+.e71_3_4 h1,.e71_3_4 p{margin-left:660px;}
+.I2473PWY_1{height:497px;background: url("../images/features/I2473PWY/m1.jpg") no-repeat right top;margin-left:-35px;margin-top:40px;margin-right: 100px;}
+.I2473PWY_2{width: 80%;height: 500px; background:url("../images/features/I2473PWY/m2.jpg") no-repeat 90px top;margin-left:-35px;margin-top:95px;}
+.I2473PWY_3{width:80%;height:520px;background:url("../images/features/I2473PWY/m3.jpg") no-repeat 420px top;margin-left:-35px;margin-top:180px;}
+.I2473PWY_4{width:80%;height:426px;background:url("../images/features/I2473PWY/m4.jpg") no-repeat 43px top;margin-left:-35px;margin-top:150px;}
+.I2473PWY_5{width:80%;height:508px;background:url("../images/features/I2473PWY/m5.jpg") no-repeat 300px top;margin-left:-35px;margin-top:230px;}
+.I2473PWY_1 h1,.I2473PWY_2 h1, .I2473PWY_3 h1, .I2473PWY_4 h1, .I2473PWY_5 h1{padding:0px;margin:0px;line-height:25px;}
+.I2473PWY_1 h1,.I2473PWY_1 p,.I2473PWY_3 h1,.I2473PWY_3 p,.I2473PWY_5 h1,.I2473PWY_5 p{margin-left:50px;}
+.I2473PWY_2 h1,.I2473PWY_2 p,.I2473PWY_4 h1,.I2473PWY_4 p{margin-left:720px;}
+.E2060VWT_1{width:1157px;height:574px;background:url("../images/features/E2060VWT/m1.png") no-repeat 0px top;margin-left:-35px;margin-top:40px;}
+.E2060VWT_2{width:1157px;height:520px;background:url("../images/features/E2060VWT/m2.png") no-repeat 0px top;margin-left:-35px;}
+.E2060VWT_3{width:1157px;height:493px;background:url("../images/features/E2060VWT/m3.png") no-repeat 0px top;margin-left:-35px;}
+.E2060VWT_4{width:1157px;height:606px;background:url("../images/features/E2060VWT/m4.png") no-repeat 0px top;margin-left:-35px;}
+.E2060VWT_1 h1,.E2060VWT_2 h1, .E2060VWT_3 h1, .E2060VWT_4 h1{padding:0px;margin:0px;line-height:25px;}
+.E2060VWT_1 h1,.E2060VWT_1 p,.E2060VWT_3 h1,.E2060VWT_3 p{margin-left:50px;}
+.E2060VWT_2 h1,.E2060VWT_2 p{margin-left:720px;}
+.E2060VWT_4 h1,.E2060VWT_4 p{margin-left:750px;}
+.MW0738_1{width:1156px;height:683px;background:url("../images/features/MW0738/MW0738_1.jpg") no-repeat 370px 0px;margin-left:-35px;margin-top:40px;}
+.MW0738_2{width:1156px;height:650px;background:url("../images/features/MW0738/MW0738_2.jpg") no-repeat left top;margin-left:-35px;margin-top:60px;}
+.MW0738_3{width:1156px;height:590px;background:url("../images/features/MW0738/MW0738_3.jpg") no-repeat right top;margin-left:-35px;}
+.MW0738_4{width:1156px;height:688px;background:url("../images/features/MW0738/MW0738_4.jpg") no-repeat left top;margin-left:-35px;}
+.MW0738_5{width:1156px;height:590px;background:url("../images/features/MW0738/MW0738_5.jpg") no-repeat right top;margin-left:-35px;margin-top:150px;}
+.MW0738_1 h1,.MW0738_2 h1, .MW0738_3 h1, .MW0738_4 h1, .MW0738_5 h1{padding:0px;margin:0px;line-height:35px;}
+.MW0738_2 h1{padding:0px;margin:0px;line-height:25px;}
+.MW0738_1 h1,.MW0738_1 p{margin-left:45px;}
+.MW0738_3 h1,.MW0738_3 p{margin-left:60px;}
+.MW0738_5 h1,.MW0738_5 p{margin-left:60px;}
+.MW0738_2 h1,.MW0738_2 p{margin-left:800px;}
+.MW0738_4 h1,.MW0738_4 p{margin-left:685px;}
+.I2777FWQ_1{width:1157px;height:701px;background:url("../images/features/I2777FWQ/I2777FWQ_1.png") no-repeat 0px 0px;margin-left:-35px;margin-top:-150px;}
+.I2777FWQ_2{width:1157px;height:559px;background:url("../images/features/I2777FWQ/I2777FWQ_2.png") no-repeat 0px 0px;margin-left:-35px;margin-top:0px;}
+.I2777FWQ_3{width:1157px;height:619px;background:url("../images/features/I2777FWQ/I2777FWQ_3.png") no-repeat 0px 0px;margin-left:-35px;margin-top:0px;}
+.I2777FWQ_4{width:1157px;height:633px;background:url("../images/features/I2777FWQ/I2777FWQ_4.png") no-repeat 0px 0px;margin-left:-35px;margin-top:0px;}
+.I2777FWQ_1 h1,.I2777FWQ_2 h1, .I2777FWQ_3 h1, .I2777FWQ_4 h1{padding:0px;margin:0px;line-height:25px;}
+.I2777FWQ_1 h1,.I2777FWQ_1 p,.I2777FWQ_3 h1,.I2777FWQ_3 p{margin-left:35px;}
+.I2777FWQ_1 p,.I2777FWQ_2 p,.I2777FWQ_3 p,.I2777FWQ_4 p{padding-top:10px;}
+.I2777FWQ_2 h1,.I2777FWQ_2 p{margin-left:710px;}
+.I2777FWQ_4 h1,.I2777FWQ_4 p{margin-left:660px;}
+.U2868PQU_1{width:1157px;height:642px;background:url("../images/features/U2868PQU/U2868PQU_1.png") no-repeat 228px 0px;margin-left:-35px;margin-top: -50px;}
+.U2868PQU_2{width:1157px;height:530px;background:url("../images/features/U2868PQU/U2868PQU_2.png") no-repeat 45px 0px;margin-left:-35px;margin-top:100px;}
+.U2868PQU_3{width:1157px;height:571px;background:url("../images/features/U2868PQU/U2868PQU_3.png") no-repeat 266px 0px;margin-left:-35px;margin-top:0px;}
+.U2868PQU_4{width:1157px;height:599px;background:url("../images/features/U2868PQU/U2868PQU_4.png") no-repeat 0px 0px;margin-left:-35px;margin-top:50px;}
+.U2868PQU_5{width:1157px;height:770px;background:url("../images/features/U2868PQU/U2868PQU_5.png") no-repeat 0px 0px;margin-left:-35px;margin-top: -1px;}
+.U2868PQU_6{width:1157px;height:666px;background:url("../images/features/U2868PQU/U2868PQU_6.png") no-repeat 0px 0px;margin-left:-35px;margin-top:0px;}
+.U2868PQU_1 h1,.U2868PQU_2 h1, .U2868PQU_3 h1, .U2868PQU_4 h1, .U2868PQU_5 h1, .U2868PQU_6 h1{padding:0px;margin:0px;line-height:25px;}
+.U2868PQU_1 h1,.U2868PQU_1 p,.U2868PQU_3 h1,.U2868PQU_3 p,.U2868PQU_5 h1,.U2868PQU_5 p{margin-left:35px;}
+.U2868PQU_1 p,.U2868PQU_2 p,.U2868PQU_3 p,.U2868PQU_4 p,.U2868PQU_5 p,.U2868PQU_6 p{padding-top:10px;}
+.U2868PQU_2 h1,.U2868PQU_2 p{margin-left:780px;}
+.U2868PQU_4 h1,.U2868PQU_4 p{margin-left:660px;}
+.U2868PQU_6 h1,.U2868PQU_6 p{margin-left:690px;}
+.G2460PG_1{width:1157px;height:792px;background:url("../images/features/G2460PG/1.png") no-repeat center 0px;margin-left:-35px;}
+.G2460PG_2{width:1156px;height:810px;background:url("../images/features/G2460PG/2.png") no-repeat center bottom;margin-left:-35px;}
+.G2460PG_3{width:1157px;height:740px;background:url("../images/features/G2460PG/3.png") no-repeat center top;margin-left:-35px;}
+.G2460PG_4{width:1156px;height:659px;background:url("../images/features/G2460PG/4.png") no-repeat center top;margin-left:-35px;}
+.G2460PG_5{width:1157px;height:792px;background:url("../images/features/G2460PG/5.png") no-repeat center top;margin-left:-35px;}
+.G2460PG_6{width:1157px;height:660px;background:url("../images/features/G2460PG/6.png") no-repeat center top;margin-left:-35px;}
+.G2460PG_1 h1,.G2460PG_2 h1, .G2460PG_3 h1, .G2460PG_4 h1{padding:0px;margin:0px;line-height:25px;}
+.G2460PG_1 h1,.G2460PG_1 p{margin-left:660px;}
+.G2460PG_4 h1,.G2460PG_4 p{margin-left:756px;}
+.G2460PG_6 h1,.G2460PG_6 p{margin-left:640px;}
+.G2460PG_2 h1,.G2460PG_2 p,.G2460PG_3 h1,.G2460PG_3 p,.G2460PG_5 h1,.G2460PG_5 p{margin-left:55px;}
+.I2777FWQ_new_1{width:1157px;height:728px;background:url("../images/features/I2777FWQ/I2777FWQ_new_1.png") no-repeat 0px 0px;margin-top: -50px;}
+.I2777FQ_new_1{width:1157px;height:1048px;background:url("../images/features/I2777FWQ/I2777FQ_new_1.jpg") no-repeat 0px 0px;margin-left:-35px;margin-top: -50px;}
+.I2777FWQ_new_2{width:1157px;height:607px;background:url("../images/features/I2777FWQ/I2777FWQ_new_2.png") no-repeat 0px 0px;margin-left:-35px;margin-top:130px;}
+.I2777FQ_new_2{width:1157px;height:607px;background:url("../images/features/I2777FWQ/I2777FQ_new_2.png") no-repeat 0px 0px;margin-left:-35px;margin-top:100px;}
+.I2777FWQ_new_3{width:1157px;height:448px;background:url("../images/features/I2777FWQ/I2777FWQ_new_3.png") no-repeat 0px 0px;margin-top:80px;}
+.I2777FWQ_new_4{width:1157px;height:716px;background:url("../images/features/I2777FWQ/I2777FWQ_new_4.png") no-repeat 0px 0px;margin-left:-35px;margin-top:50px;}
+.I2777FWQ_new_5{width:1157px;height:715px;background:url("../images/features/I2777FWQ/I2777FWQ_new_5.png") no-repeat 0px 0px;margin-top:100px;}
+.I2777FWQ_new_6{width:1157px;height:684px;background:url("../images/features/I2777FWQ/I2777FWQ_new_6.png") no-repeat 0px 0px;margin-top:100px;}
+.I2777FWQ_new_7{width:1157px;height:612px;background:url("../images/features/I2777FWQ/I2777FWQ_new_7.png") no-repeat 0px 0px;margin-left:-50px;margin-top:100px;}
+.I2777FWQ_new_1_jp{width:1156px;height:728px;background:url("../images/features/I2777FWQ/I2777FWQ_new_1_jp.png") no-repeat 0px 0px;margin-top: -50px;}
+.I2777FWQ_new_2_jp{width:1156px;height:517px;background:url("../images/features/I2777FWQ/I2777FWQ_new_2_jp.png") no-repeat 0px 0px;margin-left:-35px;margin-top:130px;}
+.I2477FWQ_new_2_jp{width:1156px;height:517px;background:url("../images/features/I2777FWQ/I2477FWQ_new_2_jp.png") no-repeat 0px 0px;margin-left:-35px;margin-top:130px;}
+.I2777FWQ_new_3_jp{width:1156px;height:448px;background:url("../images/features/I2777FWQ/I2777FWQ_new_3_jp.png") no-repeat 0px 0px;margin-top:100px;}
+.I2777FWQ_new_4_jp{width:1156px;height:716px;background:url("../images/features/I2777FWQ/I2777FWQ_new_4_jp.png") no-repeat 0px 0px;margin-left:-35px;margin-top:50px;}
+.I2777FWQ_new_5_jp{width:1156px;height:715px;background:url("../images/features/I2777FWQ/I2777FWQ_new_5_jp.png") no-repeat 0px 0px;margin-top:100px;}
+.I2777FWQ_new_6_jp{width:1156px;height:684px;background:url("../images/features/I2777FWQ/I2777FWQ_new_6_jp.png") no-repeat 0px 0px;margin-top:100px;}
+.I2777FWQ_new_7_jp{width:1156px;height:612px;background:url("../images/features/I2777FWQ/I2777FWQ_new_7_jp.png") no-repeat 0px 0px;margin-left:-50px;margin-top:100px;}
+.U3477PQU_1{width:1420px;height:897px;background:url("../images/features/U3477PQU/U3477PQU_1.jpg") no-repeat 0px 0px;margin-top: -50px;margin-left:-60px;}
+.U3477PQU_2{width:1420px;height:957px;background:url("../images/features/U3477PQU/U3477PQU_2.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_3{width:1420px;height:980px;background:url("../images/features/U3477PQU/U3477PQU_3.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_4{width:1420px;height:958px;background:url("../images/features/U3477PQU/U3477PQU_4.jpg") no-repeat 0px 0px;margin-top: -1px;}
+.U3477PQU_5{width:1420px;height:1390px;background:url("../images/features/U3477PQU/U3477PQU_5.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_6{width:1420px;height:1143px;background:url("../images/features/U3477PQU/U3477PQU_6.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_7{width:1420px;height:1047px;background:url("../images/features/U3477PQU/U3477PQU_7.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_8{width:1420px;height:1736px;background:url("../images/features/U3477PQU/U3477PQU_8.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_9{width:1420px;height:1208px;background:url("../images/features/U3477PQU/U3477PQU_9.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_10{width:1420px;height:1158px;background:url("../images/features/U3477PQU/U3477PQU_10.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_11{width:1420px;height:1085px;background:url("../images/features/U3477PQU/U3477PQU_11.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_12{width:1420px;height:1015px;background:url("../images/features/U3477PQU/U3477PQU_12.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_13{width:1420px;height:1212px;background:url("../images/features/U3477PQU/U3477PQU_13.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_14{width:1420px;height:974px;background:url("../images/features/U3477PQU/U3477PQU_14.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_15{width:1420px;height:1043px;background:url("../images/features/U3477PQU/U3477PQU_15.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_16{width:1420px;height:976px;background:url("../images/features/U3477PQU/U3477PQU_16.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.U3477PQU_17{width:1420px;height:1032px;background:url("../images/features/U3477PQU/U3477PQU_17.jpg") no-repeat 0px 0px;margin-left:-60px;}
+.I2276VW_1{width:1156px;height:594px;background:url("../images/features/I2276VW/I2276VW_1.png") no-repeat 0px 0px;margin-top: -50px;margin-left:-70px;}
+.I2276VW_1_tw{width:1156px;height:588px;background:url("../images/features/I2276VW/I2276VW_1_tw.png") no-repeat 0px 0px;margin-top: -50px;margin-left:-70px;}
+.I2276VW_2{width:1156px;height:721px;background:url("../images/features/I2276VW/I2276VW_2.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_2_tw{width:1156px;height:739px;background:url("../images/features/I2276VW/I2276VW_2_tw.png") no-repeat 0px 0px;margin-top: -1px;}
+.I2276VW_3{width:1156px;height:828px;background:url("../images/features/I2276VW/I2276VW_3.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_3_tw{width:1156px;height:797px;background:url("../images/features/I2276VW/I2276VW_3_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_4{width:1156px;height:528px;background:url("../images/features/I2276VW/I2276VW_4.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_4_tw{width:1156px;height:558px;background:url("../images/features/I2276VW/I2276VW_4_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_5{width:1156px;height:684px;background:url("../images/features/I2276VW/I2276VW_5.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_5_tw{width:1156px;height:654px;background:url("../images/features/I2276VW/I2276VW_5_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_6{width:1156px;height:860px;background:url("../images/features/I2276VW/I2276VW_6.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_6_tw{width:1156px;height:873px;background:url("../images/features/I2276VW/I2276VW_6_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_7{width:1156px;height:686px;background:url("../images/features/I2276VW/I2276VW_7.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VW_7_tw{width:1156px;height:627px;background:url("../images/features/I2276VW/I2276VW_7_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.I2276VWM_8_tw{width:1156px;height:775px;background:url("../images/features/I2276VW/I2276VWM_8_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_0_tw{width:1156px;height:109px;background:url("../images/features/E2276VW6/76_tw.png") no-repeat 0px 0px;margin-left:-70px;margin-top:50px;}
+.E2276VW6_1_tw{width:1156px;height:694px;background:url("../images/features/E2276VW6/E2276VW6_1_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_2_tw{width:1156px;height:729px;background:url("../images/features/E2276VW6/E2276VW6_2_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_3_tw{width:1156px;height:750px;background:url("../images/features/E2276VW6/E2276VW6_3_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_33_tw{width:1156px;height:154px;background:url("../images/features/E2276VWM6/E2276VWM6_33_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_333_tw{width:1156px;height:605px;background:url("../images/features/E2276VWM6/E2276VWM6_333_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_4_tw{width:1156px;height:518px;background:url("../images/features/E2276VW6/E2276VW6_4_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_5_tw{width:1156px;height:616px;background:url("../images/features/E2276VW6/E2276VW6_5_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_6_tw{width:1156px;height:690px;background:url("../images/features/E2276VW6/E2276VW6_6_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_7_tw{width:1156px;height:577px;background:url("../images/features/E2276VW6/E2276VW6_7_tw.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_1{width:1156px;height:689px;background:url("../images/features/E2276VW6/E2276VW6_1.png") no-repeat 0px 0px;margin-left:-70px;margin-top: -50px;}
+.E2276VW6_2{width:1156px;height:723px;background:url("../images/features/E2276VW6/E2276VW6_2.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_3{width:1156px;height:761px;background:url("../images/features/E2276VW6/E2276VW6_3.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_4{width:1156px;height:521px;background:url("../images/features/E2276VW6/E2276VW6_4.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_5{width:1156px;height:602px;background:url("../images/features/E2276VW6/E2276VW6_5.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_6{width:1156px;height:705px;background:url("../images/features/E2276VW6/E2276VW6_6.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VW6_7{width:1156px;height:577px;background:url("../images/features/E2276VW6/E2276VW6_7.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_1{width:1156px;height:707px;background:url("../images/features/E2276VWM6/E2276VWM6_1.png") no-repeat 0px 0px;margin-left:-70px;margin-top: -50px;}
+.E2276VWM6_2{width:1156px;height:690px;background:url("../images/features/E2276VWM6/E2276VWM6_2.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_3{width:1156px;height:782px;background:url("../images/features/E2276VWM6/E2276VWM6_3.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_4{width:1156px;height:763px;background:url("../images/features/E2276VWM6/E2276VWM6_4.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_5{width:1156px;height:507px;background:url("../images/features/E2276VWM6/E2276VWM6_5.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_6{width:1156px;height:616px;background:url("../images/features/E2276VWM6/E2276VWM6_6.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_7{width:1156px;height:705px;background:url("../images/features/E2276VWM6/E2276VWM6_7.png") no-repeat 0px 0px;margin-left:-70px;}
+.E2276VWM6_8{width:1156px;height:570px;background:url("../images/features/E2276VWM6/E2276VWM6_8.png") no-repeat 0px 0px;margin-left:-70px;}
+.G2770PQU_1{width:1156px;height:814px;background:url("../images/features/G2770PQU/G2770PQU_1.png") no-repeat 0px 0px;margin-top:-134px;margin-left:-70px;}
+.G2770PQU_2{width:1156px;height:712px;background:url("../images/features/G2770PQU/G2770PQU_2.png") no-repeat 0px 0px;margin-left:-70px;}
+.G2770PQU_3{width:1156px;height:892px;background:url("../images/features/G2770PQU/G2770PQU_3.png") no-repeat 0px 0px;margin-left:-70px;}
+.G2770PQU_4{width:1156px;height:733px;background:url("../images/features/G2770PQU/G2770PQU_4.png") no-repeat 0px 0px;margin-left:-70px;}
+.G2770PQU_5{width:1156px;height:1205px;background:url("../images/features/G2770PQU/G2770PQU_5.png") no-repeat 0px 0px;margin-left:-70px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

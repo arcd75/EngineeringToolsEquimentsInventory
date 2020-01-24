@@ -1,0 +1,48 @@
+// JavaScript Document
+
+//I2769VM
+var ips69Arr = ['ips69_1','ips69_2','ips69_3','ips69_4','ips69_5','ips69_1_jp','ips69_2_jp','ips69_3_jp','ips69_4_jp','ips69_5_jp','e70_1','e70_2','e70_3','ips69_1_tw','ips69_2_tw','ips69_3_tw','ips69_4_tw','I2473PWY_1','I2473PWY_2','I2473PWY_3','I2473PWY_4','I2473PWY_5','i2470SWQU_1','M2870VQ_3','i2470SWQU_2'];
+for(var i in ips69Arr){
+	var $div =$('.'+ips69Arr[i]),
+		lastNum = ips69Arr[i].substr(ips69Arr[i].length-1,1);
+	if( isNaN(lastNum) ){ lastNum =  ips69Arr[i].substr(ips69Arr[i].length-4,1)}; //针对tw和jp
+
+	if( lastNum % 2 !== 0){//奇数
+		$div.css({backgroundPosition:"right bottom",overflow:'hidden'});
+		$div.find('h1').css({width:'45%',paddingTop:'0px',marginTop:'50px'}).end().find('p').css({width:'45%'});
+	}else{//偶数
+		$div.find('h1').css({width:'45%',marginLeft:'55%',paddingTop:'0px',marginTop:'50px'}).end().find('p').css({width:'45%',marginLeft:'55%'});
+	}
+	if(lastNum == 1){
+		$div.find('p').first().css({marginLeft:'35px'});
+		$div.find('p').last().find('br').remove();
+	}else{
+		$div.find('br').remove();
+	}
+	$div.width(1520);
+	$div.find('h1').first().css({paddingTop:'60px'});
+}
+
+$('.i2470SWQU_1').css({backgroundPosition:"right 50px",overflow:'hidden'});
+
+//标签内取消换行符
+var brArr = ['e70_1','e70_2','e70_3','ph57_left1','i2470SWQU_1','M2870VQ_3','i2470SWQU_2','wda_right2','wda_left3'];
+for(var i in brArr){
+	var $div =$('.'+brArr[i]);
+	$div.find('br').remove();
+}
+
+var a2272pwht = ['a2272pwht_2_white','a2272pwht_4_white','a2272pwht_6_white'];
+for(var i in a2272pwht){
+	var $div =$('.'+a2272pwht[i]);
+	$div.find('h1').css({width:'45%',marginLeft:'55%',paddingTop:'0px',marginTop:'50px'}).end().find('p').css({width:'45%',marginLeft:'55%'});
+}
+
+//移除 hd、fhd
+var productSize = $('.productInfo  h2').html();
+productSize = productSize.replace("HD/FHD,","");
+productSize = productSize.replace(",HD/FHD","");
+productSize = productSize.replace("HD/FHD","");
+$('.productInfo  h2').html(productSize);
+
+

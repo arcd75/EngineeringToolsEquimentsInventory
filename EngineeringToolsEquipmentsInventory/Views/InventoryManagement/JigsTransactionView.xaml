@@ -59,7 +59,7 @@
                     <StackPanel>
                         <dxg:GridControl x:Name="dgJigInventory" Height="575">
                             <dxg:GridControl.View>
-                                <dxg:TableView Header="JIGS INVENTORY" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False"/>
+                                <dxg:TableView Header="JIGS INVENTORY" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False" Margin="-6,0,6,0" CellValueChanged="TableView_CellValueChanged"/>
                             </dxg:GridControl.View>
                             <dxg:GridColumn FieldName="Actions">
                                 <dxg:GridColumn.CellTemplate>

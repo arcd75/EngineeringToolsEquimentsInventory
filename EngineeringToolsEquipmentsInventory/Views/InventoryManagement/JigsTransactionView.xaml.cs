@@ -114,5 +114,10 @@ namespace EngineeringToolsEquipmentsInventory.Views.InventoryManagement
         {
 
         }
+
+        private void TableView_CellValueChanged(object sender, DevExpress.Xpf.Grid.CellValueChangedEventArgs e)
+        {
+
+        }
     }
 }

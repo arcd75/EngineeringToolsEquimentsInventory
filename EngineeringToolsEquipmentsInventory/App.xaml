@@ -9,7 +9,7 @@
 
         <SolidColorBrush x:Key="IOSDarkBlue" Color="#5856d6"/>
         <SolidColorBrush x:Key="IOSDeepBlue" Color="#007aff"/>
-        <!--<SolidColorBrush x:Key="IOSDeepBlue" Color="#2d3436"/>-->
+        <!--<SolidColorBrush x:Key="IOSDeepBlue" Color="#0C2D48"/>-->
         <!--<SolidColorBrush x:Key="IOSDeepBlue" Color="#130f40"/>-->
         <!--<SolidColorBrush x:Key="IOSDeepBlue" Color="#341f97"/>-->
         <SolidColorBrush x:Key="IOSBlue" Color="#34aadc"/>

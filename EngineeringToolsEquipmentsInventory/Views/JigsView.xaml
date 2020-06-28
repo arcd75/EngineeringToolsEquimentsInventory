@@ -245,6 +245,19 @@
                                             <TextBlock Margin="5,0,0,0" Text="Borrowers" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
                                         </StackPanel>
                                     </Button>
+                                    <Button  Click="BtnPrint_Click_1" x:Name="btnPrint" IsEnabled="False" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                        <Button.Effect>
+                                            <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                        </Button.Effect>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Rectangle Fill="{DynamicResource IOSDeepBlue}" Width="30" Height="30">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/print.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                            <TextBlock Margin="5,0,0,0" Text="Print List" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                        </StackPanel>
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>

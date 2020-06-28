@@ -85,4 +85,21 @@ namespace EngineeringToolsEquipmentsInventory.Models
 
     }
 
+    public class StockInHistorySession
+    {
+        public static string ItemCode = "";
+        public static string SpareItemCode = "";
+    }
+
+    public class AssetsSession
+    {
+        public static bool AssetTransactionScan = false;
+        public static string AssetTransactionMode = "";
+        public static AssetAndEquipmentTransaction NewAssetTransaction = new AssetAndEquipmentTransaction();
+        public static List<AssetTransactionItem> AssetTransItemList = new List<AssetTransactionItem>();
+    }
+
+
+ 
+
 }

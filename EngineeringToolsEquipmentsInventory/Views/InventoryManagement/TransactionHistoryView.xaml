@@ -1,4 +1,4 @@
-﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.TransactionHistoryView"
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.TransactionHistoryView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -29,41 +29,122 @@
         </DockPanel>
         <ScrollViewer VerticalScrollBarVisibility="Hidden"  Grid.Row="1">
             <DockPanel>
-                <StackPanel VerticalAlignment="Top">
-                    <dxg:GridControl Height="600"  x:Name="dgTransaction" >
-                        <dxg:GridControl.View>
-                            <dxg:TableView AllowEditing="False" AllowGrouping="False" NavigationStyle="Cell"/>
-                        </dxg:GridControl.View>
-                        <dxg:GridColumn FieldName="Action">
-                            <dxg:GridColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
-                                        <Button  Width="65" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="View Items"  x:Name="btnViewDetails" Click="BtnViewDetails_Click">
-                                            <StackPanel  Orientation="Horizontal">
-                                                <Rectangle  Width="20" Height="20" Fill="White">
-                                                    <Rectangle.OpacityMask>
-                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Print.png"/>
-                                                    </Rectangle.OpacityMask>
-                                                </Rectangle>
-                                                <TextBlock Text="Details" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </dxg:GridColumn.CellTemplate>
-                        </dxg:GridColumn>
-                        <dxg:GridColumn FieldName="TransactionID"/>
-                        <dxg:GridColumn FieldName="UserName"/>
-                        <dxg:GridColumn FieldName="NumberofItem"/>
-                        <dxg:GridColumn FieldName="TotalQuantity"/>
-                        <dxg:GridColumn FieldName="TransactionDate" Header="Date"/>
-                        <dxg:GridColumn FieldName="LoginName" Header="PIC"/>
-                        <dxg:GridColumn FieldName="LineCode"/>
-                        <dxg:GridColumn FieldName="LineName"/>
-                    </dxg:GridControl>
-                </StackPanel>
+                <dx:DXTabControl Grid.RowSpan="2" >
+                    <dx:DXTabControl.View>
+                        <dx:TabControlStretchView/>
+                    </dx:DXTabControl.View>
+                    <dx:DXTabItem Header="Consumable Transaction" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}">
+                        <Grid Background="Transparent">
+                            <StackPanel VerticalAlignment="Top">
+                                <dxg:GridControl Height="600"  x:Name="dgTransaction" >
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView Header="Consumable" AllowEditing="False" AllowGrouping="False" NavigationStyle="Cell"/>
+                                    </dxg:GridControl.View>
+                                    <dxg:GridColumn FieldName="Action">
+                                        <dxg:GridColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                                    <Button  Width="65" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="View Items"  x:Name="btnViewDetails" Click="BtnViewDetails_Click">
+                                                        <StackPanel  Orientation="Horizontal">
+                                                            <Rectangle  Width="20" Height="20" Fill="White">
+                                                                <Rectangle.OpacityMask>
+                                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Print.png"/>
+                                                                </Rectangle.OpacityMask>
+                                                            </Rectangle>
+                                                            <TextBlock Text="Details" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </dxg:GridColumn.CellTemplate>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="TransactionID"/>
+                                    <dxg:GridColumn FieldName="UserName"/>
+                                    <dxg:GridColumn FieldName="NumberofItem"/>
+                                    <dxg:GridColumn FieldName="TotalQuantity"/>
+                                    <dxg:GridColumn FieldName="TransactionDate" Header="Date"/>
+                                    <dxg:GridColumn FieldName="LoginName" Header="PIC"/> 
+                                    <dxg:GridColumn FieldName="LineName"/>
+                                </dxg:GridControl>
+                            </StackPanel>
+                        </Grid>
+                    </dx:DXTabItem>
+                    <dx:DXTabItem Header="Spare Parts Transaction" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}">
+                        <Grid Background="Transparent">
+                            <StackPanel VerticalAlignment="Top" >
+                                <dxg:GridControl Height="600"  x:Name="dgSpareTransaction" >
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView Header="Spare Parts" AllowEditing="False" AllowGrouping="False" NavigationStyle="Cell"/>
+                                    </dxg:GridControl.View>
+                                    <dxg:GridColumn FieldName="Action">
+                                        <dxg:GridColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                                    <Button  Width="65" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="View Items"  x:Name="btnViewSpareDetails" Click="BtnViewSpareDetails_Click">
+                                                        <StackPanel  Orientation="Horizontal">
+                                                            <Rectangle  Width="20" Height="20" Fill="White">
+                                                                <Rectangle.OpacityMask>
+                                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Print.png"/>
+                                                                </Rectangle.OpacityMask>
+                                                            </Rectangle>
+                                                            <TextBlock Text="Details" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </dxg:GridColumn.CellTemplate>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="TransactionID"/>
+                                    <dxg:GridColumn FieldName="UserName"/>
+                                    <dxg:GridColumn FieldName="TotalItems"/>
+                                    <dxg:GridColumn FieldName="TotalQuantity"/>
+                                    <dxg:GridColumn FieldName="TotalCost" />
+                                    <dxg:GridColumn FieldName="Date" Header="Date"/>
+                                    <dxg:GridColumn FieldName="LineCode"/>
+                                    <dxg:GridColumn FieldName="LineName"/>
+                                </dxg:GridControl>
+                            </StackPanel>
+                        </Grid>
+                    </dx:DXTabItem>
+                    <dx:DXTabItem Header="Asset And Equipment Transaction" Margin="0,0,-41,0">
+                        <Grid Background="Transparent">
+                            <StackPanel VerticalAlignment="Top" >
+                                <dxg:GridControl Height="600"  x:Name="dgAssetTransaction" >
+                                    <dxg:GridControl.View>
+                                        <dxg:TableView Header="Asset and Equipment" AllowEditing="False" AllowGrouping="False" NavigationStyle="Cell"/>
+                                    </dxg:GridControl.View>
+                                    <dxg:GridColumn FieldName="Action">
+                                        <dxg:GridColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                                    <Button  Width="65" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="View Items"  x:Name="btnViewAssetTransaction" Click="BtnViewAssetTransaction_Click">
+                                                        <StackPanel  Orientation="Horizontal">
+                                                            <Rectangle  Width="20" Height="20" Fill="White">
+                                                                <Rectangle.OpacityMask>
+                                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Print.png"/>
+                                                                </Rectangle.OpacityMask>
+                                                            </Rectangle>
+                                                            <TextBlock Text="Details" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </dxg:GridColumn.CellTemplate>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="TransactionID"/>
+                                    <dxg:GridColumn FieldName="UserName"/>
+                                    <dxg:GridColumn FieldName="LineName"/>
+                                    <dxg:GridColumn FieldName="PIC"/>
+                                    <dxg:GridColumn FieldName="TotalItem"/>
+                                    <dxg:GridColumn FieldName="TotalCost"/>
+                                    <dxg:GridColumn FieldName="Type"/>
+                                    <dxg:GridColumn FieldName="Date"/>
+                                </dxg:GridControl>
+                            </StackPanel>
+                        </Grid>
+                    </dx:DXTabItem>
+                </dx:DXTabControl> 
             </DockPanel>
-        </ScrollViewer>
-
+        </ScrollViewer> 
     </Grid>
 </UserControl>

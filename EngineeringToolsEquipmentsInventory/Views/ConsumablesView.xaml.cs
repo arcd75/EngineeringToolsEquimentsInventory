@@ -256,7 +256,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     {
                         using (var context = new GMCSDatabaseContext())
                         {
-                            var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                            var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                             if (line != null)
                             {
                                 txtLineName.Text = line.line_nm;
@@ -362,14 +362,17 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     return;
                 }
                 int total = 0;
+                float totalCost = 0;
                 foreach (var item in SparePartSession.TransSparePartItemList)
                 {
                     total = total + item.Quantity;
+                    totalCost = totalCost + item.TotalCost;
                 }
-                SparePartSession.NewTransactionSparePart.TotalItems = ConsumableSession.TransItemList.Count;
+                SparePartSession.NewTransactionSparePart.TotalItems = SparePartSession.TransSparePartItemList.Count;
                 SparePartSession.NewTransactionSparePart.TotalQuantity = total;
                 SparePartSession.NewTransactionSparePart.LineCode = cmbLineCode.Text;
                 SparePartSession.NewTransactionSparePart.LineName = txtLineName.Text;
+                SparePartSession.NewTransactionSparePart.TotalCost = totalCost;
                 SparePartSession.TransactionSparePartScan = true;
 
                 IDScanWindow iDScanWindow = new IDScanWindow();
@@ -429,7 +432,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     {
                         foreach (var item in lines)
                         {
-                            cmbLineCode.Items.Add(item.line_c);
+                            cmbLineCode.Items.Add(item.line_nm);
                         }
                     }
                     else
@@ -593,6 +596,8 @@ namespace EngineeringToolsEquipmentsInventory.Views
                             return;
                         }
                     }
+
+                    
                 }
             }
         }
@@ -603,7 +608,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
             {
                 using (var context = new GMCSDatabaseContext())
                 {
-                    var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                    var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                     if (line != null)
                     {
                         txtLineName.Text = line.line_nm;
@@ -630,7 +635,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 {
                     using (var context = new GMCSDatabaseContext())
                     {
-                        var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                        var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                         if (line != null)
                         {
                             txtLineName.Text = line.line_nm;
@@ -658,7 +663,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 {
                     using (var context = new GMCSDatabaseContext())
                     {
-                        var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                        var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                         if (line != null)
                         {
                             txtLineName.Text = line.line_nm;
@@ -733,7 +738,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
             {
                 var selectedItems = dgSpareParts.SelectedItem as SparePart;
                 if (selectedItems != null)
-                {
+                { 
                     if (selectedItems.MaintainingQuantity >= selectedItems.AvailableQuantity)
                     {
                         MessageBox.Show("This item is in critical level! reorder is required", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -744,6 +749,15 @@ namespace EngineeringToolsEquipmentsInventory.Views
                         MessageBox.Show("This item is Out of Stock!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
+
+                    var test =SparePartSession.TransSparePartItemList.FirstOrDefault(br => br.ItemCode == selectedItems.ItemCode);
+                    if (test != null)
+                    {
+                        test.Quantity = test.Quantity + 1;
+                        test.TotalCost = test.Cost * test.Quantity;
+                        LoadSparePartsItem();
+                        return;
+                    } 
 
                     using (var context = new DatabaseContext())
                     {
@@ -879,6 +893,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                         {
                             MessageBox.Show("Invalid Quantity! not enough stocks.", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
                             selectedItem.Quantity = 1;
+                            selectedItem.TotalCost = selectedItem.Quantity * consumable.Cost;
                             return;
                         }
 
@@ -886,11 +901,11 @@ namespace EngineeringToolsEquipmentsInventory.Views
                         {
                             MessageBox.Show("Invalid Quantity! not enough stocks.", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
                             selectedItem.Quantity = 1;
+                            selectedItem.TotalCost = selectedItem.Quantity * consumable.Cost;
                             return;
                         }
-                    }
-
-                    selectedItem.Cost = selectedItem.Quantity * consumable.Cost;
+                    } 
+                    selectedItem.TotalCost = selectedItem.Quantity * consumable.Cost;
                 }
             }
         }

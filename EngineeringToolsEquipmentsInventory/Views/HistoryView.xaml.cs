@@ -55,6 +55,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                             loanedItemsReport.FindControl("xrReturnDate", false).Text = data.ReturnDate.ToString();
                             loanedItemsReport.FindControl("xrPIC", false).Text = data.LoginName;
                             loanedItemsReport.FindControl("xrGeneratedBy", false).Text = UserSession.UserName;
+                            loanedItemsReport.FindControl("xrTotalCost", false).Text = data.TotalCost.ToString();
 
                             var loanItems = context.LoanedTools.Where(br => br.LoanID == selectedItem.LoanID);
                             Dispatcher.Invoke(() =>

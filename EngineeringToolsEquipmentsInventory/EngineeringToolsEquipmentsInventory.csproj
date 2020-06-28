@@ -41,10 +41,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dashboard.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Dashboard.v19.1.Wpf, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -57,12 +59,17 @@
     <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpf.Carousel.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Charts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Controls.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Dashboard.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DataAccess.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Docking.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ExpressionEditor.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Gauges.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -71,10 +78,13 @@
     <Reference Include="DevExpress.Xpf.PivotGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.PropertyGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.RichEdit.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Themes.Office2016White.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.TreeMap.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -106,6 +116,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -160,18 +171,77 @@
     <Compile Include="Models\DatabaseTables.cs" />
     <Compile Include="Models\GMCSDatabaseContext.cs" />
     <Compile Include="Models\GMCSDatabaseTables.cs" />
+    <Compile Include="Models\iJosDatabaseContext.cs" />
+    <Compile Include="Models\iJosDatabaseTables.cs" />
     <Compile Include="Models\Variables.cs" />
+    <Compile Include="Reports\AssetAndEquipmentTransactionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AssetAndEquipmentTransactionReport.Designer.cs">
+      <DependentUpon>AssetAndEquipmentTransactionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AssetTag.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AssetTag.Designer.cs">
+      <DependentUpon>AssetTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AssetTagEquipment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AssetTagEquipment.Designer.cs">
+      <DependentUpon>AssetTagEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AssetTransactionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AssetTransactionReport.Designer.cs">
+      <DependentUpon>AssetTransactionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DeliveryReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DeliveryReport.Designer.cs">
+      <DependentUpon>DeliveryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\JIGDeliveryReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\JIGDeliveryReport.Designer.cs">
+      <DependentUpon>JIGDeliveryReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\LoanedItemsReport.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\LoanedItemsReport.Designer.cs">
       <DependentUpon>LoanedItemsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\OrderPreviewReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\OrderPreviewReport.Designer.cs">
+      <DependentUpon>OrderPreviewReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseOrderReport.Designer.cs">
+      <DependentUpon>PurchaseOrderReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SparePartTransactionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SparePartTransactionReport.Designer.cs">
+      <DependentUpon>SparePartTransactionReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\TransactionReport.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\TransactionReport.Designer.cs">
       <DependentUpon>TransactionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetAndEquipmentView.xaml.cs">
+      <DependentUpon>AssetAndEquipmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConsumablesView.xaml.cs">
       <DependentUpon>ConsumablesView.xaml</DependentUpon>
@@ -203,6 +273,12 @@
     <Compile Include="Views\InventoryManagement\JigsTransactionView.xaml.cs">
       <DependentUpon>JigsTransactionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\InventoryManagement\ProductMasterView.xaml.cs">
+      <DependentUpon>ProductMasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryManagement\StockinView.xaml.cs">
+      <DependentUpon>StockinView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InventoryManagement\TransactionHistoryView.xaml.cs">
       <DependentUpon>TransactionHistoryView.xaml</DependentUpon>
     </Compile>
@@ -221,14 +297,29 @@
     <Compile Include="Views\ToolsView.xaml.cs">
       <DependentUpon>ToolsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddNewConsumable.xaml.cs">
+      <DependentUpon>AddNewConsumable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddNewJigWindow.xaml.cs">
+      <DependentUpon>AddNewJigWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddToolWindow.xaml.cs">
       <DependentUpon>AddToolWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\BarrowerLookupWindow.xaml.cs">
       <DependentUpon>BarrowerLookupWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ConsumableDeliveryListWindow.xaml.cs">
+      <DependentUpon>ConsumableDeliveryListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConsumableItemDeliveryWindow.xaml.cs">
+      <DependentUpon>ConsumableItemDeliveryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\IDScanWindow.xaml.cs">
       <DependentUpon>IDScanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\JigManualAdd.xaml.cs">
+      <DependentUpon>JigManualAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\LoanItemsWindow.xaml.cs">
       <DependentUpon>LoanItemsWindow.xaml</DependentUpon>
@@ -251,6 +342,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AssetAndEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ConsumablesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,6 +378,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\InventoryManagement\ProductMasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryManagement\StockinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InventoryManagement\TransactionHistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -307,6 +410,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddNewConsumable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddNewJigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddToolWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,7 +426,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ConsumableDeliveryListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConsumableItemDeliveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\IDScanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\JigManualAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -351,8 +474,35 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssetAndEquipmentTransactionReport.resx">
+      <DependentUpon>AssetAndEquipmentTransactionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssetTag.resx">
+      <DependentUpon>AssetTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssetTagEquipment.resx">
+      <DependentUpon>AssetTagEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AssetTransactionReport.resx">
+      <DependentUpon>AssetTransactionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DeliveryReport.resx">
+      <DependentUpon>DeliveryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\JIGDeliveryReport.resx">
+      <DependentUpon>JIGDeliveryReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\LoanedItemsReport.resx">
       <DependentUpon>LoanedItemsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OrderPreviewReport.resx">
+      <DependentUpon>OrderPreviewReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PurchaseOrderReport.resx">
+      <DependentUpon>PurchaseOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SparePartTransactionReport.resx">
+      <DependentUpon>SparePartTransactionReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\TransactionReport.resx">
       <DependentUpon>TransactionReport.cs</DependentUpon>
@@ -597,6 +747,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Libs\Images\jig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\openorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\JOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\viewDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\stockout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\scanbarcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\productmaster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\consumable_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\tool_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\spareparts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\opendelivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\returnreserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Libs\Images\Asset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets" Condition="Exists('..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets')" />

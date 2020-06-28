@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace EngineeringToolsEquipmentsInventory.Views
 {
@@ -27,8 +28,11 @@ namespace EngineeringToolsEquipmentsInventory.Views
         public InventoryManagementView()
         {
             InitializeComponent();
-            
+
         }
+
+        public double width = 0;
+        public DispatcherTimer timer = new DispatcherTimer();
 
         private void BtnDashBoard_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +83,23 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
         private void BtnJigs_Click(object sender, RoutedEventArgs e)
         {
+
             mainNavigation.Navigate(new JigsTransactionView());
+        }
+
+        private void BtnExpand_Click(object sender, RoutedEventArgs e)
+        {
+             
+        }
+
+        private void HamburgerMenu_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+          
+        }
+
+        private void Menu_ViewStateChanged(object sender, DevExpress.Xpf.WindowsUI.HamburgerMenuViewStateChangedEventArgs e)
+        {
+       
         }
     }
 }

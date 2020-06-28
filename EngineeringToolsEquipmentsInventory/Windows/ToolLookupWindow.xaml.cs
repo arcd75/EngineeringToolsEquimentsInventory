@@ -48,6 +48,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                                 goto Skip;
                             }
                         }
+                        
                         TransactionSession.barrowTools.Add(item);
                     Skip:
                         if (duplicateItem != "")
@@ -76,12 +77,13 @@ namespace EngineeringToolsEquipmentsInventory.Windows
             if (HistorySession.historyItemLookUp == true)
             {
                 viewGrid.ShowCheckBoxSelectorColumn = false;
-                txtBtnContent.Text = "Search ItemCode";
+                
+                btnAddDistinct.Visibility = Visibility.Visible;
             }
             else
             {
                 viewGrid.ShowCheckBoxSelectorColumn = true;
-
+                btnAddDistinct.Visibility = Visibility.Collapsed;
             }
         }
 

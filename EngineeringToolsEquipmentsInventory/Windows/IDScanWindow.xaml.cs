@@ -69,8 +69,8 @@ namespace EngineeringToolsEquipmentsInventory.Windows
             Models.UserSession.idScanTemp = Models.UserSession.idScanTemp + charTemp;
             if (e.Key == Key.Enter)
             {
-                if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan ==false)
-                {
+                if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan ==false && AssetsSession.AssetTransactionScan == false)
+                { 
                     if (Models.UserSession.idScanTemp != "")
                     {
                         using (var context = new DatabaseContext())
@@ -90,8 +90,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                                         {
                                             SearchTool.Status = "Loaned";
                                             toolContext.SaveChanges();
-                                        }
-
+                                        } 
                                         LoanedTool loanedTool = new LoanedTool();
                                         loanedTool.LoanToolID = "TLOAN-" + DateTime.Now.ToString("yyyyMMdd") + RandomString(6); ;
                                         loanedTool.LoanID = TransactionSession.newTransaction.LoanID;
@@ -105,6 +104,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                                         loanedTool.LoginName = UserSession.UserName;
                                         loanedTool.ReturnLoginName = "";
                                         loanedTool.BorrowerName = user.Name;
+                                        loanedTool.UnitCost = float.Parse(item.UnitCost.ToString());
                                         toolContext.LoanedTools.Add(loanedTool);
                                         toolContext.SaveChanges();
                                     }
@@ -131,7 +131,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         }
                     }
                 }
-                else if (ReturningSession.returnScanID == true && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && JigsSession.JgsTransactionScan == false)
+                else if (ReturningSession.returnScanID == true && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && JigsSession.JgsTransactionScan == false && AssetsSession.AssetTransactionScan == false)
                 {
                     using (var context = new DatabaseContext())
                     {
@@ -165,7 +165,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         }
                     }
                 }
-                else if (HistorySession.historyIDScan == true && ConsumableSession.TransactionScan == false && ReturningSession.returnScanID == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == false)
+                else if (HistorySession.historyIDScan == true && ConsumableSession.TransactionScan == false && ReturningSession.returnScanID == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == false && AssetsSession.AssetTransactionScan == false)
                 {
                     using (var context = new DatabaseContext())
                     {
@@ -186,7 +186,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         }
                     }
                 }
-                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == true && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == false)
+                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == true && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == false && AssetsSession.AssetTransactionScan == false)
                 {
                     using (var context = new DatabaseContext())
                     {
@@ -219,7 +219,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                     }
                 }
 
-                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == true && JigsSession.JgsTransactionScan == false)
+                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == true && JigsSession.JgsTransactionScan == false && AssetsSession.AssetTransactionScan == false)
                 {
                     using (var context = new DatabaseContext())
                     {
@@ -252,7 +252,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         }
                     }
                 }
-                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == true)
+                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == true && AssetsSession.AssetTransactionScan == false)
                 {
                     using (var context = new DatabaseContext())
                     {
@@ -285,9 +285,50 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         }
                     }
                 }
-            }
+                else if (ReturningSession.returnScanID == false && HistorySession.historyIDScan == false && ConsumableSession.TransactionScan == false && SparePartSession.TransactionSparePartScan == false && JigsSession.JgsTransactionScan == false && AssetsSession.AssetTransactionScan == true)
+                {
+                    using (var context = new DatabaseContext())
+                    {
+                        var user = context.Users.FirstOrDefault(br => br.UserID == Models.UserSession.idScanTemp);
+                        if (user != null)
+                        {
+                            AssetsSession.NewAssetTransaction.UserID = user.UserID;
+                            AssetsSession.NewAssetTransaction.UserName = user.Name;
 
+                            if (AssetsSession.AssetTransactionMode == "Withdraw")
+                            {
+                                AssetsSession.NewAssetTransaction.DateWithdrawn = DateTime.Now;
+                                AssetsSession.NewAssetTransaction.WithdrawnBy = user.Name;
+                            }
+                            else
+                            {
+                                AssetsSession.NewAssetTransaction.WithdrawnBy = "";
+                            }
+                            foreach (var item in AssetsSession.AssetTransItemList)
+                            {
+                                item.UserName = user.Name;
+                                item.UserID = user.UserID;
 
+                            }
+
+                            AssetsSession.AssetTransactionScan = false;
+                            Models.UserSession.idScanTemp = "";
+                            DialogResult = true;
+                        }
+                        else
+                        {
+                            AssetsSession.AssetTransactionScan = false;
+                            Models.UserSession.idScanTemp = "";
+
+                            if (MessageBox.Show("Borrower is not registered! Do you want to add as new borrower?", "Inventory System", MessageBoxButton.YesNo, MessageBoxImage.Error) == MessageBoxResult.Yes)
+                            {
+                                DialogResult = false;
+                                BarrowerLookupWindow barrowerLookupWindow = new BarrowerLookupWindow();
+                            }
+                        }
+                    }
+                }
+            } 
             if (e.Key == Key.Escape)
             {
                 DialogResult = false;

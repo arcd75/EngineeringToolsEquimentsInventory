@@ -1,0 +1,262 @@
+﻿<UserControl x:Class="EngineeringToolsEquipmentsInventory.Views.AssetAndEquipmentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             mc:Ignorable="d" 
+             Background="White"
+             Loaded="UserControl_Loaded"
+                           d:DesignHeight="697"  d:DesignWidth="1350">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="658*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+            <TextBlock Text="Assets And Equipments" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" FontSize="15" Foreground="{DynamicResource IOSTextHeading}"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="1">
+            <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+                <DockPanel>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Background="{DynamicResource IOSDeepBlue}"  Margin="0,0,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                    <TextBlock Text="LineCode" Margin="10,0,10,0" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Medium" VerticalAlignment="Center" Foreground="White"/>
+                                    <ComboBox x:Name="cmbLineCode"  IsEditable="True" IsReadOnly="False" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="0" Width="150" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="Black" FontWeight="Normal" FontSize="13" Background="White" SelectionChanged="CmbLineCode_SelectionChanged" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                    <TextBlock Text="" x:Name="txtLineName" Margin="10,0,0,0" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Normal" VerticalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <dxg:GridControl  Height="425" IsEnabled="False" x:Name="dgGridItems" SelectionMode="Row" >
+                            <dxg:GridControl.View >
+                                <dxg:TableView  FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Medium" FontSize="13" ShowDataNavigator="True"   ShowSearchPanelMode="Never" DataNavigatorButtons="Navigation" ShowGroupPanel="False" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Cell" x:Name="dgJigWithdrawTableView" CellValueChanged="DgJigWithdrawTableView_CellValueChanged"   />
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="ItemCode"/>
+                            <dxg:GridColumn FieldName="ItemDescription"/>
+                            <dxg:GridColumn FieldName="SerialNo"/>
+                            <dxg:GridColumn FieldName="AssetNo"/>
+                            <dxg:GridColumn FieldName="Quantity" AllowEditing="True">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:CalcEditSettings/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="Remarks" AllowEditing="True">
+                                <dxg:GridColumn.EditSettings>
+                                    <dxe:MemoEditSettings MemoAcceptsReturn="True" MemoAcceptsTab="True" MemoTextWrapping="Wrap"/>
+                                </dxg:GridColumn.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="#" AllowEditing="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Margin="10">
+                                            <Button Width="20" Height="20" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Item"  x:Name="btnItemDelete" Click="BtnItemDelete_Click" >
+                                                <Rectangle Width="20" Height="20" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/Libs/Images/Close.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Height="35" Background="{DynamicResource IOSDeepBlue}" Grid.Column="0" Grid.Row="0">
+                            <TextBlock Foreground="White" Margin="10,8,0,0" Text="TOTAL ITEMS" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" FontSize="15"/>
+                            <TextBlock x:Name="txtTotal" Foreground="White" Margin="20,8,0,0" Text="0" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" FontSize="15"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="35" Background="{DynamicResource IOSDeepBlue}" Grid.Column="1" Grid.Row="0">
+                            <TextBlock Foreground="White" Margin="10,8,0,0" Text="TRANS ID" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" FontSize="15"/>
+                            <TextBlock x:Name="txtTransID" Foreground="White" Margin="10,11,0,0" Text="0" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" FontSize="10"/>
+                        </StackPanel>
+                        <DockPanel Grid.Column="0" Grid.Row="1">
+                            <Button x:Name="btnNewtrans" Click="BtnNewtrans_Click" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                </Button.Effect>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Rectangle Fill="{DynamicResource IOSGreen}" Width="30" Height="30">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Margin="5,0,0,0" Text="New Transaction" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </DockPanel>
+                        <DockPanel Grid.Column="1" Grid.Row="1">
+                            <Button x:Name="btnCancelTrans" Click="BtnCancelTrans_Click"  IsEnabled="False" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                </Button.Effect>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Rectangle Fill="{DynamicResource IOSRed}" Width="30" Height="30">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Close.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Margin="5,0,0,0" Text="Cancel Transaction" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </DockPanel>
+                        <DockPanel Grid.Column="0" Grid.Row="3">
+                            <Button Click="BtnMenu_Click"   x:Name="btnMenu" IsEnabled="True" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White" Visibility="Visible">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                </Button.Effect>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Rectangle Fill="{DynamicResource IOSBlue}" Width="30" Height="30">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Menu_01.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Margin="5,0,0,0" Text="Main Menu [F7]" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </DockPanel>
+                        <DockPanel Grid.Column="1" Grid.Row="2">
+                            <Button x:Name="btnFinish" Click="BtnFinish_Click"  IsEnabled="False" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                </Button.Effect>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Rectangle Fill="{DynamicResource IOSGreen}" Width="30" Height="30">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Check.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock Margin="5,0,0,0" Text="Finish Transaction" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </DockPanel>
+                    </Grid>
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="634*"/>
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0" Background="{DynamicResource IOSDeepBlue}">
+                    <StackPanel x:Name="pnlGroups" IsEnabled="True" HorizontalAlignment="Right" Orientation="Horizontal" Background="{DynamicResource IOSDeepBlue}">
+                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,10,0">
+                            <RadioButton IsEnabled="False" x:Name="rbWithdraw" Click="RbWithdraw_Click" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontSize="14" FontWeight="Normal" Foreground="White"  Content="Withdrawal" Margin="0,0,10,0"/>
+                            <RadioButton IsEnabled="False" x:Name="rbReserve" Click="RbReserve_Click"  FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontSize="14" FontWeight="Normal" Foreground="White"  Content="Reservation"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="1">
+                    <StackPanel Orientation="Vertical">
+                        <dxg:GridControl Height="442"  IsEnabled="False" x:Name="dgAssets" ShowBorder="False"  >
+                            <dxg:GridControl.View  >
+                                <dxg:TableView x:Name="dgAssetTableView" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}"  FontSize="12"   ShowDataNavigator="True"  ShowSearchPanelMode="Always" DataNavigatorButtons="Navigation" ShowGroupPanel="True" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Row" >
+                                    <dxg:TableView.FormatConditions>
+                                        <dxg:FormatCondition FieldName="Qty_Available" Expression="[Qty_Available] &le; [MaintainingQty]">
+                                            <dxg:Format Background="Red"/>
+                                        </dxg:FormatCondition>
+                                        <dxg:FormatCondition Expression="[Qty_Available] &lt;= [MaintainingQty]" FieldName="Qty_Available" >
+                                            <dxg:Format Background="Green" Foreground="White"/>
+                                        </dxg:FormatCondition>
+                                        <dxg:FormatCondition Expression="[Qty_Available] &lt;= 0" FieldName="Qty_Available"  >
+                                            <dxg:Format Background="Red" Foreground="White"/>
+                                        </dxg:FormatCondition>
+                                    </dxg:TableView.FormatConditions>
+                                </dxg:TableView>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="Actions">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Margin="10">
+                                            <Button x:Name="btnAdd" Click="BtnAdd_Click" Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Add Item" >
+                                                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/addtoorder.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="AssetID"/>
+                            <dxg:GridColumn FieldName="ItemCode"/>
+                            <dxg:GridColumn FieldName="ItemDescription"/>
+                            <dxg:GridColumn FieldName="Qty_Available"/>
+                            <dxg:GridColumn FieldName="MaintainingQty"/>
+                            <dxg:GridColumn FieldName="SerialNo"/>
+                            <dxg:GridColumn FieldName="AssetNo"/>
+                        </dxg:GridControl>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <Button Click="BtnBarrower_Click" x:Name="btnBarrower" IsEnabled="False" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                        <Button.Effect>
+                                            <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                        </Button.Effect>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Rectangle Fill="{DynamicResource IOSDarkBlue}" Width="30" Height="30">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/UserFind.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                            <TextBlock Margin="5,0,0,0" Text="Borrowers" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button  Click="BtnPrint_Click_1" x:Name="btnPrint" IsEnabled="False" Height="60" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                                        <Button.Effect>
+                                            <DropShadowEffect BlurRadius="20" Color="#FF272727" Opacity="0.3"/>
+                                        </Button.Effect>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Rectangle Fill="{DynamicResource IOSDeepBlue}" Width="30" Height="30">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/print.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                            <TextBlock Margin="5,0,0,0" Text="Print List" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" Foreground="{DynamicResource IOSTextHeading}" FontSize="13"/>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

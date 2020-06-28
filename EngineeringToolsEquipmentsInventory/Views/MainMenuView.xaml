@@ -98,14 +98,14 @@
                             </Button>
                         </StackPanel>
                         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Button Background="Transparent" Style="{DynamicResource ButtonFlatStyle}">
+                            <Button Background="Transparent" x:Name="btnAssets" Click="BtnAssets_Click" Style="{DynamicResource ButtonFlatStyle}">
                                 <StackPanel Orientation="Vertical">
                                     <Rectangle Fill="#00cec9" Width="110" Height="110">
                                         <Rectangle.OpacityMask>
                                             <ImageBrush ImageSource="/Libs/Images/equipment.png"/>
                                         </Rectangle.OpacityMask>
                                     </Rectangle>
-                                    <TextBlock Text="Equipment [F5]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
+                                    <TextBlock Text="Assets and Equipments [F5]" TextAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="16" FontWeight="Normal" Foreground="{DynamicResource IOSGrey}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>

@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.ProductMasterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views.InventoryManagement"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d" 
+             Background="White"
+           d:DesignHeight="1300" d:DesignWidth="1155">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="632*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Visibility="Collapsed" x:Name="bsyPanel" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Fetching data from iJOS">
+                    <dx:WaitIndicator.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Please Wait" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"  FontSize="15"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dx:WaitIndicator.ContentTemplate>
+                </dx:WaitIndicator>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="0">
+            <DockPanel Background="{DynamicResource IOSDeepBlue}">
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <Rectangle Margin="10,0,0,0" Width="30" Height="30" Fill="White">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/productmaster.png"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="PRODUCT MASTER" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="15" FontWeight="Bold" Foreground="White" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </DockPanel>
+        <ScrollViewer Grid.Row="1">
+            <dx:DXTabControl >
+                <dx:DXTabControl.View>
+                    <dx:TabControlStretchView/>
+                </dx:DXTabControl.View>
+                <dx:DXTabItem Header="Tab">
+                    <Grid Background="Transparent"/>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Tab">
+                    <Grid Background="Transparent"/>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Tab">
+                    <Grid Background="Transparent"/>
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

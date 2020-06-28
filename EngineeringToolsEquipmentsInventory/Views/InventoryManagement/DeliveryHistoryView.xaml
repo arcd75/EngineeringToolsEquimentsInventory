@@ -1,23 +1,97 @@
-﻿<UserControl x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.DeliveryHistoryView"
+﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing"  xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.DeliveryHistoryView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views.InventoryManagement"
+             xmlns:dxrud="http://schemas.devexpress.com/winfx/2008/xaml/reports/userdesigner"
              mc:Ignorable="d" 
              Background="White"
-             d:DesignHeight="650" d:DesignWidth="900">
+             Loaded="UserControl_Loaded"
+             ScrollViewer.CanContentScroll="True"
+           d:DesignHeight="1300" d:DesignWidth="1155">
     <Grid Margin="5">
-        <ScrollViewer Height="640">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="89*"/>
-                    <RowDefinition Height="231*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0">
-                    
-                </StackPanel>
-            </Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <Button  x:Name="btnOpenDelivery" Click="BtnOpenDelivery_Click" Height="25"  Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Delivery List" VerticalAlignment="Center" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontSize="15" Foreground="White"/>
+                        <Rectangle Height="25" Width="25" Fill="White" Margin="10,0,0,0">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/opendelivery.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </StackPanel>
+                </Button>
+                <dxrud:ReportDesigner  Height="590" x:Name="docuViewer"  UseOfficeInspiredRibbonStyle="True">
+                    <dxrud:ReportDesignerClassicView/>
+                </dxrud:ReportDesigner>
+            </StackPanel>
         </ScrollViewer>
+        <DockPanel Visibility="Visible" x:Name="pnlDeliveryList" Background="#66808080" Margin="-5" >
+            <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center" Width="1000" Height="500" Background="White">
+                <StackPanel.Effect>
+                    <DropShadowEffect BlurRadius="50"/>
+                </StackPanel.Effect>
+                <Grid Height="500" Margin="5,-5,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="113*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnClose" Click="BtnClose_Click" Height="30" Width="30" HorizontalAlignment="Right" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}">
+                        <Rectangle Height="30" Width="30" Fill="White">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Close.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
+                        <Rectangle Height="25" Width="25" Fill="{DynamicResource IOSDeepBlue}" Margin="0,0,5,0">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/opendelivery.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock Text="Open Delivery List" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontSize="15" FontWeight="SemiBold" Foreground="{DynamicResource  IOSTextHeading}" VerticalAlignment="Center"/>
+                        
+                    </StackPanel>
+                    <DockPanel Grid.Row="1">
+                        <dxg:GridControl Height="400" x:Name="dgDelivery">
+                            <dxg:GridControl.View>
+                                <dxg:TableView  ShowDataNavigator="True" DataNavigatorButtons="Navigation"  Header="DELIVERY HISTORY" AllowEditing="False" AllowGrouping="False" />
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="Actions">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <Button Margin="0,0,5,0" x:Name="btnViewReport" Click="BtnViewReport_Click"  Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="View Report" >
+                                                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Reports.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                            <Button x:Name="btnPrintReport" Click="BtnPrintReport_Click"  Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Quick Print" >
+                                                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/print.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="DeliveryID"/>
+                            <dxg:GridColumn FieldName="DeliveryDate"/>
+                            <dxg:GridColumn FieldName="ToolTotal"/>
+                            <dxg:GridColumn FieldName="ConsumableTotal"/>
+                            <dxg:GridColumn FieldName="SpareTotal"/>
+                            <dxg:GridColumn FieldName="AssetTotal"/>
+                            <dxg:GridColumn FieldName="TotalItem"/>
+                        </dxg:GridControl>
+                    </DockPanel>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
     </Grid>
 </UserControl>

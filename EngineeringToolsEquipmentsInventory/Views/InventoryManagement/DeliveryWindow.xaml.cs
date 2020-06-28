@@ -27,7 +27,12 @@ namespace EngineeringToolsEquipmentsInventory.Views.InventoryManagement
 
         private void BtnNewDelivery_Click(object sender, RoutedEventArgs e)
         {
-            mainNavigation.Navigate(new NewDeliveryView());
+            mainNavigation.Navigate(new StockinView());
+        }
+
+        private void BtnDeliveryHistory_Click(object sender, RoutedEventArgs e)
+        {
+            mainNavigation.Navigate(new DeliveryHistoryView());
         }
     }
 }

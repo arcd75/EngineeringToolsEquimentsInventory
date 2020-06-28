@@ -69,7 +69,7 @@
                                 </dxg:GridColumn.CellTemplate>
                             </dxg:GridColumn>
                         </dxg:GridControl>
-                        <dxg:GridControl Height="425" IsEnabled="False" Visibility="Visible"  x:Name="dgSpareItems" SelectionMode="Row" >
+                        <dxg:GridControl Height="427" IsEnabled="False" Visibility="Visible"  x:Name="dgSpareItems" SelectionMode="Row" >
                             <dxg:GridControl.View >
                                 <dxg:TableView x:Name="dgSpareItemsTableView" CellValueChanged="DgSpareItemsTableView_CellValueChanged" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Medium" FontSize="13" ShowDataNavigator="True"   ShowSearchPanelMode="Never" DataNavigatorButtons="Navigation" ShowGroupPanel="False" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Cell"/>
                             </dxg:GridControl.View>
@@ -84,7 +84,8 @@
                                     <dxe:CalcEditSettings/>
                                 </dxg:GridColumn.EditSettings>
                             </dxg:GridColumn>
-                            <dxg:GridColumn FieldName="Cost"/>
+                            <dxg:GridColumn FieldName="Cost" Visible="False"/>
+                            <dxg:GridColumn FieldName="TotalCost" Visible="False"/>
                             <dxg:GridColumn FieldName="#" AllowEditing="False">
                                 <dxg:GridColumn.CellTemplate>
                                     <DataTemplate>
@@ -202,7 +203,7 @@
                     <StackPanel Orientation="Vertical">
                         <dxg:GridControl Height="442"  IsEnabled="False" Visibility="Visible" x:Name="dgConsumables" ShowBorder="False"  >
                             <dxg:GridControl.View  >
-                                <dxg:TableView  BorderBrush="White" BorderThickness="0"   x:Name="dgTableView" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}"  FontSize="12"   ShowDataNavigator="True"  ShowSearchPanelMode="Always" DataNavigatorButtons="Navigation" ShowGroupPanel="True" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Row" Margin="0,6,0,-6" >
+                                <dxg:TableView  BorderBrush="White" BorderThickness="0"   x:Name="dgTableView" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}"  FontSize="12"   ShowDataNavigator="True"  ShowSearchPanelMode="Always" DataNavigatorButtons="Navigation" ShowGroupPanel="True" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Row" Margin="0,0,0,0" >
                                     <dxg:TableView.FormatConditions>
                                         <!--<dxg:FormatCondition FieldName="RemainingQuantity" Expression="[Remaining Quantity] &le; [Maintaining Quantity]">
                                             <dx:Format Background="Red"/>

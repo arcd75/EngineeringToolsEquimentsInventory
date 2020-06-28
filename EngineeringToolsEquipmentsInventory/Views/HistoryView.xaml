@@ -141,6 +141,7 @@
                         <dxg:GridColumn FieldName="LoanDate" SortOrder="Ascending" SortMode="Value"/>
                         <dxg:GridColumn FieldName="ReturnDate" SortMode="Value"/>
                         <dxg:GridColumn FieldName="LoginName" Header="PIC"/>
+                        <dxg:GridColumn FieldName="TotalCost"/>
                     </dxg:GridControl>
                     <dxg:GridControl Height="500" x:Name="dgGridByItem" SelectionMode="Row" Visibility="Collapsed" >
                         <dxg:GridControl.View>

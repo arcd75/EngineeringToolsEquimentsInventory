@@ -4,30 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Views"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
              mc:Ignorable="d" 
              Background="White"
              Loaded="UserControl_Loaded"
            d:DesignHeight="697"  d:DesignWidth="1350">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition x:Name="sidePanel" Width="80*"/>
             <ColumnDefinition Width="575*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.Column="0" Background="{DynamicResource IOSDeepBlue}">
+        <DockPanel Grid.Column="0" Background="{DynamicResource IOSDeepBlue}" >
+            
+            <!--Background="{DynamicResource IOSDeepBlue}">-->
             <DockPanel.Effect>
                 <DropShadowEffect BlurRadius="10" Direction="360" Color="#FF8D8D8D" Opacity="0.875" ShadowDepth="1"/>
             </DockPanel.Effect>
             <Grid Margin="5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="36*"/>
+                    <RowDefinition  Height="36*"/>
                     <RowDefinition Height="655*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" >
-                    <TextBlock Text="Engineering Warehouse" FontSize="15"  FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" Foreground="White"   />
-                    <TextBlock Text="Inventory Management" FontSize="13"  FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" Foreground="White"  />
-                </StackPanel>
+                <!--<StackPanel Grid.Row="0" >
+                    --><!--<TextBlock Text="Engineering Warehouse" FontSize="15"  FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Medium" Foreground="White"   />
+                    <TextBlock Text="Inventory Management" FontSize="13"  FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Normal" Foreground="White"  />--><!--
+                </StackPanel>-->
                 <StackPanel Grid.Row="1" Margin="0,10,0,0" Orientation="Vertical">
-                    <Button x:Name="btnDashBoard" Click="BtnDashBoard_Click" HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White">
+                    <!--<Button  x:Name="btnExpand" Click="BtnExpand_Click"   HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Fill="White">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Menu_01.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                <TextBlock Text="" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Button>-->
+                    <Button  x:Name="btnDashBoard" Click="BtnDashBoard_Click" HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White">
                         <StackPanel Orientation="Horizontal">
                             <Rectangle Width="30" Height="30" Fill="White">
                                 <Rectangle.OpacityMask>
@@ -48,6 +63,18 @@
                             </Rectangle>
                             <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
                                 <TextBlock Text="Inventory" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnProductMaster" Click="BtnInventory_Click" HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Fill="White">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/productmaster.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <StackPanel Margin="5,0,0,0" VerticalAlignment="Center">
+                                <TextBlock Text="Product Master" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"/>
                             </StackPanel>
                         </StackPanel>
                     </Button>
@@ -125,10 +152,33 @@
                     </Button>
                 </StackPanel>
             </Grid>
+            <!--<dxwui:HamburgerMenu Header="Menu" x:Name="menu" ViewState="CompactOverlay" AvailableViewStates="Overlay" ContextMenuClosing="HamburgerMenu_ContextMenuClosing" IsInitiallyCompact="False" ViewStateChanged="Menu_ViewStateChanged" >
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Dashboard" Glyph="pack://application:,,,/EngineeringToolsEquipmentsInventory;component/Libs/Images/dashboard.png"/>
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Inventory" Glyph="{dx:DXImage SvgImages/Dashboards/DashboardDesigner.svg}"/>
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Delivery" Glyph="{dx:DXImage SvgImages/Dashboards/DashboardDesigner.svg}"/>
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Transactions" Glyph="{dx:DXImage SvgImages/Dashboards/DashboardDesigner.svg}"/>
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Jigs" Glyph="{dx:DXImage SvgImages/Dashboards/DashboardDesigner.svg}"/>
+                <dxwui:HamburgerMenuNavigationButton GlyphColor="White" Content="Main Menu" Glyph="{dx:DXImage SvgImages/Dashboards/DashboardDesigner.svg}"/>
+            </dxwui:HamburgerMenu>-->
         </DockPanel>
-        <DockPanel Grid.Column="1">
-            <dxwui:NavigationFrame x:Name="mainNavigation" AnimationType="Fade" />
+        <DockPanel Grid.Column="1"> 
+             
+                <dxwui:NavigationFrame x:Name="mainNavigation" AnimationType="Fade" />
+       
         </DockPanel>
-
+        <DockPanel x:Name="bsyPanel" Visibility="Collapsed" Grid.Column="1" Background="#4C808080" Panel.ZIndex="1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Fetching data from iJOS">
+                    <dx:WaitIndicator.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Please Wait" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"  FontSize="15"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dx:WaitIndicator.ContentTemplate>
+                </dx:WaitIndicator>
+            </StackPanel>
+        </DockPanel> 
     </Grid>
 </UserControl>

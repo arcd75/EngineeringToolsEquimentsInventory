@@ -1,0 +1,195 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="EngineeringToolsEquipmentsInventory.Windows.AddNewJigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+       WindowStartupLocation="CenterScreen"
+        BorderBrush="Black"
+        BorderThickness="1"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Title="AddNewJigWindow" Height="600" Width="950">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="187*"/>
+        </Grid.RowDefinitions>
+        <DockPanel x:Name="pnlOrderItems" Grid.RowSpan="2" Visibility="Collapsed" Background="#4C808080" Panel.ZIndex="1">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Right" Margin="0,0,0,5">
+                    <Border>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Gray"/>
+                        </Border.Effect>
+                            <Button x:Name="btnCloseOrderItems" Click="BtnCloseOrderItems_Click" Height="30" Width="30" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSRed}">
+                            <Rectangle Width="30" Height="30" Fill="White">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Close.png" />
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Button>
+                    </Border>
+                </StackPanel>
+                <Border  BorderThickness="1">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Gray" />
+                    </Border.Effect> 
+                    <dxg:GridControl  x:Name="dgOrderItem" Height="400" Width="900">
+                        <dxg:GridControl.View>
+                            <dxg:TableView Header="Delivery Items" AllowFixedGroups="true"  ShowGroupPanel="True" AllowGrouping="True" ShowSearchPanelMode="Always" AllowPaging="False" ShowDataNavigator="True" DataNavigatorButtons="Navigation" AllowEditing="False"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="Actions" AllowEditing="False">
+                            <dxg:GridColumn.CellTemplate>
+                                 <DataTemplate>
+                                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                        <Button x:Name="btnAddJig" Click="BtnAddJig_Click" ToolTip="Add  all item/s to inventory" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" >
+                                            <Rectangle Width="30" Height="30" Fill="White">
+                                                <Rectangle.OpacityMask>
+                                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png"/>
+                                                </Rectangle.OpacityMask>
+                                            </Rectangle>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn FieldName="Jig_Code"/>
+                        <dxg:GridColumn FieldName="Jig_Name"/>
+                        <dxg:GridColumn FieldName="ReceivingNo"/>
+                        <dxg:GridColumn FieldName="ReceivedDate"/>
+                        <dxg:GridColumn FieldName="POQty"/>
+                        <dxg:GridColumn FieldName="DeliveredQty"/>
+                        <dxg:GridColumn FieldName="ReceivedQty"/>
+                        <dxg:GridColumn FieldName="Remarks"/>
+                    </dxg:GridControl>
+                </Border>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel x:Name="bsyPanel" Visibility="Collapsed" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Transferring Data from iJOS">
+                    <dx:WaitIndicator.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Please Wait" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"  FontSize="15"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dx:WaitIndicator.ContentTemplate>
+                </dx:WaitIndicator>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="10,0,0,0" Text="iJOS DATA" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}"/>
+                    <Rectangle Height="30" Width="30" Fill="{DynamicResource IOSDeepBlue}">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </StackPanel>
+                <TextBlock Text="Last Updated: " HorizontalAlignment="Right" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" FontSize="12" Foreground="{DynamicResource IOSTextHeading}" Grid.Column="1" FontStyle="Italic"/>
+            </Grid>
+            
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <dx:DXTabControl >
+                <dx:DXTabControl.View>
+                    <dx:TabControlStretchView/>
+                </dx:DXTabControl.View>
+                <dx:DXTabItem Header="JOS Deliveries" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Normal" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Order_Item.svg}">
+                    <Grid Background="Transparent">
+                        <dxg:GridControl x:Name="dgJOSDeliveries">
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowFixedGroups="true"  ShowGroupPanel="True" AllowGrouping="True" ShowSearchPanelMode="Always" AllowPaging="False" ShowDataNavigator="True" DataNavigatorButtons="Navigation" AllowEditing="False"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="Actions" AllowEditing="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <Button x:Name="btnAddToInventory" Click="BtnAddToInventory_Click" ToolTip="Add  all item/s to inventory" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" >
+                                                <Rectangle Width="30" Height="30" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                            <Button x:Name="btnAddIndividual" Click="BtnAddIndividual_Click" ToolTip="Add individual Item/s to inventory" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" >
+                                                <Rectangle Width="20" Height="20" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/openorder.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                            <Button ToolTip="View Details" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" x:Name="btnViewDetails" Click="BtnViewDetails_Click" >
+                                                <Rectangle Width="30" Height="30" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/MasterList.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="ReceivingNo" SortOrder="Ascending"/>
+                            <dxg:GridColumn FieldName="ReceivedDate"/>
+                            <dxg:GridColumn FieldName="DateTransferred"/>
+                            <dxg:GridColumn FieldName="DeliveryNo"/>
+                            <dxg:GridColumn FieldName="PONo"/>
+                            <dxg:GridColumn FieldName="DeliveryQty"/>
+                            <dxg:GridColumn FieldName="TotalCost"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Jig Orders" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" FontWeight="Normal"  Glyph="{dx:DXImage SvgImages/Business Objects/BO_Product.svg}">
+                    <Grid Background="Transparent">
+                        <dxg:GridControl x:Name="dgJOSOrders">
+                            <dxg:GridControl.View>
+                                <dxg:TableView AllowFixedGroups="true"  ShowGroupPanel="True" AllowGrouping="True" ShowSearchPanelMode="Always" AllowPaging="False" ShowDataNavigator="True" DataNavigatorButtons="Navigation" AllowEditing="False"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="Actions" AllowEditing="False">
+                                <dxg:GridColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                                            <!--<Button ToolTip="Add  all item/s to inventory" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" >
+                                                <Rectangle Width="30" Height="30" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/Add.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>-->
+                                            <Button ToolTip="View Details" Margin="0,0,2,0" Width="30" Height="30" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" x:Name="btnPOViewDetails" Click="BtnPOViewDetails_Click" >
+                                                <Rectangle Width="30" Height="30" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/MasterList.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </dxg:GridColumn.CellTemplate>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="TranNo"/>
+                            <dxg:GridColumn FieldName="PONo"/>
+                            <dxg:GridColumn FieldName="PODate"/>
+                            <dxg:GridColumn FieldName="ReferenceNo"/>
+                            <dxg:GridColumn FieldName="IssuerName"/>
+                            <dxg:GridColumn FieldName="Quantity"/>
+                            <dxg:GridColumn FieldName="TotalPrice"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+        </DockPanel>
+    </Grid>
+</Window>

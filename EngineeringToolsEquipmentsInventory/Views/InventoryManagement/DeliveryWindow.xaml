@@ -34,26 +34,25 @@
                     <RowDefinition Height="1171*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <Button x:Name="btnNewDelivery" Click="BtnNewDelivery_Click" Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
-                        <Rectangle Fill="White" Height="25" Width="25">
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/NewDelivery.png"/>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
+                    <Button x:Name="btnNewDelivery" Click="BtnNewDelivery_Click" Width="150" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="New Delivery" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <Rectangle Fill="{DynamicResource IOSDeepBlue}" Height="25" Width="25" Margin="5,0,0,0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/NewDelivery.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </StackPanel>
                     </Button>
-                    <Button Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
-                        <Rectangle Fill="White" Height="25" Width="25">
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/DeliveryHistory.png"/>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
-                    </Button>
-                    <Button Width="50" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}">
-                        <Rectangle Fill="White" Height="25" Width="25">
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/NewDelivery.png"/>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
+                    <Button x:Name="btnDeliveryHistory" Click="BtnDeliveryHistory_Click" Width="150" Style="{DynamicResource ButtonFlatStyle}" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Delivery History" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" Foreground="{DynamicResource IOSTextHeading}"/>
+                            <Rectangle Fill="{DynamicResource IOSDeepBlue}" Height="25" Width="25" Margin="5,0,0,0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/DeliveryHistory.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </StackPanel>
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="1"> 

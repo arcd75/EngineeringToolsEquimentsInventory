@@ -29,8 +29,20 @@ namespace EngineeringToolsEquipmentsInventory.Models
         public DbSet<JigTransactionItem> JigTransactionItems { get; set; } 
         public DbSet<Location> Locations { get; set; } 
         public DbSet<JigTransactionType> JigTransactionTypes { get; set; } 
+        public DbSet<JOSDelivery> JOSDeliveries { get; set; }
+        public DbSet<JigPurchaseOrder> JigPurchaseOrders { get; set; }
+        public DbSet<UOM> UOMs { get; set; }
+        public DbSet<DeliveryItemSparePart> DeliveryItemSpareParts { get; set; }
+        public DbSet<Classification> Classifications { get; set; }
+        public DbSet<ToolCondition> ToolConditions { get; set; }
+        public DbSet<ToolMst> ToolMsts { get; set; }
+        public DbSet<ItemMst> ItemMsts { get; set; }
+        public DbSet<AssetAndEquipment> AssetAndEquipments { get; set; }
+        public DbSet<AssetAndEquipmentTransaction> AssetAndEquipmentTransactions { get; set; }
+        public DbSet<AssetTransactionItem> AssetTransactionItems { get; set; }
+        public DbSet<DeliveryAsset> DeliveryAssets { get; set; }
+        public DbSet<JOSUpdate> JOSUpdates { get; set; }
 
-  
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -56,7 +68,19 @@ namespace EngineeringToolsEquipmentsInventory.Models
             modelBuilder.Entity<JigTransactionItem>().ToTable("JigTransactionItem", "public"); 
             modelBuilder.Entity<Location>().ToTable("Location", "public"); 
             modelBuilder.Entity<JigTransactionType>().ToTable("JigTransactionType", "public"); 
-       
+            modelBuilder.Entity<JOSDelivery>().ToTable("JOSDelivery", "public");
+            modelBuilder.Entity<JigPurchaseOrder>().ToTable("JigPurchaseOrder", "public");
+            modelBuilder.Entity<UOM>().ToTable("UOM", "public");
+            modelBuilder.Entity<DeliveryItemSparePart>().ToTable("DeliveryItemSparePart", "public");
+            modelBuilder.Entity<Classification>().ToTable("Classification", "public");
+            modelBuilder.Entity<ToolCondition>().ToTable("ToolCondition", "public");
+            modelBuilder.Entity<ToolMst>().ToTable("ToolMst", "public");
+            modelBuilder.Entity<ItemMst>().ToTable("ItemMst", "public");
+            modelBuilder.Entity<AssetAndEquipment>().ToTable("AssetAndEquipment", "public");
+            modelBuilder.Entity<AssetAndEquipmentTransaction>().ToTable("AssetAndEquipmentTransaction", "public");
+            modelBuilder.Entity<AssetTransactionItem>().ToTable("AssetTransactionItem", "public");
+            modelBuilder.Entity<DeliveryAsset>().ToTable("DeliveryAsset", "public");
+            modelBuilder.Entity<JOSUpdate>().ToTable("JOSUpdate", "public");
         }
         public class Initializer : IDatabaseInitializer<DatabaseContext>
         {

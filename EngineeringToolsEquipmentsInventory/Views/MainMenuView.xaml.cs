@@ -123,6 +123,22 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 SendKeys.Flush();
             }
         }
+
+        private void BtnAssets_Click(object sender, RoutedEventArgs e)
+        {
+            IntPtr zero = IntPtr.Zero;
+            for (int i = 0; (i < 60) && (zero == IntPtr.Zero); i++)
+            {
+                Thread.Sleep(500);
+                zero = FindWindow(null, "Mainwindow");
+            }
+            if (zero != IntPtr.Zero)
+            {
+                SetForegroundWindow(zero);
+                SendKeys.SendWait("{F5}");
+                SendKeys.Flush();
+            }
+        }
     }
 }
 

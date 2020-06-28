@@ -1,0 +1,104 @@
+﻿<Window x:Class="EngineeringToolsEquipmentsInventory.Windows.ConsumableDeliveryListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineeringToolsEquipmentsInventory.Windows"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        BorderBrush="Black"
+        BorderThickness="1"
+        Title="ConsumableDeliveryListWindow" Height="450" Width="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="407*"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal"  Grid.Row="0" Height="30" Width="200">
+            <Rectangle Fill="{DynamicResource IOSDeepBlue}" Width="25" Height="25" >
+                <Rectangle.OpacityMask>
+                    <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/DeliveryHistory.png" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            <TextBlock Margin="5,0,0,0" Text="STOCK-IN HISTORY" VerticalAlignment="Center" Foreground="{DynamicResource IOSTextHeading}" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontWeight="Bold" FontSize="15"/>
+        </StackPanel>
+        <DockPanel x:Name="pnlConsumable" Visibility="Collapsed" Grid.Row="1">
+            <dxg:GridControl  IsEnabled="True" x:Name="dgConsumables" >
+                <dxg:GridControl.View >
+                    <dxg:TableView x:Name="dgConsumableTableView"    ShowDataNavigator="True"  ShowSearchPanelMode="Always" DataNavigatorButtons="Navigation" ShowGroupPanel="False" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Row"  >
+                        <dxg:TableView.FormatConditions>
+                            <dxg:FormatCondition Expression="[RemainingQuantity] &lt;= [MaintainingQuantity]" FieldName="RemainingQuantity" >
+                                <dxg:Format Background="Green" Foreground="White"/>
+                            </dxg:FormatCondition>
+                            <dxg:FormatCondition Expression="[RemainingQuantity] &lt;= 0" FieldName="RemainingQuantity"  >
+                                <dxg:Format Background="Red" Foreground="White"/>
+                            </dxg:FormatCondition>
+                        </dxg:TableView.FormatConditions>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="Actions" Visible="True">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Center" Margin="10">
+                                <Button x:Name="btnConsumableDelete" Click="BtnConsumableDelete_Click"  Width="25" Height="25" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Add Item" >
+                                    <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="18" Height="18" Fill="White">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/close.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+                <dxg:GridColumn FieldName="DeliveryID"/>
+                <dxg:GridColumn FieldName="ItemName"/>
+                <dxg:GridColumn FieldName="UOM"/>
+                <dxg:GridColumn FieldName="Quantity"/>
+                <dxg:GridColumn FieldName="Date"/>
+            </dxg:GridControl>
+        </DockPanel>
+        <DockPanel  Grid.Row="1" x:Name="pnlSpareParts" Visibility="Visible">
+            <dxg:GridControl  IsEnabled="True" x:Name="dgSpareParts" >
+                <dxg:GridControl.View >
+                    <dxg:TableView x:Name="dgSparePartsTableView"    ShowDataNavigator="True"  ShowSearchPanelMode="Always" DataNavigatorButtons="Navigation" ShowGroupPanel="False" AllowEditing="False" AllowGrouping="False" AllowColumnMoving="False" NavigationStyle="Row"  >
+                        <dxg:TableView.FormatConditions>
+                            <dxg:FormatCondition Expression="[RemainingQuantity] &lt;= [MaintainingQuantity]" FieldName="RemainingQuantity" >
+                                <dxg:Format Background="Green" Foreground="White"/>
+                            </dxg:FormatCondition>
+                            <dxg:FormatCondition Expression="[RemainingQuantity] &lt;= 0" FieldName="RemainingQuantity"  >
+                                <dxg:Format Background="Red" Foreground="White"/>
+                            </dxg:FormatCondition>
+                        </dxg:TableView.FormatConditions>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="Actions" Visible="True">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Center" Margin="10">
+                                <Button x:Name="btnSparePartDelete" Click="BtnSparePartDelete_Click"  Width="25" Height="25" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Add Item" >
+                                    <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="18" Height="18" Fill="White">
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/close.png"/>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+                <dxg:GridColumn FieldName="DeliveryID"/>
+                <dxg:GridColumn FieldName="ItemName"/>
+                <dxg:GridColumn FieldName="Cost"/>
+                <dxg:GridColumn FieldName="Qty"/>
+                <dxg:GridColumn FieldName="TotalCost"/>
+            </dxg:GridControl>
+        </DockPanel>
+    </Grid>
+</Window>

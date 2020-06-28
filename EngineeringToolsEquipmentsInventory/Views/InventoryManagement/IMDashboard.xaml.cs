@@ -138,6 +138,36 @@ namespace EngineeringToolsEquipmentsInventory.Views.InventoryManagement
                     }
                     #endregion
 
+                    #region getLostAssets
+                    using (var activeCtx = new DatabaseContext())
+                    {
+                        var activeloans = activeCtx.AssetAndEquipments.Where(br => br.Condition == "LOST");
+                        if (activeloans.Count() > 0)
+                        {
+                            txtAssetLost.Text = activeloans.Count().ToString();
+                        }
+                    }
+                    #endregion
+                    #region getGoodAssets
+                    using (var activeCtx = new DatabaseContext())
+                    {
+                        var activeloans = activeCtx.AssetAndEquipments.Where(br => br.Condition == "GOOD");
+                        if (activeloans.Count() > 0)
+                        {
+                            txtAssetGood.Text = activeloans.Count().ToString();
+                        }
+                    }
+                    #endregion
+                    #region getNoGoodAssets
+                    using (var activeCtx = new DatabaseContext())
+                    {
+                        var activeloans = activeCtx.AssetAndEquipments.Where(br => br.Condition == "NO GOOD");
+                        if (activeloans.Count() > 0)
+                        {
+                            txtAssetNoGood.Text = activeloans.Count().ToString();
+                        }
+                    }
+                    #endregion 
                     #region getRecentLoans
                     using (var loanCtx = new DatabaseContext())
                     {
@@ -159,7 +189,70 @@ namespace EngineeringToolsEquipmentsInventory.Views.InventoryManagement
                         }
                     }
                     #endregion
+
+                    #region getRecentSpareTransactions
+                    using (var loanCtx = new DatabaseContext())
+                    {
+                        var recent = loanCtx.SparePartTransactions.Where(br => br.Date >= DateTime.Today);
+                        if (recent != null)
+                        {
+                           dgSpareParts.ItemsSource = recent.ToList();
+                        }
+                    }
+                    #endregion
+
+                    #region getRecentAssetTransactions
+                    using (var loanCtx = new DatabaseContext())
+                    {
+                        var recent = loanCtx.AssetAndEquipmentTransactions.Where(br => br.Date >= DateTime.Today);
+                        if (recent != null)
+                        {
+                            dgAssets.ItemsSource = recent.ToList();
+                        }
+                    }
+                    #endregion
+
+
                 }
+            }
+
+            using (var context = new DatabaseContext())
+            {
+                var data = context.AssetAndEquipments;
+                if (data.Count() > 0)
+                {
+                    #region getNoStock
+                    int cnt = 0;
+                    foreach (var item in data)
+                    {
+                        if (item.Qty_Available <= 0)
+                        {
+                            cnt++;
+                        }
+                    }
+                    txtAssetNoStock.Text = cnt.ToString();
+                    #endregion
+                    #region getCritical
+                    cnt = 0;
+                    foreach (var item in data)
+                    {
+                        if (item.MaintainingQty > item.Qty_Available)
+                        {
+                            cnt++;
+                        }
+                        else if ((item.Qty_Available - item.MaintainingQty) <= 30)
+                        {
+                            cnt++;
+                        }
+                    }
+                    txtAssetCritical.Text = cnt.ToString();
+                    #endregion
+                    #region getReorder
+                    txtAssetReorder.Text = (int.Parse(txtAssetNoStock.Text) + int.Parse(txtAssetCritical.Text)).ToString();
+                    #endregion 
+
+                }
+
             }
 
             

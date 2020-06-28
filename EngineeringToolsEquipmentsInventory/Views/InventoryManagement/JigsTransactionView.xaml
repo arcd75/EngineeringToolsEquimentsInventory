@@ -7,7 +7,7 @@
              xmlns:Models="clr-namespace:EngineeringToolsEquipmentsInventory.Models"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="EngineeringToolsEquipmentsInventory.Views.InventoryManagement.JigsTransactionView"
              mc:Ignorable="d"
              Background="White"
-             Loaded="UserControl_Loaded"
+             Loaded="UserControl_Loaded" 
             d:DesignHeight="1300" d:DesignWidth="1155">
     <UserControl.Resources>
         <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource" ContextType="{x:Type Models:DatabaseContext}" Path="Locations">
@@ -30,12 +30,51 @@
                 <dx:DesignDataSettings RowCount="5"/>
             </dx:DesignDataManager.DesignData>
         </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource4" ContextType="{x:Type Models:DatabaseContext}" Path="Locations">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource5" ContextType="{x:Type Models:DatabaseContext}" Path="Users">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource6" ContextType="{x:Type Models:iJosDatabaseContext}" Path="JigPriceLists">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource7" ContextType="{x:Type Models:DatabaseContext}" Path="Classifications">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
+        <dx:EntitySimpleDataSource x:Key="EntitySimpleDataSource8" ContextType="{x:Type Models:DatabaseContext}" Path="Users">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:EntitySimpleDataSource>
     </UserControl.Resources>
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="632*"/>
         </Grid.RowDefinitions>
+        <DockPanel Visibility="Collapsed" x:Name="bsyPanel" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Fetching data from iJOS">
+                    <dx:WaitIndicator.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Please Wait" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"  FontSize="15"/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dx:WaitIndicator.ContentTemplate>
+                </dx:WaitIndicator>
+            </StackPanel>
+        </DockPanel>
         <DockPanel Grid.Row="0">
             <DockPanel Background="{DynamicResource IOSDeepBlue}">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
@@ -50,97 +89,168 @@
                 </StackPanel>
             </DockPanel>
         </DockPanel>
-        <dx:DXTabControl Grid.Row="1">
+        <dx:DXTabControl Grid.Row="1" >
             <dx:DXTabControl.View>
-                <dx:TabControlScrollView/>
+                <dx:TabControlStretchView/>
             </dx:DXTabControl.View>
-            <dx:DXTabItem Header="Inventory" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" >
+            <dx:DXTabItem Header="Inventory" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Product.svg}" >
                 <Grid Background="Transparent">
-                    <StackPanel>
-                        <dxg:GridControl x:Name="dgJigInventory" Height="575">
-                            <dxg:GridControl.View>
-                                <dxg:TableView Header="JIGS INVENTORY" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False" Margin="-6,0,6,0" CellValueChanged="TableView_CellValueChanged"/>
-                            </dxg:GridControl.View>
-                            <dxg:GridColumn FieldName="Actions">
-                                <dxg:GridColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel HorizontalAlignment="Center" Margin="5">
-                                            <Button x:Name="btnUpdateInventory" Click="BtnUpdateInventory_Click" Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Add Item" >
-                                                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
-                                                    <Rectangle.OpacityMask>
-                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/save.png"/>
-                                                    </Rectangle.OpacityMask>
-                                                </Rectangle>
-                                            </Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </dxg:GridColumn.CellTemplate>
-                            </dxg:GridColumn>
-                            <dxg:GridColumn FieldName="ItemCode"/>
-                            <dxg:GridColumn FieldName="JigCode"/>
-                            <dxg:GridColumn FieldName="JigName"/>
-                            <dxg:GridColumn FieldName="Location"/>
-                            <dxg:GridColumn FieldName="Type"/>
-                            <dxg:GridColumn FieldName="Quantity"/>
-                            <dxg:GridColumn FieldName="Balance"/>
-                            <dxg:GridColumn FieldName="UnitCost"/>
-                            <dxg:GridColumn FieldName="TotalCost"/>
-                            <dxg:GridColumn FieldName="Specification"/>
-                            <dxg:GridColumn FieldName="RefNo"/>
-                            <dxg:GridColumn FieldName="PIC" AllowEditing="True">
-                                <dxg:GridColumn.EditSettings>
-                                    <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource3}}" ValueMember="Name">
-                                        <dxg:LookUpEditSettings.StyleSettings>
-                                            <dxg:SearchLookUpEditStyleSettings/>
-                                        </dxg:LookUpEditSettings.StyleSettings>
-                                    </dxg:LookUpEditSettings>
-                                </dxg:GridColumn.EditSettings>
-                            </dxg:GridColumn>
-                            <dxg:GridColumn FieldName="DateDelivered"/>
-                        </dxg:GridControl>
-                    </StackPanel>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnAddDelivery" Click="BtnAddDelivery_Click" Height="50" Width="200" Style="{DynamicResource  ButtonFlatStyle}" Background="White">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="JIG ORDERING SYSTEM" Foreground="{DynamicResource IOSTextHeading}" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                        <Rectangle Height="20" Width="20" Fill="{DynamicResource IOSDeepBlue}">
+                                            <Rectangle.OpacityMask>
+                                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/JOS.png"/>
+                                            </Rectangle.OpacityMask>
+                                        </Rectangle>
+                                    </StackPanel>
+                                </Button>
+                                <!--<Button x:Name="btnManualAdd" Click="BtnManualAdd_Click" Height="50" Width="200" Style="{DynamicResource  ButtonFlatStyle}" Background="White">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="ADD JIG" Foreground="{DynamicResource IOSTextHeading}" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                        <Rectangle Height="30" Width="30" Fill="{DynamicResource IOSDeepBlue}">
+                                            <Rectangle.OpacityMask>
+                                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/add.png"/>
+                                            </Rectangle.OpacityMask>
+                                        </Rectangle>
+                                    </StackPanel>
+                                </Button>-->
+                            </StackPanel>
+                            <dxg:GridControl x:Name="dgJigInventory" Height="500">
+                                <dxg:GridControl.View>
+                                    <dxg:TableView AddingNewRow="DgInventoryTableView_AddingNewRow" x:Name="dgInventoryTableView" DataNavigatorButtons="All" ShowDataNavigator="True" Header="JIGS INVENTORY" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False" CellValueChanged="TableView_CellValueChanged" Height="500" VerticalAlignment="Bottom" EditFormShowMode="Inline" EditFormShowing="DgInventoryTableView_EditFormShowing" >
+
+                                    </dxg:TableView>
+                                </dxg:GridControl.View>
+                                <dxg:GridColumn FieldName="Actions">
+                                    <dxg:GridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel HorizontalAlignment="Center" Margin="5">
+                                                <Button x:Name="btnUpdateInventory" Click="BtnUpdateInventory_Click" Width="25" Height="25" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Inventory" >
+                                                    <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
+                                                        <Rectangle.OpacityMask>
+                                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/close.png"/>
+                                                        </Rectangle.OpacityMask>
+                                                    </Rectangle>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </dxg:GridColumn.CellTemplate>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="ItemCode" x:Name="tableViewItemCode"/>
+                                <dxg:GridColumn FieldName="PONo"/>
+                                <dxg:GridColumn FieldName="JigCode" x:Name="tableViewJigCode" ContentChanged="TableViewJigCode_ContentChanged">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings x:Name="cmbJigCode" DisplayMember="Jig_Code"  ValueMember="Jig_Code">
+                                            <dxg:LookUpEditSettings.StyleSettings>
+                                                <dxg:SearchLookUpEditStyleSettings/>
+                                            </dxg:LookUpEditSettings.StyleSettings>
+                                        </dxg:LookUpEditSettings>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="JigName" x:Name="tblJigName"/>
+                                <dxg:GridColumn FieldName="Location" x:Name="tableViewLocation" AllowEditing="True">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource4}}" ValueMember="Name">
+                                            <dxg:LookUpEditSettings.StyleSettings>
+                                                <dxg:SearchLookUpEditStyleSettings/>
+                                            </dxg:LookUpEditSettings.StyleSettings>
+                                        </dxg:LookUpEditSettings>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="Type"/>
+                                <dxg:GridColumn FieldName="Quantity" x:Name="tableViewQuantity" AllowEditing="true">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxe:CalcEditSettings/>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="Balance" AllowEditing="False">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxe:CalcEditSettings/>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="UnitCost" x:Name="tblUnitCost"/>
+                                <dxg:GridColumn FieldName="TotalCost" x:Name="tblTotalCost"/>
+                                <dxg:GridColumn FieldName="Specification">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings DisplayMember="ClassName" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource7}}" ValueMember="ClassName"/>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="RefNo"/>
+                                <dxg:GridColumn FieldName="PIC" Header="Ordered By">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource8}}" ValueMember="Name"/>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="WarehousePIC" x:Name="tableViewWarehousePIC" AllowEditing="True" Visible="False">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource5}}" ValueMember="Name">
+                                            <dxg:LookUpEditSettings.StyleSettings>
+                                                <dxg:SearchLookUpEditStyleSettings/>
+                                            </dxg:LookUpEditSettings.StyleSettings>
+                                        </dxg:LookUpEditSettings>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="DateDelivered"/>
+                            </dxg:GridControl>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </dx:DXTabItem>
-            <dx:DXTabItem Header="Withdrawal History">
+            <dx:DXTabItem Header="Withdrawal History" Glyph="{dx:DXImage SvgImages/Chart/Chart.svg}">
                 <Grid Background="Transparent">
                     <StackPanel>
-                        <dxg:GridControl x:Name="dgWithdrawHistory" Height="575">
+                        <dxg:GridControl x:Name="dgWithdrawHistory" Height="500">
                             <dxg:GridControl.View>
                                 <dxg:TableView Header="WITHDRAWN JIGS" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False"/>
                             </dxg:GridControl.View>
-                            <dxg:GridColumn FieldName="UserName"/>
+                            <dxg:GridColumn FieldName="UserName" Header="Withdrawn By"/>
                             <dxg:GridColumn FieldName="ItemCode"/>
                             <dxg:GridColumn FieldName="JigCode"/>
                             <dxg:GridColumn FieldName="Location"/>
                             <dxg:GridColumn FieldName="Type"/>
                             <dxg:GridColumn FieldName="Specification"/>
                             <dxg:GridColumn FieldName="RefNo"/>
-                            <dxg:GridColumn FieldName="PIC"/>
-                            <dxg:GridColumn FieldName="Date"/>
+                            <dxg:GridColumn FieldName="PIC" Header="Jig PIC"/>
+                            <dxg:GridColumn FieldName="Date" Header="Date Withdrawn"/>
                             <dxg:GridColumn FieldName="Status" AllowEditing="True">
                                 <dxg:GridColumn.EditSettings>
                                     <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource1}}" ValueMember="Name"/>
                                 </dxg:GridColumn.EditSettings>
                             </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="WarehousePIC"/>
+                            <dxg:GridColumn FieldName="TotalItem"/>
+                            <dxg:GridColumn FieldName="Cost"/>
+                            <dxg:GridColumn FieldName="TotalCost"/>
                         </dxg:GridControl>
                     </StackPanel>
                 </Grid>
             </dx:DXTabItem>
-            <dx:DXTabItem Header="Reserve Jigs">
+            <dx:DXTabItem Header="Reserve Jigs" Glyph="{dx:DXImage SvgImages/XAF/Action_LinkUnlink_Link.svg}">
                 <Grid Background="Transparent">
                     <StackPanel>
-                        <dxg:GridControl x:Name="dgReserveJigs" Height="575">
+                        <dxg:GridControl x:Name="dgReserveJigs" Height="500">
                             <dxg:GridControl.View>
                                 <dxg:TableView Header="RESERVE JIGS" EditFormCaptionBinding="{x:Null}" UseLegacyColumnVisibleIndexes="False" AllowEditing="False"/>
                             </dxg:GridControl.View>
                             <dxg:GridColumn FieldName="Actions">
                                 <dxg:GridColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel HorizontalAlignment="Center" Margin="5">
-                                            <Button x:Name="btnUpdate" Click="BtnUpdate_Click" Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Add Item" >
+                                        <StackPanel HorizontalAlignment="Center" Margin="5" Orientation="Horizontal">
+                                            <Button x:Name="btnUpdate" Click="BtnUpdate_Click" Width="25" Height="25" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Update Record" >
                                                 <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
                                                     <Rectangle.OpacityMask>
                                                         <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/save.png"/>
+                                                    </Rectangle.OpacityMask>
+                                                </Rectangle>
+                                            </Button>
+                                            <Button Margin="5,0,0,0" x:Name="btnReturn" Click="BtnReturn_Click"  Width="25" Height="25" Background="{DynamicResource IOSGreen}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return reserve jig" >
+                                                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="13" Height="13" Fill="White">
+                                                    <Rectangle.OpacityMask>
+                                                        <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/returnreserve.png"/>
                                                     </Rectangle.OpacityMask>
                                                 </Rectangle>
                                             </Button>
@@ -148,7 +258,7 @@
                                     </DataTemplate>
                                 </dxg:GridColumn.CellTemplate>
                             </dxg:GridColumn>
-                            <dxg:GridColumn FieldName="UserName"/>
+                            <dxg:GridColumn FieldName="UserName" Header="Reserved By"/>
                             <dxg:GridColumn FieldName="ItemCode"/>
                             <dxg:GridColumn FieldName="JigCode"/>
                             <dxg:GridColumn FieldName="Location" AllowEditing="True">
@@ -159,21 +269,26 @@
                             <dxg:GridColumn FieldName="Type" AllowEditing="Default"/>
                             <dxg:GridColumn FieldName="Specification"/>
                             <dxg:GridColumn FieldName="RefNo"/>
-                            <dxg:GridColumn FieldName="PIC"/>
+                            <dxg:GridColumn FieldName="PIC" Header="Jig PIC"/>
                             <dxg:GridColumn FieldName="Date"/>
                             <dxg:GridColumn FieldName="Status" AllowEditing="True">
                                 <dxg:GridColumn.EditSettings>
                                     <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource2}}" ValueMember="Name"/>
                                 </dxg:GridColumn.EditSettings>
                             </dxg:GridColumn>
-                            <dxg:GridColumn FieldName="TotalItem"/>
-                            <dxg:GridColumn FieldName="Cost"/>
-                            <dxg:GridColumn FieldName="TotalCost"/>
-                            <dxg:GridColumn AllowEditing="True" FieldName="DateWithdrawn">
+                            <dxg:GridColumn FieldName="TotalItem" AllowEditing="True">
                                 <dxg:GridColumn.EditSettings>
-                                    <dxe:DateEditSettings/>
+                                    <dxe:CalcEditSettings/>
                                 </dxg:GridColumn.EditSettings>
                             </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="Cost" AllowEditing="True">
+
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="TotalCost"/>
+                            <dxg:GridColumn AllowEditing="True" FieldName="DateWithdrawn">
+
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="WarehousePIC"/>
                         </dxg:GridControl>
                     </StackPanel>
                 </Grid>

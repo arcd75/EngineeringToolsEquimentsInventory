@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace EngineeringToolsEquipmentsInventory.Reports
 {
-    public partial class TransactionReport : DevExpress.XtraReports.UI.XtraReport
+    public partial class AssetAndEquipmentTransactionReport : DevExpress.XtraReports.UI.XtraReport
     {
-        public TransactionReport()
+        public AssetAndEquipmentTransactionReport()
         {
             InitializeComponent();
         }

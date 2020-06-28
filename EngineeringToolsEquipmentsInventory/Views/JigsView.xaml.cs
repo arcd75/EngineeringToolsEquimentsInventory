@@ -1,4 +1,6 @@
-﻿using EngineeringToolsEquipmentsInventory.Models;
+﻿using DevExpress.Xpf.Printing;
+using EngineeringToolsEquipmentsInventory.Models;
+using EngineeringToolsEquipmentsInventory.Reports;
 using EngineeringToolsEquipmentsInventory.Windows;
 using System;
 using System.Collections.Generic;
@@ -42,7 +44,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     {
                         foreach (var item in lines)
                         {
-                            cmbLineCode.Items.Add(item.line_c);
+                            cmbLineCode.Items.Add(item.line_nm);
                         }
                     }
                     else
@@ -104,10 +106,11 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     }
                 }
             }
+            txtTransID.Text = tempID;
             JigsSession.NewJigTransaction.Type = "Withdraw";
             JigsSession.NewJigTransaction.TransactionID = tempID;
-            JigsSession.NewJigTransaction.LineCode = cmbLineCode.Text;
-            JigsSession.NewJigTransaction.LineName = txtLineName.Text;
+            //JigsSession.NewJigTransaction.LineCode = cmbLineCode.Text;
+            //JigsSession.NewJigTransaction.LineName = txtLineName.Text;
             JigsSession.NewJigTransaction.Date = DateTime.Now;
             JigsSession.NewJigTransaction.PIC = UserSession.UserName;
 
@@ -136,10 +139,11 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     }
                 }
             }
+            txtTransID.Text = tempID;
             JigsSession.NewJigTransaction.Type = "Reserve";
             JigsSession.NewJigTransaction.TransactionID = tempID;
-            JigsSession.NewJigTransaction.LineCode = cmbLineCode.Text;
-            JigsSession.NewJigTransaction.LineName = txtLineName.Text;
+            //JigsSession.NewJigTransaction.LineCode = cmbLineCode.Text;
+            //JigsSession.NewJigTransaction.LineName = txtLineName.Text;
             JigsSession.NewJigTransaction.Date = DateTime.Now;
             JigsSession.NewJigTransaction.PIC = UserSession.UserName;
 
@@ -260,129 +264,140 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
         private void BtnFinish_Click(object sender, RoutedEventArgs e)
         {
-            if (JigsSession.TransactionMode  == "Withdraw" || JigsSession.TransactionMode == "Reserve")
+            if (txtLineName.Text != "" || cmbLineCode.Text != "")
             {
-                if (JigsSession.JigTransItemList.Count <= 0)
+                if (JigsSession.TransactionMode == "Withdraw" || JigsSession.TransactionMode == "Reserve")
                 {
-                    MessageBox.Show("This transaction does not contain any item/s!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                int total = 0;
-                foreach (var item in JigsSession.JigTransItemList)
-                {
-                    total = total + item.TotalItem;
-
-                }
-                float totalCost = 0;
-                foreach (var item in JigsSession.JigTransItemList)
-                {
-                    totalCost = totalCost + item.TotalCost;
-                    if (JigsSession.TransactionMode == "Withdraw")
+                    if (JigsSession.JigTransItemList.Count <= 0)
                     {
-                        item.DateWithdrawn = DateTime.Now; 
+                        MessageBox.Show("This transaction does not contain any item/s!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
                     }
-                    else
-                    {
-                        item.DateWithdrawn = DateTime.MinValue;
-                    }
-                }
-                JigsSession.NewJigTransaction.TotalItem = total ;
-                JigsSession.NewJigTransaction.TotalCost = totalCost;
-                JigsSession.JgsTransactionScan = true;
-                IDScanWindow iDScanWindow = new IDScanWindow();
-                iDScanWindow.ShowDialog();
-                if (iDScanWindow.DialogResult == true)
-                {
-                    //try
-                    //{
-                    using (var context = new DatabaseContext())
-                    {
-                        context.JigTransactions.Add(JigsSession.NewJigTransaction);
-                        context.SaveChanges();
-                    }
+                    int total = 0;
                     foreach (var item in JigsSession.JigTransItemList)
                     {
-                        using (var context2 = new DatabaseContext())
+                        total = total + item.TotalItem;
+
+                    }
+                    float totalCost = 0;
+                    foreach (var item in JigsSession.JigTransItemList)
+                    {
+                        totalCost = totalCost + item.TotalCost;
+                        
+                        if (JigsSession.TransactionMode == "Withdraw")
                         {
-                            context2.JigTransactionItems.Add(item);
-                            context2.SaveChanges();
+                            item.DateWithdrawn = DateTime.Now;
+                        }
+                        else
+                        {
+                            item.DateWithdrawn = DateTime.MinValue;
                         }
                     }
-
-                    foreach (var item in JigsSession.JigTransItemList)
+                    JigsSession.NewJigTransaction.TotalItem = total;
+                    JigsSession.NewJigTransaction.TotalCost = totalCost;
+                    JigsSession.NewJigTransaction.LineName = txtLineName.Text;
+                    JigsSession.NewJigTransaction.LineCode = txtLineName.Text;
+                    JigsSession.JgsTransactionScan = true;
+                    IDScanWindow iDScanWindow = new IDScanWindow();
+                    iDScanWindow.ShowDialog();
+                    if (iDScanWindow.DialogResult == true)
                     {
+                        //try
+                        //{
                         using (var context = new DatabaseContext())
                         {
-                            var jigs = context.Jigs.FirstOrDefault(br => br.ItemCode == item.ItemCode);
-                            if (jigs != null)
+                            context.JigTransactions.Add(JigsSession.NewJigTransaction);
+                            context.SaveChanges();
+                        }
+                        foreach (var item in JigsSession.JigTransItemList)
+                        {
+                            using (var context2 = new DatabaseContext())
                             {
-                                jigs.Balance = (int.Parse(jigs.Balance) - item.TotalItem).ToString();
-                                jigs.TotalCost = (float.Parse(jigs.UnitCost) * int.Parse(jigs.Balance)).ToString();
-                                context.SaveChanges();
+                                context2.JigTransactionItems.Add(item);
+                                context2.SaveChanges();
                             }
                         }
+
+                        foreach (var item in JigsSession.JigTransItemList)
+                        {
+                            using (var context = new DatabaseContext())
+                            {
+                                var jigs = context.Jigs.FirstOrDefault(br => br.ItemCode == item.ItemCode);
+                                if (jigs != null)
+                                {
+                                    jigs.Balance = (int.Parse(jigs.Balance) - item.TotalItem).ToString();
+                                    jigs.TotalCost = (float.Parse(jigs.UnitCost) * int.Parse(jigs.Balance)).ToString();
+                                    context.SaveChanges();
+                                }
+                            }
+                        }
+                        EndTransaction();
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    MessageBox.Show(ex.ToString(), "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+                        //}
                     }
-                    EndTransaction();
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.ToString(), "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
-                    //}
                 }
+                else if (TransactionSession.consumable == false && TransactionSession.sparepart == true)
+                {
+                    if (SparePartSession.TransSparePartItemList.Count <= 0)
+                    {
+                        MessageBox.Show("This transaction does not contain any item/s!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    int total = 0;
+                    foreach (var item in SparePartSession.TransSparePartItemList)
+                    {
+                        total = total + item.Quantity;
+                    }
+                    SparePartSession.NewTransactionSparePart.TotalItems = ConsumableSession.TransItemList.Count;
+                    SparePartSession.NewTransactionSparePart.TotalQuantity = total;
+                    SparePartSession.NewTransactionSparePart.LineCode = cmbLineCode.Text;
+                    SparePartSession.NewTransactionSparePart.LineName = txtLineName.Text;
+                    SparePartSession.TransactionSparePartScan = true;
+
+                    IDScanWindow iDScanWindow = new IDScanWindow();
+                    iDScanWindow.ShowDialog();
+                    if (iDScanWindow.DialogResult == true)
+                    {
+                        //try
+                        //{
+                        using (var context = new DatabaseContext())
+                        {
+                            context.SparePartTransactions.Add(SparePartSession.NewTransactionSparePart);
+                            context.SaveChanges();
+                        }
+                        foreach (var item in SparePartSession.TransSparePartItemList)
+                        {
+                            using (var context2 = new DatabaseContext())
+                            {
+                                context2.SparePartTransactionItems.Add(item);
+                                context2.SaveChanges();
+                            }
+                        }
+
+                        foreach (var item in SparePartSession.TransSparePartItemList)
+                        {
+                            using (var context = new DatabaseContext())
+                            {
+                                var sparepart = context.SpareParts.FirstOrDefault(br => br.PartID == item.PartID);
+                                if (sparepart != null)
+                                {
+                                    sparepart.AvailableQuantity = sparepart.AvailableQuantity - item.Quantity;
+                                    context.SaveChanges();
+                                }
+                            }
+                        }
+                        EndTransaction();
+                    }
+
+                } 
             }
-            else if (TransactionSession.consumable == false && TransactionSession.sparepart == true)
+            else
             {
-                if (SparePartSession.TransSparePartItemList.Count <= 0)
-                {
-                    MessageBox.Show("This transaction does not contain any item/s!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                int total = 0;
-                foreach (var item in SparePartSession.TransSparePartItemList)
-                {
-                    total = total + item.Quantity;
-                }
-                SparePartSession.NewTransactionSparePart.TotalItems = ConsumableSession.TransItemList.Count;
-                SparePartSession.NewTransactionSparePart.TotalQuantity = total;
-                SparePartSession.NewTransactionSparePart.LineCode = cmbLineCode.Text;
-                SparePartSession.NewTransactionSparePart.LineName = txtLineName.Text;
-                SparePartSession.TransactionSparePartScan = true;
-
-                IDScanWindow iDScanWindow = new IDScanWindow();
-                iDScanWindow.ShowDialog();
-                if (iDScanWindow.DialogResult == true)
-                {
-                    //try
-                    //{
-                    using (var context = new DatabaseContext())
-                    {
-                        context.SparePartTransactions.Add(SparePartSession.NewTransactionSparePart);
-                        context.SaveChanges();
-                    }
-                    foreach (var item in SparePartSession.TransSparePartItemList)
-                    {
-                        using (var context2 = new DatabaseContext())
-                        {
-                            context2.SparePartTransactionItems.Add(item);
-                            context2.SaveChanges();
-                        }
-                    }
-
-                    foreach (var item in SparePartSession.TransSparePartItemList)
-                    {
-                        using (var context = new DatabaseContext())
-                        {
-                            var sparepart = context.SpareParts.FirstOrDefault(br => br.PartID == item.PartID);
-                            if (sparepart != null)
-                            {
-                                sparepart.AvailableQuantity = sparepart.AvailableQuantity - item.Quantity;
-                                context.SaveChanges();
-                            }
-                        }
-                    }
-                    EndTransaction();  
-                }
-
+                MessageBox.Show("Specify Linecode!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+                cmbLineCode.Focus();
             }
         }
 
@@ -396,15 +411,15 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
         private void BtnNewtrans_Click(object sender, RoutedEventArgs e)
         {
-            if (cmbLineCode.Text != "")
-            {
+            //if (cmbLineCode.Text != "")
+            //{
                 try
                 {
                     if (cmbLineCode.Text != "")
                     {
                         using (var context = new GMCSDatabaseContext())
                         {
-                            var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                            var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                             if (line != null)
                             {
                                 txtLineName.Text = line.line_nm;
@@ -412,7 +427,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                             else
                             {
                                 txtLineName.Text = "";
-                                MessageBox.Show("Invalid Linecode", "Inventory System!", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("Invalid Line", "Inventory System!", MessageBoxButton.OK, MessageBoxImage.Error);
                                 cmbLineCode.Focus();
                                 return;
                             }
@@ -426,12 +441,12 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 }
 
                 NewTransaction();
-            }
-            else
-            {
-                MessageBox.Show("Specify Linecode!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
-                cmbLineCode.Focus();
-            }
+            //}
+            //else
+            //{
+            //    //MessageBox.Show("Specify Linecode!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    //cmbLineCode.Focus();
+            //}
         }
 
         private void NewTransaction()
@@ -440,8 +455,8 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
             rbWithdraw.IsEnabled = true;
             rbReserve.IsEnabled = true;
-
-            cmbLineCode.IsEnabled = false;
+            btnPrint.IsEnabled = true;
+            cmbLineCode.IsEnabled = true;
             btnCancelTrans.IsEnabled = true;
             btnFinish.IsEnabled = true;
             btnBarrower.IsEnabled = true;
@@ -463,6 +478,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
             pnlGroups.IsEnabled = false;
             dgGridItems.IsEnabled = false;
             btnNewtrans.IsEnabled = true;
+            btnPrint.IsEnabled = false;
 
             JigsSession.JigTransItemList.Clear();
             JigsSession.NewJigTransaction.TransactionID = "";
@@ -507,14 +523,14 @@ namespace EngineeringToolsEquipmentsInventory.Views
             {
                 using (var context = new GMCSDatabaseContext())
                 {
-                    var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                    var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                     if (line != null)
                     {
                         txtLineName.Text = line.line_nm;
                     }
                     else
                     {
-                        MessageBox.Show("Invalid Linecode", "Inventory System!", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Invalid Line", "Inventory System!", MessageBoxButton.OK, MessageBoxImage.Error);
                         txtLineName.Text = "";
                         cmbLineCode.Focus();
                     }
@@ -534,7 +550,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 {
                     using (var context = new GMCSDatabaseContext())
                     {
-                        var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                        var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                         if (line != null)
                         {
                             txtLineName.Text = line.line_nm;
@@ -562,7 +578,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 {
                     using (var context = new GMCSDatabaseContext())
                     {
-                        var line = context.line_Msts.FirstOrDefault(br => br.line_c == cmbLineCode.Text);
+                        var line = context.line_Msts.FirstOrDefault(br => br.line_nm == cmbLineCode.Text);
                         if (line != null)
                         {
                             txtLineName.Text = line.line_nm;
@@ -628,6 +644,59 @@ namespace EngineeringToolsEquipmentsInventory.Views
                     selectedItem.Cost = selectedItem.TotalItem * float.Parse(consumable.UnitCost);
                 }
             }
+        }
+
+        private void BtnPrint_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPrint_Click_1(object sender, RoutedEventArgs e)
+        {
+           var ItemList = JigsSession.JigTransItemList.ToList();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.busyIndicator.Visibility = Visibility.Visible;
+            var selectedItem = dgGridItems.SelectedItem as JigTransactionItem;
+            var task = Task.Run(() =>
+            {
+                
+                    OrderPreviewReport transactionItemsReport = new OrderPreviewReport();
+                    using (var context = new DatabaseContext())
+                    {
+                        //var data = ItemList.FirstOrDefault(br => br.TransactionID == selectedItem.TransactionID);
+                        //if (data != null)
+                        //{
+                            //transactionItemsReport.FindControl("xrTransactionID", false).Text = data.TransactionID;
+                            //transactionItemsReport.FindControl("xrUserName", false).Text = data.UserName;
+                            //transactionItemsReport.FindControl("xrTotalItems", false).Text = data.NumberofItem.ToString();
+                            //transactionItemsReport.FindControl("xrTransactionDate", false).Text = data.TransactionDate.ToString();
+                            //transactionItemsReport.FindControl("xrTotalQuantity", false).Text = data.TotalQuantity.ToString();
+                            //transactionItemsReport.FindControl("xrPIC", false).Text = data.LoginName;
+                            transactionItemsReport.FindControl("xrGeneratedBy", false).Text = UserSession.UserName;
+                        //transactionItemsReport.FindControl("xrLineCode", false).Text = data.LineCode;
+                        //transactionItemsReport.FindControl("xrLineName", false).Text = data.LineName;
+                        var transactionItems = ItemList; 
+                            Dispatcher.Invoke(() =>
+                            {
+                                transactionItemsReport.DataSource = transactionItems.ToList();
+                                PrintHelper.ShowPrintPreviewDialog(null, transactionItemsReport);
+                            });
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("This transaction is not existing!", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Error);
+                        //}
+                    }
+            
+            });
+            task.ContinueWith((t) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    mainWindow.busyIndicator.Visibility = Visibility.Hidden;
+                });
+            });
         }
     }
 }

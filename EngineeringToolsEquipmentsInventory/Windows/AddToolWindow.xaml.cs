@@ -1,4 +1,5 @@
-﻿using EngineeringToolsEquipmentsInventory.Models;
+﻿using DevExpress.XtraBars.Docking2010.Customization; 
+using EngineeringToolsEquipmentsInventory.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Documents; 
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -36,12 +37,14 @@ namespace EngineeringToolsEquipmentsInventory.Windows
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (txtItemCode.Text.Trim() == "" || txtItemName.Text.Trim() == ""||txtBrand.Text.Trim() == ""|| txtBrand.Text.Trim() == "")
+            if (txtItemCode.Text.Trim() == "" || txtItemName.Text.Trim() == ""||txtBrand.Text.Trim() == ""|| txtBrand.Text.Trim() == "" || txtUnitCost.Text =="" )
             {
                 MessageBox.Show("Please complete all information","Inventory System",MessageBoxButton.OK,MessageBoxImage.Error);
             }
             else
             {
+                
+
                 if (ToolEditSession.toolEditItemCode == "")
                 {
                     using (var context = new DatabaseContext())
@@ -65,6 +68,8 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         tool.LastUpdate = DateTime.Now;
                         tool.Status = "In-Stock";
                         tool.PECode = txtPECode.Text.Trim();
+                        tool.UnitCost = float.Parse(txtUnitCost.Text);
+                        tool.ProductCode = txtProductCode.Text;
                         context.Tools.Add(tool);
                         context.SaveChanges();
                         MessageBox.Show("Tool added", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -95,12 +100,13 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                             updateTool.DateDelivered = dtDateDelivered.DateTime;
                             updateTool.LastUpdate = DateTime.Now; 
                             updateTool.PECode = txtPECode.Text.Trim();
+                            updateTool.DateDelivered = dtDateDelivered.DateTime;
+                            updateTool.UnitCost = float.Parse(txtUnitCost.Text);
                             context.SaveChanges();
                             MessageBox.Show("Tool Updated", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
                             ClearForm();
                             ToolEditSession.toolEditItemCode = "";
-                            //DialogResult = true;
-
+                            DialogResult = true;  
                         }
                     }
                 }
@@ -115,6 +121,7 @@ namespace EngineeringToolsEquipmentsInventory.Windows
             txtDescription.Text = "";
             cmbCondition.SelectedIndex = 0;
             cmbType.SelectedIndex = 0;
+            txtProductCode.Text = "";
             txtPECode.Text = "";
         }
 
@@ -165,10 +172,60 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                         cmbCondition.Text = data.Condition;
                         cmbType.Text = data.Type;
                         txtPECode.Text = data.PECode;
-                        dtDateDelivered.DateTime = data.DateDelivered; 
+                        dtDateDelivered.DateTime = data.DateDelivered;
+                        txtProductCode.Text = data.ProductCode;
+                        txtUnitCost.Text = data.UnitCost.ToString();
+                        dtDateDelivered.DateTime = data.DateDelivered;
+                        txtProductCode.IsReadOnly = true;
+                        btnDropDown.IsEnabled = false;
                     }
                 }
             }
+            using (var context = new DatabaseContext())
+            {
+                var items = context.ItemMsts;
+                if (items!= null)
+                {
+                    cmbProductLookup.ItemsSource = items.ToList();
+                }
+            }
+        }
+
+        private void TxtUnitCost_EditValueChanged(object sender, DevExpress.Xpf.Editors.EditValueChangedEventArgs e)
+        {
+            if (txtUnitCost.Text == "")
+            {
+                txtUnitCost.Text = "0";
+            }
+        }
+        Predicate<System.Windows.Forms.DialogResult> predicate = canCloseFunc;
+        private static bool canCloseFunc(System.Windows.Forms.DialogResult parameter)
+        {
+            return parameter != System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private void BtnLookup_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void CmbProductLookup_SelectedIndexChanged(object sender, RoutedEventArgs e)
+        {
+            txtProductCode.Text = cmbProductLookup.Text;
+            using (var context = new DatabaseContext())
+            {
+                var item = context.ItemMsts.FirstOrDefault(br => br.item_cd == cmbProductLookup.Text);
+                if (item != null)
+                {
+                    txtItemName.Text = item.description;
+                    txtBrand.Text = item.brand;
+                    txtDescription.Text = item.description;
+                    txtUnitCost.Text = item.UnitCost.ToString();
+                }
+            }
+            btnDropDown.IsPopupOpen = false;
+
+
         }
     }
 }

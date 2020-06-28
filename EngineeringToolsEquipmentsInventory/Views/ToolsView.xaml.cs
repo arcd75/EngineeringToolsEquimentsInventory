@@ -81,6 +81,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
         private void BtnTool_Click(object sender, RoutedEventArgs e)
         {
+            HistorySession.historyItemLookUp = false;
             ToolLookupWindow lookupWindow = new ToolLookupWindow();
             lookupWindow.ShowDialog();
 
@@ -134,13 +135,17 @@ namespace EngineeringToolsEquipmentsInventory.Views
             {
                 TransactionSession.newTransaction.LoanQuantity = txtTotal.Text;
                 TransactionSession.newTransaction.Status = "Active";
-                TransactionSession.newTransaction.Remarks = "N/A";
+                TransactionSession.newTransaction.Remarks = "N/A"; 
                 TransactionSession.newTransaction.LoginName = UserSession.UserName;
                 TransactionSession.newTransaction.ReturnDate = DateTime.MinValue;
-
-                IDScanWindow iDScanWindow = new IDScanWindow();
-                iDScanWindow.ShowDialog();
-
+                float totalcost = 0;
+                foreach (var item in TransactionSession.barrowTools)
+                {
+                    totalcost = totalcost + float.Parse(item.UnitCost.ToString());
+                }
+                TransactionSession.newTransaction.TotalCost = totalcost;
+               IDScanWindow iDScanWindow = new IDScanWindow();
+                iDScanWindow.ShowDialog(); 
                 if (iDScanWindow.DialogResult == true)
                 {
                     CancelTrans();
@@ -164,7 +169,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 loanID = context.Loans.Where(br => br.UserID == ReturningSession.borrowerID && br.Status == "Active").ToList();
                 if (loanID.Count() >0)
                 {
-                    txtTotalLoan.Text = loanID.Count().ToString();
+                    //txtTotalLoan.Text = loanID.Count().ToString();
                 }
 
             }
@@ -186,6 +191,7 @@ namespace EngineeringToolsEquipmentsInventory.Views
                 } 
             }
             toolsBindingSource.DataSource = loanedItems.ToList();
+            txtTotalLoan.Text = loanedItems.Count().ToString();
             dgGridLoans.ItemsSource = toolsBindingSource;
         }
 

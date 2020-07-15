@@ -111,76 +111,79 @@
 
                                     </dxg:TableView>
                                 </dxg:GridControl.View>
-                                <dxg:GridColumn FieldName="Actions">
-                                    <dxg:GridColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <StackPanel HorizontalAlignment="Center" Margin="5">
-                                                <Button x:Name="btnUpdateInventory" Click="BtnUpdateInventory_Click" Width="25" Height="25" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Inventory" >
-                                                    <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
-                                                        <Rectangle.OpacityMask>
-                                                            <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/close.png"/>
-                                                        </Rectangle.OpacityMask>
-                                                    </Rectangle>
-                                                </Button>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </dxg:GridColumn.CellTemplate>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="ItemCode" x:Name="tableViewItemCode"/>
-                                <dxg:GridColumn FieldName="PONo"/>
-                                <dxg:GridColumn FieldName="JigCode" x:Name="tableViewJigCode" ContentChanged="TableViewJigCode_ContentChanged">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxg:LookUpEditSettings x:Name="cmbJigCode" DisplayMember="Jig_Code"  ValueMember="Jig_Code">
-                                            <dxg:LookUpEditSettings.StyleSettings>
-                                                <dxg:SearchLookUpEditStyleSettings/>
-                                            </dxg:LookUpEditSettings.StyleSettings>
-                                        </dxg:LookUpEditSettings>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="JigName" x:Name="tblJigName"/>
-                                <dxg:GridColumn FieldName="Location" x:Name="tableViewLocation" AllowEditing="True">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource4}}" ValueMember="Name">
-                                            <dxg:LookUpEditSettings.StyleSettings>
-                                                <dxg:SearchLookUpEditStyleSettings/>
-                                            </dxg:LookUpEditSettings.StyleSettings>
-                                        </dxg:LookUpEditSettings>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="Type"/>
-                                <dxg:GridColumn FieldName="Quantity" x:Name="tableViewQuantity" AllowEditing="true">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxe:CalcEditSettings/>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="Balance" AllowEditing="False">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxe:CalcEditSettings/>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="UnitCost" x:Name="tblUnitCost"/>
-                                <dxg:GridColumn FieldName="TotalCost" x:Name="tblTotalCost"/>
-                                <dxg:GridColumn FieldName="Specification">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxg:LookUpEditSettings DisplayMember="ClassName" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource7}}" ValueMember="ClassName"/>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="RefNo"/>
-                                <dxg:GridColumn FieldName="PIC" Header="Ordered By">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource8}}" ValueMember="Name"/>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="WarehousePIC" x:Name="tableViewWarehousePIC" AllowEditing="True" Visible="False">
-                                    <dxg:GridColumn.EditSettings>
-                                        <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource5}}" ValueMember="Name">
-                                            <dxg:LookUpEditSettings.StyleSettings>
-                                                <dxg:SearchLookUpEditStyleSettings/>
-                                            </dxg:LookUpEditSettings.StyleSettings>
-                                        </dxg:LookUpEditSettings>
-                                    </dxg:GridColumn.EditSettings>
-                                </dxg:GridColumn>
-                                <dxg:GridColumn FieldName="DateDelivered"/>
+                                <dxg:GridControl.Columns>
+                                    <dxg:GridColumn FieldName="Actions">
+                                        <dxg:GridColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel HorizontalAlignment="Center" Margin="5">
+                                                    <Button x:Name="btnUpdateInventory" Click="BtnUpdateInventory_Click" Width="25" Height="25" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Delete Inventory" >
+                                                        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" Fill="White">
+                                                            <Rectangle.OpacityMask>
+                                                                <ImageBrush ImageSource="/EngineeringToolsEquipmentsInventory;component/Libs/Images/close.png"/>
+                                                            </Rectangle.OpacityMask>
+                                                        </Rectangle>
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </dxg:GridColumn.CellTemplate>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="ItemCode" x:Name="tableViewItemCode"/>
+                                    <dxg:GridColumn FieldName="PONo"/>
+                                    <dxg:GridColumn FieldName="JigCode" x:Name="tableViewJigCode" ContentChanged="TableViewJigCode_ContentChanged">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxg:LookUpEditSettings x:Name="cmbJigCode" DisplayMember="Jig_Code"  ValueMember="Jig_Code">
+                                                <dxg:LookUpEditSettings.StyleSettings>
+                                                    <dxg:SearchLookUpEditStyleSettings/>
+                                                </dxg:LookUpEditSettings.StyleSettings>
+                                            </dxg:LookUpEditSettings>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="JigName" x:Name="tblJigName"/>
+                                    <dxg:GridColumn FieldName="Location" x:Name="tableViewLocation" AllowEditing="True">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource4}}" ValueMember="Name">
+                                                <dxg:LookUpEditSettings.StyleSettings>
+                                                    <dxg:SearchLookUpEditStyleSettings/>
+                                                </dxg:LookUpEditSettings.StyleSettings>
+                                            </dxg:LookUpEditSettings>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="Type"/>
+                                    <dxg:GridColumn FieldName="Quantity" x:Name="tableViewQuantity" AllowEditing="true">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:CalcEditSettings/>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="Balance" AllowEditing="False">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxe:CalcEditSettings/>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="UnitCost" x:Name="tblUnitCost"/>
+                                    <dxg:GridColumn FieldName="TotalCost" x:Name="tblTotalCost"/>
+                                    <dxg:GridColumn FieldName="Specification">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxg:LookUpEditSettings DisplayMember="ClassName" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource7}}" ValueMember="ClassName"/>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="RefNo"/>
+                                    <dxg:GridColumn FieldName="PIC" Header="Ordered By">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource8}}" ValueMember="Name"/>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="WarehousePIC" x:Name="tableViewWarehousePIC" AllowEditing="True" Visible="False">
+                                        <dxg:GridColumn.EditSettings>
+                                            <dxg:LookUpEditSettings DisplayMember="Name" ItemsSource="{Binding Data, Source={StaticResource EntitySimpleDataSource5}}" ValueMember="Name">
+                                                <dxg:LookUpEditSettings.StyleSettings>
+                                                    <dxg:SearchLookUpEditStyleSettings/>
+                                                </dxg:LookUpEditSettings.StyleSettings>
+                                            </dxg:LookUpEditSettings>
+                                        </dxg:GridColumn.EditSettings>
+                                    </dxg:GridColumn>
+                                    <dxg:GridColumn FieldName="DateDelivered"/>
+                                </dxg:GridControl.Columns>
+
                             </dxg:GridControl>
                         </StackPanel>
                     </ScrollViewer>

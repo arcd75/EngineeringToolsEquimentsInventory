@@ -29,6 +29,7 @@ namespace EngineeringToolsEquipmentsInventory
         Timer timer = new Timer();
         Timer timer2 = new Timer();
         public DispatcherTimer dTimer = new DispatcherTimer() { Interval = new TimeSpan(0, 30, 0) };
+        public static bool IsUpdateDone = false;
         public MainWindow()
         {
             try
@@ -71,10 +72,19 @@ namespace EngineeringToolsEquipmentsInventory
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            this.Dispatcher.Invoke(() =>
+            try
             {
-                txtDateTime.Text = DateTime.Now.ToLongDateString() + " - " + DateTime.Now.ToLongTimeString(); 
-            });
+                this.Dispatcher.Invoke(() =>
+                {
+                    txtDateTime.Text = DateTime.Now.ToLongDateString() + " - " + DateTime.Now.ToLongTimeString();
+                });
+            }
+            catch (Exception ex)
+            {
+
+                //throw;
+            }
+            
         }
 
         private void dTimer_Tick(object sender, EventArgs e)
@@ -242,10 +252,61 @@ namespace EngineeringToolsEquipmentsInventory
             {
                 Dispatcher.Invoke(() =>
                 {
+                    IsUpdateDone = true;
                     dTimer.Start();
-                    //LoadDeliveries();
-                    //bsyPanel.Visibility = Visibility.Collapsed;
                 });
+            });
+        }
+
+        public void UpdateMissing()
+        {
+            var task = Task.Run(() =>
+            {
+                using (var context = new DatabaseContext())
+                {
+                    var loanedTools = context.LoanedTools.ToList();
+                    var loans = context.Loans.ToList();
+                    var tools = context.Tools.ToList();
+                    var loanedItems = loanedTools.Where(l => l.Status == "Active" && l.Condition == "GOOD").OrderByDescending(l => l.DateBorrowed).ToList();
+                    var dateNow = DateTime.Now;
+                    foreach (var loan in loanedItems)
+                    {
+                        var hrsBorrow = dateNow.Subtract(loan.DateBorrowed);
+                        if (Math.Round(hrsBorrow.TotalHours) > 24)
+                        {
+                            loan.Status = "Active";
+                            loan.Condition = "MISSING";
+                            loan.DateReturned = DateTime.Now;
+                            loan.ReturnLoginName = "SYSTEM";
+
+                            var inv = tools.FirstOrDefault(i => i.ItemCode == loan.ItemCode);
+                            if (inv != null)
+                            {
+                                inv.Status = "In-Stock";
+                                inv.Condition = "LOST";
+                                inv.LastUpdate = DateTime.Now;
+                            }
+
+                            var loanTools = loanedTools.Where(l => l.LoanID == loan.LoanID && l.Status == "Active");
+                            if (loanTools.Count() <= 0)
+                            {
+                                var motherLoan = loans.FirstOrDefault(m => m.LoanID == loan.LoanID);
+                                if (motherLoan != null)
+                                {
+                                    motherLoan.Status = "Returned";
+                                    motherLoan.ReturnDate = DateTime.Now;
+                                    motherLoan.LoginName = "SYSTEM";
+                                }
+                            }
+
+                            context.SaveChanges();
+                        }
+                    }
+                }
+            });
+            task.ContinueWith((t) =>
+            {
+                UpdateLocalDB();
             });
         }
 
@@ -320,7 +381,8 @@ namespace EngineeringToolsEquipmentsInventory
                                 txtDepartment.Text = user.Department;
                                 UserSession.UserName = user.Name;
                                 timer2.Start();
-                                UpdateLocalDB();
+                                //UpdateLocalDB();
+                                UpdateMissing();
                                 mainNavigation.Navigate(new MainMenuView());
                             }
                             else

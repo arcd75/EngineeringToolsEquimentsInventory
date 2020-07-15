@@ -390,53 +390,56 @@ namespace EngineeringToolsEquipmentsInventory.Views
             var selectedItem = dgGridLoans.SelectedItem as LoanedTool;
             if (selectedItem != null)
             {
-                using (var context = new DatabaseContext())
+                if (MessageBox.Show("Are you sure " + selectedItem.Item + " condition is NO GOOD?", "Inventory System", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    var tool = context.LoanedTools.FirstOrDefault(br => br.LoanToolID == selectedItem.LoanToolID);
-                    if (tool != null)
+                    using (var context = new DatabaseContext())
                     {
-                        tool.Status = "Returned";
-                        tool.Condition = "NOGOOD";
-                        tool.DateReturned = DateTime.Now;
-                        tool.ReturnLoginName = UserSession.UserName;
-                        context.SaveChanges();
-
-                        using (var inventoryContext = new DatabaseContext())
+                        var tool = context.LoanedTools.FirstOrDefault(br => br.LoanToolID == selectedItem.LoanToolID);
+                        if (tool != null)
                         {
-                            var inventory = inventoryContext.Tools.FirstOrDefault(br => br.ItemCode == tool.ItemCode);
-                            if (inventory != null)
-                            {
-                                inventory.Status = "In-Stock";
-                                inventory.Condition = "NOGOOD";
-                                inventory.LastUpdate = DateTime.Now;
-                                inventoryContext.SaveChanges();
-                            }
-                        }
+                            tool.Status = "Returned";
+                            tool.Condition = "NOGOOD";
+                            tool.DateReturned = DateTime.Now;
+                            tool.ReturnLoginName = UserSession.UserName;
+                            context.SaveChanges();
 
-
-                        using (var loanContext = new DatabaseContext())
-                        {
-                            var loanTools = loanContext.LoanedTools.Where(br => br.LoanID == tool.LoanID && br.Status == "Active");
-                            if (loanTools.Count() <= 0)
+                            using (var inventoryContext = new DatabaseContext())
                             {
-                                using (var ReturnLoanContext = new DatabaseContext())
+                                var inventory = inventoryContext.Tools.FirstOrDefault(br => br.ItemCode == tool.ItemCode);
+                                if (inventory != null)
                                 {
-                                    var motherLoan = ReturnLoanContext.Loans.FirstOrDefault(br => br.LoanID == tool.LoanID);
-                                    if (motherLoan != null)
+                                    inventory.Status = "In-Stock";
+                                    inventory.Condition = "NOGOOD";
+                                    inventory.LastUpdate = DateTime.Now;
+                                    inventoryContext.SaveChanges();
+                                }
+                            }
+
+
+                            using (var loanContext = new DatabaseContext())
+                            {
+                                var loanTools = loanContext.LoanedTools.Where(br => br.LoanID == tool.LoanID && br.Status == "Active");
+                                if (loanTools.Count() <= 0)
+                                {
+                                    using (var ReturnLoanContext = new DatabaseContext())
                                     {
-                                        motherLoan.Status = "Returned";
-                                        motherLoan.ReturnDate = DateTime.Now;
-                                        motherLoan.LoginName = UserSession.UserName;
-                                        ReturnLoanContext.SaveChanges();
-                                        MessageBox.Show("Full loan returned", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        var motherLoan = ReturnLoanContext.Loans.FirstOrDefault(br => br.LoanID == tool.LoanID);
+                                        if (motherLoan != null)
+                                        {
+                                            motherLoan.Status = "Returned";
+                                            motherLoan.ReturnDate = DateTime.Now;
+                                            motherLoan.LoginName = UserSession.UserName;
+                                            ReturnLoanContext.SaveChanges();
+                                            MessageBox.Show("Full loan returned", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        }
                                     }
                                 }
                             }
+                            LoadLoans();
+                            GetData();
                         }
-                        LoadLoans();
-                        GetData();
                     }
-                }
+                }                
             }
         }
 
@@ -445,51 +448,54 @@ namespace EngineeringToolsEquipmentsInventory.Views
             var selectedItem = dgGridLoans.SelectedItem as LoanedTool;
             if (selectedItem != null)
             {
-                using (var context = new DatabaseContext())
+                if (MessageBox.Show("Are you sure " + selectedItem.Item + " condition is MISSING?", "Inventory System", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    var tool = context.LoanedTools.FirstOrDefault(br => br.LoanToolID == selectedItem.LoanToolID);
-                    if (tool != null)
+                    using (var context = new DatabaseContext())
                     {
-                        tool.Status = "Active";
-                        tool.Condition = "MISSING";
-                        tool.DateReturned = DateTime.Now;
-                        tool.ReturnLoginName = UserSession.UserName;
-                        context.SaveChanges();
-
-                        using (var inventoryContext = new DatabaseContext())
+                        var tool = context.LoanedTools.FirstOrDefault(br => br.LoanToolID == selectedItem.LoanToolID);
+                        if (tool != null)
                         {
-                            var inventory = inventoryContext.Tools.FirstOrDefault(br => br.ItemCode == tool.ItemCode);
-                            if (inventory != null)
-                            {
-                                inventory.Status = "In-Stock";
-                                inventory.Condition = "LOST";
-                                inventory.LastUpdate = DateTime.Now;
-                                inventoryContext.SaveChanges();
-                            }
-                        }
+                            tool.Status = "Active";
+                            tool.Condition = "MISSING";
+                            tool.DateReturned = DateTime.Now;
+                            tool.ReturnLoginName = UserSession.UserName;
+                            context.SaveChanges();
 
-                        using (var loanContext = new DatabaseContext())
-                        {
-                            var loanTools = loanContext.LoanedTools.Where(br => br.LoanID == tool.LoanID && br.Status == "Active");
-                            if (loanTools.Count() <= 0)
+                            using (var inventoryContext = new DatabaseContext())
                             {
-                                using (var ReturnLoanContext = new DatabaseContext())
+                                var inventory = inventoryContext.Tools.FirstOrDefault(br => br.ItemCode == tool.ItemCode);
+                                if (inventory != null)
                                 {
-                                    var motherLoan = ReturnLoanContext.Loans.FirstOrDefault(br => br.LoanID == tool.LoanID);
-                                    if (motherLoan != null)
+                                    inventory.Status = "In-Stock";
+                                    inventory.Condition = "LOST";
+                                    inventory.LastUpdate = DateTime.Now;
+                                    inventoryContext.SaveChanges();
+                                }
+                            }
+
+                            using (var loanContext = new DatabaseContext())
+                            {
+                                var loanTools = loanContext.LoanedTools.Where(br => br.LoanID == tool.LoanID && br.Status == "Active");
+                                if (loanTools.Count() <= 0)
+                                {
+                                    using (var ReturnLoanContext = new DatabaseContext())
                                     {
-                                        motherLoan.Status = "Returned";
-                                        motherLoan.ReturnDate = DateTime.Now;
-                                        motherLoan.LoginName = UserSession.UserName;
-                                        ReturnLoanContext.SaveChanges();
-                                        MessageBox.Show("Full loan returned", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        var motherLoan = ReturnLoanContext.Loans.FirstOrDefault(br => br.LoanID == tool.LoanID);
+                                        if (motherLoan != null)
+                                        {
+                                            motherLoan.Status = "Returned";
+                                            motherLoan.ReturnDate = DateTime.Now;
+                                            motherLoan.LoginName = UserSession.UserName;
+                                            ReturnLoanContext.SaveChanges();
+                                            MessageBox.Show("Full loan returned", "Inventory System", MessageBoxButton.OK, MessageBoxImage.Information);
+                                        }
                                     }
                                 }
                             }
+                            LoadLoans();
+                            GetData();
                         }
-                        LoadLoans();
-                        GetData();
-                    }
+                    } 
                 }
             }
         }

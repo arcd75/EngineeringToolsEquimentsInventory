@@ -1,0 +1,47 @@
+﻿<Window x:Class="EngineeringToolsEquipmentsInventory.Windows.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" BorderBrush="Black" BorderThickness="1"
+        Title="UserWindow" Width="300" Height="220">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="USER" x:Name="txtTitle" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource IOSTextHeading}" Height="20"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Name:" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="{DynamicResource IOSTextHeading}" Height="22" Margin="0 5 0 0"/>
+            <TextBlock Text="Department:" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="{DynamicResource IOSTextHeading}" Height="22" Margin="0 5 0 0"/>
+            <TextBlock Text="Type:" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="{DynamicResource IOSTextHeading}" Height="22" Margin="0 5 0 0"/>
+            <TextBlock Text="User ID:" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="{DynamicResource IOSTextHeading}" Height="22" Margin="0 5 0 0"/>
+            <TextBlock Text="Has Access:" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Foreground="{DynamicResource IOSTextHeading}" Height="22" Margin="0 5 0 0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox x:Name="txtName" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Height="22" Margin="0 5 0 0"/>
+            <!--<TextBox x:Name="txtDept" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Height="22" Margin="0 5 0 0"/>-->
+            <dxe:ComboBoxEdit x:Name="cbDept" Height="22" Margin="0 5 0 0" AutoComplete="False" IsTextEditable="False">
+                <dxe:ComboBoxEditItem Content="Engineering"/>
+                <dxe:ComboBoxEditItem Content="Maintenance"/>
+            </dxe:ComboBoxEdit>
+            <!--<TextBox x:Name="txtType" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Height="22" Margin="0 5 0 0"/>-->
+            <dxe:ComboBoxEdit x:Name="cbType" Height="22" Margin="0 5 0 0" AutoComplete="False" IsTextEditable="False" SelectedIndexChanged="CbType_SelectedIndexChanged">
+                <dxe:ComboBoxEditItem Content="Barrower"/>
+                <dxe:ComboBoxEditItem Content="Administrator"/>
+            </dxe:ComboBoxEdit>
+            <PasswordBox x:Name="txtUserID" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" Height="22" Margin="0 5 0 0"/>
+            <CheckBox x:Name="chkHasAccess" Margin="0 0 0 0"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="btnSave" Click="BtnSave_Click" Height="35" Width="55" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSDeepBlue}" Content="SAVE" Foreground="White" Margin="0 0 10 0" IsDefault="True"/>
+            <Button x:Name="btnCancel" Click="BtnCancel_Click" Height="35" Width="55" Style="{DynamicResource ButtonFlatStyle}" Background="{DynamicResource IOSRed}" Content="CANCEL" Foreground="White" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

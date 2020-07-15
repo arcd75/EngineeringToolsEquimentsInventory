@@ -61,20 +61,6 @@
             <RowDefinition Height="35*"/>
             <RowDefinition Height="632*"/>
         </Grid.RowDefinitions>
-        <DockPanel Visibility="Collapsed" x:Name="bsyPanel" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1" >
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Fetching data from iJOS">
-                    <dx:WaitIndicator.ContentTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="Please Wait" FontFamily="{DynamicResource FontHelveticaNeu_Bold}"  FontSize="15"/>
-                                <TextBlock Text="{Binding}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </dx:WaitIndicator.ContentTemplate>
-                </dx:WaitIndicator>
-            </StackPanel>
-        </DockPanel>
         <DockPanel Grid.Row="0">
             <DockPanel Background="{DynamicResource IOSDeepBlue}">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">

@@ -1,4 +1,5 @@
 ﻿using EngineeringToolsEquipmentsInventory.Views.InventoryManagement;
+using EngineeringToolsEquipmentsInventory.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -83,8 +84,11 @@ namespace EngineeringToolsEquipmentsInventory.Views
 
         private void BtnJigs_Click(object sender, RoutedEventArgs e)
         {
-
-            mainNavigation.Navigate(new JigsTransactionView());
+            var window = new IDScanWindow2();
+            if ((bool)window.ShowDialog())
+            {
+                mainNavigation.Navigate(new JigsTransactionView());
+            }
         }
 
         private void BtnExpand_Click(object sender, RoutedEventArgs e)
@@ -100,6 +104,15 @@ namespace EngineeringToolsEquipmentsInventory.Views
         private void Menu_ViewStateChanged(object sender, DevExpress.Xpf.WindowsUI.HamburgerMenuViewStateChangedEventArgs e)
         {
        
+        }
+
+        private void BtnPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new IDScanWindow2();
+            if ((bool)window.ShowDialog())
+            {
+                mainNavigation.Navigate(new PersonnelView());
+            }
         }
     }
 }

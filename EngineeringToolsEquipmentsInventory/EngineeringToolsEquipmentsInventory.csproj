@@ -294,6 +294,9 @@
     <Compile Include="Views\NewDeliveryView.xaml.cs">
       <DependentUpon>NewDeliveryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\InventoryManagement\PersonnelView.xaml.cs">
+      <DependentUpon>PersonnelView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ToolsView.xaml.cs">
       <DependentUpon>ToolsView.xaml</DependentUpon>
     </Compile>
@@ -306,6 +309,9 @@
     <Compile Include="Windows\AddToolWindow.xaml.cs">
       <DependentUpon>AddToolWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\BarrowerLookupWindow.xaml.cs">
       <DependentUpon>BarrowerLookupWindow.xaml</DependentUpon>
     </Compile>
@@ -317,6 +323,9 @@
     </Compile>
     <Compile Include="Windows\IDScanWindow.xaml.cs">
       <DependentUpon>IDScanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IDScanWindow2.xaml.cs">
+      <DependentUpon>IDScanWindow2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\JigManualAdd.xaml.cs">
       <DependentUpon>JigManualAdd.xaml</DependentUpon>
@@ -406,6 +415,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\InventoryManagement\PersonnelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ToolsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -422,6 +435,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\BarrowerLookupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -435,6 +452,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\IDScanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\IDScanWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

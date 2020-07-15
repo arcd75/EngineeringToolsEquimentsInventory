@@ -16,6 +16,14 @@ namespace EngineeringToolsEquipmentsInventory.Models
         public string Name { get; set; }
         public string Department { get; set; }
         public string Type { get; set; }
+        public bool HasAccess { get; set; }
+        public string Access
+        {
+            get
+            {
+                return HasAccess ? "True" : "False";
+            }
+        }
     }
 
     public class Tool

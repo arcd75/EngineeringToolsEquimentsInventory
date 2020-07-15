@@ -196,17 +196,17 @@
                             <dxg:GridColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="10">
-                                        <Button x:Name="btnReturnGood" Click="BtnReturnGood_Click"  Width="70" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as GOOD" >
+                                        <Button x:Name="btnReturnGood" Click="BtnReturnGood_Click"  Width="70" Height="20" Background="{DynamicResource IOSDeepBlue}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as GOOD" Margin="0 2">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="GOOD" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
-                                        <Button x:Name="btnReturnNoGood" Click="BtnReturnNoGood_Click" Margin="0,2,0,2"  Width="70" Height="20" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as NO GOOD" >
+                                        <Button x:Name="btnReturnNoGood" Click="BtnReturnNoGood_Click" Margin="0 2"  Width="70" Height="20" Background="{DynamicResource IOSRed}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as NO GOOD" >
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="NO GOOD" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
-                                        <Button x:Name="btnReturnMissing" Click="BtnReturnMissing_Click"  Width="70" Height="20" Background="{DynamicResource IOSYellow}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as MISSING" >
+                                        <Button x:Name="btnReturnMissing" Click="BtnReturnMissing_Click"  Width="70" Height="20" Background="{DynamicResource IOSYellow}" Style="{DynamicResource ButtonFlatStyle}" ToolTip="Return as MISSING" Margin="0 2">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="MISSING" Foreground="White" FontFamily="{DynamicResource FontHelveticaNeu_Bold}" FontSize="10" VerticalAlignment="Center"/>
                                             </StackPanel>

@@ -90,7 +90,7 @@
                             </StackPanel>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White">
+                    <Button x:Name="btnPersonnel" HorizontalContentAlignment="Left" Height="40" Style="{DynamicResource ButtonFlatStyle}" Background="Transparent" Foreground="White" Click="BtnPersonnel_Click">
                         <StackPanel Orientation="Horizontal">
                             <Rectangle Width="30" Height="30" Fill="White">
                                 <Rectangle.OpacityMask>

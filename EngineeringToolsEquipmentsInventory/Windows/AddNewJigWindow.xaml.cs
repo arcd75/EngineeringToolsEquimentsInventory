@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace EngineeringToolsEquipmentsInventory.Windows
 {
@@ -16,6 +17,8 @@ namespace EngineeringToolsEquipmentsInventory.Windows
     /// </summary>
     public partial class AddNewJigWindow : Window
     {
+        DispatcherTimer timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1) };
+
         public AddNewJigWindow()
         {
             InitializeComponent();
@@ -23,20 +26,35 @@ namespace EngineeringToolsEquipmentsInventory.Windows
         System.Windows.Forms.BindingSource josReceivingBindingSource = new System.Windows.Forms.BindingSource();
         System.Windows.Forms.BindingSource josOrderItems = new System.Windows.Forms.BindingSource();
 
+        public void timer_Tick (object sender, EventArgs e)
+        {
+            if (MainWindow.IsUpdateDone)
+            {
+                timer.Stop();
+                LoadDeliveries();
+            }
+            
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            /*
             dgJOSDeliveries.ItemsSource = josReceivingBindingSource;
             dgOrderItem.ItemsSource = josOrderItems;
             LoadDeliveries();
             LoadPOData();
+            */
             //LoadPurchaseOrder();
             //UpdateLocalDB();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
         }
 
         public void LoadDeliveries()
         {
             using (var context = new DatabaseContext())
             {
+                var lastUpdate = context.JOSUpdates.ToList();
                 var receivables = context.JOSDeliveries.ToList();
                 var purchaseOrders = context.JigPurchaseOrders.ToList();
                 josReceivingBindingSource.DataSource = receivables;
@@ -45,7 +63,11 @@ namespace EngineeringToolsEquipmentsInventory.Windows
                 dgJOSOrders.ItemsSource = josOrderItems;
                 dgJOSDeliveries.RefreshData();
                 dgJOSOrders.RefreshData();
-
+                if (lastUpdate.Count() > 0)
+                {
+                    txtLastUpdate.Text = "Last Updated: " + lastUpdate.FirstOrDefault().LastUpdate.ToString("MMMM d, yyyy h:mm:ss tt");
+                    bsyPanel.Visibility = Visibility.Collapsed;
+                }
             }
         }
 

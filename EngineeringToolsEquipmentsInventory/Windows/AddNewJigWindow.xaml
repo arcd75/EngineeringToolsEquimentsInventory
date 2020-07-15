@@ -69,7 +69,7 @@
                 </Border>
             </StackPanel>
         </DockPanel>
-        <DockPanel x:Name="bsyPanel" Visibility="Collapsed" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1">
+        <DockPanel x:Name="bsyPanel" Visibility="Visible" Grid.RowSpan="2" Background="#4C808080" Panel.ZIndex="1">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <dx:WaitIndicator Grid.Row="1" DeferedVisibility="True" x:Name="waitIndicator" Visibility="Visible" Content="Transferring Data from iJOS">
                     <dx:WaitIndicator.ContentTemplate>
@@ -97,7 +97,7 @@
                         </Rectangle.OpacityMask>
                     </Rectangle>
                 </StackPanel>
-                <TextBlock Text="Last Updated: " HorizontalAlignment="Right" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" FontSize="12" Foreground="{DynamicResource IOSTextHeading}" Grid.Column="1" FontStyle="Italic"/>
+                <TextBlock Text="Last Updated: " HorizontalAlignment="Right" FontFamily="{DynamicResource FontHelveticaNeu_BlackCond}" VerticalAlignment="Center" FontSize="12" Foreground="{DynamicResource IOSTextHeading}" Grid.Column="1" FontStyle="Italic" x:Name="txtLastUpdate" Margin="0 0 10 0"/>
             </Grid>
             
         </DockPanel>
